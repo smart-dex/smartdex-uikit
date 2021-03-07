@@ -2917,6 +2917,7 @@ var Menu = function (_a) {
         React.createElement(StyledNav, { showMenu: showMenu },
             React.createElement(Logo$1, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
             React.createElement(Flex, null,
+                "Mode",
                 React.createElement(UserBlock$1, { account: account, login: login, logout: logout }),
                 profile && React.createElement(Avatar, { profile: profile }))),
         React.createElement(BodyWrapper, null,

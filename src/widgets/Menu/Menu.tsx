@@ -123,6 +123,7 @@ const Menu: React.FC<NavProps> = ({
           href={homeLink?.href ?? "/"}
         />
         <Flex>
+          Mode
           <UserBlock account={account} login={login} logout={logout} />
           {profile && <Avatar profile={profile} />}
         </Flex>
