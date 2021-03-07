@@ -1,6 +1,6 @@
 {
-  "name": "@pancakeswap-libs/uikit-sota",
-  "version": "0.13.1",
+  "name": "uikit-sotatek",
+  "version": "1.0.0",
   "description": "Set of UI components for pancake projects",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -8,7 +8,10 @@
   "files": [
     "dist"
   ],
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sotatek-CanPham/pancake-uikit-sota.git"
+  },
   "license": "MIT",
   "scripts": {
     "build": "rm -rf ./dist && rollup -c && tsc -d --emitDeclarationOnly --declarationDir dist",
@@ -81,5 +84,10 @@
     "lodash": "^4.17.20",
     "react-transition-group": "^4.4.1",
     "styled-system": "^5.1.5"
-  }
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/Sotatek-CanPham/pancake-uikit-sota/issues"
+  },
+  "homepage": "https://github.com/Sotatek-CanPham/pancake-uikit-sota#readme"
 }
