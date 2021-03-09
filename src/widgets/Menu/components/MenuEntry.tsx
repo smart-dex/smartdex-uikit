@@ -19,7 +19,7 @@ const rainbowAnimation = keyframes`
 `;
 
 const LinkLabel = styled.div<{ isPushed: boolean }>`
-  color: ${({ isPushed, theme }) => (isPushed ? theme.colors.textSubtle : "transparent")};
+  color: ${({ isPushed, theme }) => (isPushed ? (theme.isDark ? 'rgba(255, 255, 255, 0.77)' : '#5F5E76') : "transparent")};
   transition: color 0.4s;
   flex-grow: 1;
 `;
@@ -32,7 +32,8 @@ const MenuEntry = styled.div<Props>`
   padding: ${({ secondary }) => (secondary ? "0 10px 0 56px" : "0 10px 0 16px")};
   font-size: ${({ secondary }) => (secondary ? "14px" : "16px")};
   background-color: ${({ secondary }) => (secondary ? "transparent" : "transparent")};
-  color: ${({ theme }) => theme.colors.textMenuLeft};
+  color: ${({ theme }) => theme.isDark ? 'rgba(255, 255, 255, 0.77)' : '#5F5E76'};
+  font-weight: 500;
 
   a {
     display: flex;
@@ -42,15 +43,15 @@ const MenuEntry = styled.div<Props>`
   }
 
   svg {
-    fill: ${({ theme }) => theme.colors.textMenuLeft};
+    fill: ${({ theme }) => theme.isDark ? 'rgba(255, 255, 255, 0.77)' : '#5F5E76'};
   }
 
   div {
-    color: ${({ theme }) => theme.colors.textMenuLeft};
+    color: ${({ theme }) => theme.isDark ? 'rgba(255, 255, 255, 0.77)' : '#5F5E76'};
   }
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.activeBackgroundMenuLeft};
+    background-color: ${({ theme }) => theme.isDark ? '#1C2438' : '#E9F4FC'};
   }
 
   // Safari fix
@@ -59,16 +60,16 @@ const MenuEntry = styled.div<Props>`
   &.rainbow {
     background-clip: text;
     animation: ${rainbowAnimation} 3s ease-in-out infinite;
-    color: ${({ theme }) => theme.colors.primary};
-    background-color: ${({ theme }) => theme.colors.activeBackgroundMenuLeft};
+    color: ${({ theme }) => theme.isDark ? '#0085FF' : '#0085FF'};
+    background-color: ${({ theme }) => theme.isDark ? '#1C2438' : '#E9F4FC'};
     background-size: 400% 100%;
 
     svg {
-      fill: ${({ theme }) => theme.colors.primary};
+      fill: ${({ theme }) => theme.isDark ? '#0085FF' : '#0085FF'};
     }
 
     div {
-      color: ${({ theme }) => theme.colors.primary};
+      color:${({ theme }) => theme.isDark ? '#0085FF' : '#0085FF'};
     }
   }
 `;

@@ -15,7 +15,7 @@ interface Props {
 }
 
 const StyleButton = styled(Button)`
-  border: 1px solid ${({ theme }) => theme.colors.borderColor};
+  border: 1px solid  ${({ theme }) => theme.isDark ? '#2F344B' : '#E2E2E8'};
   border-radius: 50px;
   margin-right: 20px;
   height: 56px;
@@ -26,7 +26,7 @@ const LangSelectorHeader: React.FC<Props> = ({ currentLang, langs, setLang, isDa
   <Dropdown
     position="bottom"
     target={
-      <StyleButton variant="text" endIcon={<ChevronDownIcon color="textSubtle" width="24px" />}>
+      <StyleButton variant="text" endIcon={<ChevronDownIcon color={!isDark ? 'rgba(255, 255, 255, 0.87)' : '#6F6C99'} width="24px" />}>
         <Text color="textSubtle">{currentLang?.toUpperCase()}</Text>
       </StyleButton>
     }

@@ -26,7 +26,7 @@ const UserBlock: React.FC<Props> = ({ account, login, logout }) => {
         </Button>
       ) : (
         <Button
-          style={{ minWidth: 150 }}
+          style={{ minWidth: 150, backgroundColor: '#0085FF' }}
           scale="md"
           onClick={() => {
             onPresentConnectModal();

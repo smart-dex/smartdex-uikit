@@ -16,7 +16,7 @@ const getFontSize = ({ fontSize, small }: TextProps) => {
 };
 
 const Text = styled.div<TextProps>`
-  color: ${getColor};
+  color: ${({ theme }) => theme.isDark ? 'rgba(255, 255, 255, 0.87)' : '#6F6C99'};
   font-size: ${getFontSize};
   font-weight: ${({ bold }) => (bold ? 600 : 400)};
   line-height: 1.5;

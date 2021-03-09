@@ -98,15 +98,14 @@ var Icon$12 = function (props) {
         React.createElement("path", { d: "M11 7H13V9H11V7ZM12 17C12.55 17 13 16.55 13 16V12C13 11.45 12.55 11 12 11C11.45 11 11 11.45 11 12V16C11 16.55 11.45 17 12 17ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z" })));
 };
 
-var getColor$1 = function (_a) {
-    var color = _a.color, theme = _a.theme;
-    return getThemeValue("colors." + color, color)(theme);
-};
 var getFontSize = function (_a) {
     var fontSize = _a.fontSize, small = _a.small;
     return small ? "14px" : fontSize || "16px";
 };
-var Text = styled.div(templateObject_1$N || (templateObject_1$N = __makeTemplateObject(["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n  ", "\n"], ["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n  ", "\n"])), getColor$1, getFontSize, function (_a) {
+var Text = styled.div(templateObject_1$N || (templateObject_1$N = __makeTemplateObject(["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n  ", "\n"], ["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n  ", "\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.isDark ? 'rgba(255, 255, 255, 0.87)' : '#6F6C99';
+}, getFontSize, function (_a) {
     var bold = _a.bold;
     return (bold ? 600 : 400);
 }, function (_a) {
@@ -1354,22 +1353,13 @@ var getScale = function (property) { return function (_a) {
 }; };
 var Handle = styled.div(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 50%;\n  cursor: pointer;\n  height: ", ";\n  left: ", ";\n  position: absolute;\n  top: ", ";\n  transition: left 200ms ease-in;\n  width: ", ";\n  z-index: 1;\n"], ["\n  background-color: ", ";\n  border-radius: 50%;\n  cursor: pointer;\n  height: ", ";\n  left: ", ";\n  position: absolute;\n  top: ", ";\n  transition: left 200ms ease-in;\n  width: ", ";\n  z-index: 1;\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.toggle.handleBackground;
+    return theme.isDark ? '#FFFFFF' : '#17C267';
 }, getScale("handleHeight"), getScale("handleLeft"), getScale("handleTop"), getScale("handleWidth"));
-var Input = styled.input(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n  cursor: pointer;\n  opacity: 0;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n\n  &:checked + ", " {\n    left: ", ";\n    background-color: ", ";\n  }\n\n  &:focus + ", " {\n    box-shadow: ", ";\n  }\n\n  &:hover + ", ":not(:disabled):not(:checked) {\n    box-shadow: ", ";\n  }\n"], ["\n  cursor: pointer;\n  opacity: 0;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n\n  &:checked + ", " {\n    left: ", ";\n    background-color: ", ";\n  }\n\n  &:focus + ", " {\n    box-shadow: ", ";\n  }\n\n  &:hover + ", ":not(:disabled):not(:checked) {\n    box-shadow: ", ";\n  }\n"])), Handle, getScale("checkedLeft"), function (_a) {
+var Input = styled.input(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n  cursor: pointer;\n  opacity: 0;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n\n  &:checked + ", " {\n    left: ", ";\n    background-color: ", ";\n  }\n\n  &:focus + ", " {\n    box-shadow: \"0px 0px 0px 1px #45d973, 0px 0px 0px 4px rgb(40 210 120 / 60%)\";\n  }\n\n  &:hover + ", ":not(:disabled):not(:checked) {\n    box-shadow: \"0px 0px 0px 1px #45d973, 0px 0px 0px 4px rgb(40 210 120 / 60%)\";\n  }\n"], ["\n  cursor: pointer;\n  opacity: 0;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n\n  &:checked + ", " {\n    left: ", ";\n    background-color: ", ";\n  }\n\n  &:focus + ", " {\n    box-shadow: \"0px 0px 0px 1px #45d973, 0px 0px 0px 4px rgb(40 210 120 / 60%)\";\n  }\n\n  &:hover + ", ":not(:disabled):not(:checked) {\n    box-shadow: \"0px 0px 0px 1px #45d973, 0px 0px 0px 4px rgb(40 210 120 / 60%)\";\n  }\n"])), Handle, getScale("checkedLeft"), function (_a) {
     var theme = _a.theme;
-    return theme.colors.success;
-}, Handle, function (_a) {
-    var theme = _a.theme;
-    return theme.shadows.focus;
-}, Handle, function (_a) {
-    var theme = _a.theme;
-    return theme.shadows.focus;
-});
-var StyledToggle = styled.div(templateObject_3$3 || (templateObject_3$3 = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border-radius: 24px;\n  box-shadow: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  height: ", ";\n  position: relative;\n  transition: background-color 200ms;\n  width: ", ";\n"], ["\n  align-items: center;\n  background-color: ", ";\n  border-radius: 24px;\n  box-shadow: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  height: ", ";\n  position: relative;\n  transition: background-color 200ms;\n  width: ", ";\n"])), function (_a) {
-    var theme = _a.theme, checked = _a.checked;
-    return theme.colors[checked ? "success" : "success"] + "33";
-}, function (_a) {
+    return theme.isDark ? '#17C267' : '#17C267';
+}, Handle, Handle);
+var StyledToggle = styled.div(templateObject_3$3 || (templateObject_3$3 = __makeTemplateObject(["\n  align-items: center;\n  background-color: rgb(111 207 151 / 20%);\n  border-radius: 24px;\n  box-shadow: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  height: ", ";\n  position: relative;\n  transition: background-color 200ms;\n  width: ", ";\n"], ["\n  align-items: center;\n  background-color: rgb(111 207 151 / 20%);\n  border-radius: 24px;\n  box-shadow: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  height: ", ";\n  position: relative;\n  transition: background-color 200ms;\n  width: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.shadows.inset;
 }, getScale("toggleHeight"), getScale("toggleWidth"));
@@ -2382,9 +2372,9 @@ var SIDEBAR_WIDTH_REDUCED = 56;
 var rainbowAnimation = keyframes(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n  0%,\n  100% {\n    background-position: 0 0;\n  }\n  50% {\n    background-position: 100% 0;\n  }\n"], ["\n  0%,\n  100% {\n    background-position: 0 0;\n  }\n  50% {\n    background-position: 100% 0;\n  }\n"])));
 var LinkLabel = styled.div(templateObject_2$5 || (templateObject_2$5 = __makeTemplateObject(["\n  color: ", ";\n  transition: color 0.4s;\n  flex-grow: 1;\n"], ["\n  color: ", ";\n  transition: color 0.4s;\n  flex-grow: 1;\n"])), function (_a) {
     var isPushed = _a.isPushed, theme = _a.theme;
-    return (isPushed ? theme.colors.textSubtle : "transparent");
+    return (isPushed ? (theme.isDark ? 'rgba(255, 255, 255, 0.77)' : '#5F5E76') : "transparent");
 });
-var MenuEntry = styled.div(templateObject_3$1 || (templateObject_3$1 = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", "px;\n  padding: ", ";\n  font-size: ", ";\n  background-color: ", ";\n  color: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  div {\n    color: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    color: ", ";\n    background-color: ", ";\n    background-size: 400% 100%;\n\n    svg {\n      fill: ", ";\n    }\n\n    div {\n      color: ", ";\n    }\n  }\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", "px;\n  padding: ", ";\n  font-size: ", ";\n  background-color: ", ";\n  color: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  div {\n    color: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    color: ", ";\n    background-color: ", ";\n    background-size: 400% 100%;\n\n    svg {\n      fill: ", ";\n    }\n\n    div {\n      color: ", ";\n    }\n  }\n"])), MENU_ENTRY_HEIGHT, function (_a) {
+var MenuEntry = styled.div(templateObject_3$1 || (templateObject_3$1 = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", "px;\n  padding: ", ";\n  font-size: ", ";\n  background-color: ", ";\n  color: ", ";\n  font-weight: 500;\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  div {\n    color: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    color: ", ";\n    background-color: ", ";\n    background-size: 400% 100%;\n\n    svg {\n      fill: ", ";\n    }\n\n    div {\n      color:", ";\n    }\n  }\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", "px;\n  padding: ", ";\n  font-size: ", ";\n  background-color: ", ";\n  color: ", ";\n  font-weight: 500;\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  div {\n    color: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    color: ", ";\n    background-color: ", ";\n    background-size: 400% 100%;\n\n    svg {\n      fill: ", ";\n    }\n\n    div {\n      color:", ";\n    }\n  }\n"])), MENU_ENTRY_HEIGHT, function (_a) {
     var secondary = _a.secondary;
     return (secondary ? "0 10px 0 56px" : "0 10px 0 16px");
 }, function (_a) {
@@ -2395,28 +2385,28 @@ var MenuEntry = styled.div(templateObject_3$1 || (templateObject_3$1 = __makeTem
     return (secondary ? "transparent" : "transparent");
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.textMenuLeft;
+    return theme.isDark ? 'rgba(255, 255, 255, 0.77)' : '#5F5E76';
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.textMenuLeft;
+    return theme.isDark ? 'rgba(255, 255, 255, 0.77)' : '#5F5E76';
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.textMenuLeft;
+    return theme.isDark ? 'rgba(255, 255, 255, 0.77)' : '#5F5E76';
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.activeBackgroundMenuLeft;
+    return theme.isDark ? '#1C2438' : '#E9F4FC';
 }, rainbowAnimation, function (_a) {
     var theme = _a.theme;
-    return theme.colors.primary;
+    return theme.isDark ? '#0085FF' : '#0085FF';
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.activeBackgroundMenuLeft;
+    return theme.isDark ? '#1C2438' : '#E9F4FC';
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.primary;
+    return theme.isDark ? '#0085FF' : '#0085FF';
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.primary;
+    return theme.isDark ? '#0085FF' : '#0085FF';
 });
 MenuEntry.defaultProps = {
     secondary: false,
@@ -2502,12 +2492,12 @@ var CakePrice$1 = React.memo(CakePrice);
 var templateObject_1$c;
 
 var Icons = IconModule;
-var SocialLinks = function () { return (React.createElement(Flex, null, socials.map(function (social, index) {
+var SocialLinks = function () { return (React.createElement(Flex, { style: { paddingTop: 8 } }, socials.map(function (social, index) {
     var Icon = Icons[social.icon];
-    var iconProps = { width: "24px", color: "primary", style: { cursor: "pointer" } };
+    var iconProps = { width: "24px", color: "#0085FF", style: { cursor: "pointer" } };
     var mr = index < socials.length - 1 ? "10px" : 0;
     if (social.items) {
-        return (React.createElement(Dropdown, { key: social.label, position: "top", target: React.createElement(Icon, __assign({}, iconProps, { mr: mr })) }, social.items.map(function (item) { return (React.createElement(Link, { external: true, key: item.label, href: item.href, "aria-label": item.label, color: "textSubtle" }, item.label)); })));
+        return (React.createElement(Dropdown, { key: social.label, position: "top", target: React.createElement(Icon, __assign({}, iconProps, { mr: mr })) }, social.items.map(function (item) { return (React.createElement(Link, { external: true, key: item.label, href: item.href, "aria-label": item.label, color: "#0085FF" }, item.label)); })));
     }
     return (React.createElement(Link, { external: true, key: social.label, href: social.href, "aria-label": social.label, mr: mr },
         React.createElement(Icon, __assign({}, iconProps))));
@@ -2516,7 +2506,7 @@ var SocialLinks$1 = React.memo(SocialLinks, function () { return true; });
 
 var Container = styled.div(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  flex: none;\n  padding: 8px 4px;\n  border-top: solid 1px;\n  border-color: ", ";\n  width: calc(100% - 30px);\n  margin: auto;\n"], ["\n  flex: none;\n  padding: 8px 4px;\n  border-top: solid 1px;\n  border-color: ", ";\n  width: calc(100% - 30px);\n  margin: auto;\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.colors.borderColor;
+    return theme.isDark ? '#2F344B' : '#E2E2E8';
 });
 var SocialEntry = styled.div(templateObject_2$3 || (templateObject_2$3 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 5px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 5px;\n"])), MENU_ENTRY_HEIGHT);
 var PanelFooter = function (_a) {
@@ -2552,7 +2542,7 @@ var StyledPanel = styled.div(templateObject_1$9 || (templateObject_1$9 = __makeT
     return (showMenu ? "0" : 0);
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.navThemeLeft;
+    return theme.isDark ? '#030610' : '#f9fcfe';
 }, function (_a) {
     var isPushed = _a.isPushed;
     return (isPushed ? SIDEBAR_WIDTH_FULL + "px" : 0);
@@ -2790,7 +2780,7 @@ var UserBlock = function (_a) {
     var accountEllipsis = account ? account.substring(0, 4) + "..." + account.substring(account.length - 4) : null;
     return (React.createElement("div", null, account ? (React.createElement(Button, { scale: "md", variant: "tertiary", onClick: function () {
             onPresentAccountModal();
-        } }, accountEllipsis)) : (React.createElement(Button, { style: { minWidth: 150 }, scale: "md", onClick: function () {
+        } }, accountEllipsis)) : (React.createElement(Button, { style: { minWidth: 150, backgroundColor: '#0085FF' }, scale: "md", onClick: function () {
             onPresentConnectModal();
         } }, "Connect"))));
 };
@@ -2817,13 +2807,13 @@ MenuButton.defaultProps = {
 };
 var templateObject_1$6;
 
-var StyleButton = styled(Button)(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  border: 1px solid ", ";\n  border-radius: 50px;\n  margin-right: 20px;\n  height: 56px;\n  min-width: 150px;\n"], ["\n  border: 1px solid ", ";\n  border-radius: 50px;\n  margin-right: 20px;\n  height: 56px;\n  min-width: 150px;\n"])), function (_a) {
+var StyleButton = styled(Button)(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  border: 1px solid  ", ";\n  border-radius: 50px;\n  margin-right: 20px;\n  height: 56px;\n  min-width: 150px;\n"], ["\n  border: 1px solid  ", ";\n  border-radius: 50px;\n  margin-right: 20px;\n  height: 56px;\n  min-width: 150px;\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.colors.borderColor;
+    return theme.isDark ? '#2F344B' : '#E2E2E8';
 });
 var LangSelectorHeader = function (_a) {
-    var currentLang = _a.currentLang, langs = _a.langs, setLang = _a.setLang; _a.isDark;
-    return (React.createElement(Dropdown, { position: "bottom", target: React.createElement(StyleButton, { variant: "text", endIcon: React.createElement(Icon$R, { color: "textSubtle", width: "24px" }) },
+    var currentLang = _a.currentLang, langs = _a.langs, setLang = _a.setLang, isDark = _a.isDark;
+    return (React.createElement(Dropdown, { position: "bottom", target: React.createElement(StyleButton, { variant: "text", endIcon: React.createElement(Icon$R, { color: !isDark ? 'rgba(255, 255, 255, 0.87)' : '#6F6C99', width: "24px" }) },
             React.createElement(Text, { color: "textSubtle" }, currentLang === null || currentLang === void 0 ? void 0 : currentLang.toUpperCase())) }, langs.map(function (lang) { return (React.createElement(MenuButton, { key: lang.code, fullWidth: true, onClick: function () { return setLang(lang); }, 
         // Safari fix
         style: { minHeight: "32px", height: "auto", minWidth: 118 } }, lang.language)); })));
@@ -2860,10 +2850,10 @@ var StyledNav = styled.nav(templateObject_2 || (templateObject_2 = __makeTemplat
     return (showMenu ? 0 : "-" + MENU_HEIGHT + "px");
 }, MENU_HEIGHT, function (_a) {
     var theme = _a.theme;
-    return theme.colors.background;
+    return theme.isDark ? '#151C31' : '#FFFFFF';
 }, function (_a) {
     var theme = _a.theme;
-    return "solid 1px " + theme.nav.boderColor;
+    return "solid 1px " + (theme.isDark ? '#2F344B' : '#E2E2E8');
 });
 var BodyWrapper = styled.div(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n"], ["\n  position: relative;\n  display: flex;\n"])));
 var Inner = styled.div(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  flex-grow: 1;\n  margin-top: ", ";\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n\n  ", " {\n    margin-left: ", ";\n    max-width: ", ";\n  }\n"], ["\n  flex-grow: 1;\n  margin-top: ", ";\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n\n  ", " {\n    margin-left: ", ";\n    max-width: ", ";\n  }\n"])), function (_a) {

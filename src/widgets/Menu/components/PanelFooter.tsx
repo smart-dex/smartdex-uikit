@@ -13,7 +13,7 @@ const Container = styled.div`
   flex: none;
   padding: 8px 4px;
   border-top: solid 1px;
-  border-color: ${({ theme }) => theme.colors.borderColor};
+  border-color: ${({ theme }) => theme.isDark ? '#2F344B' : '#E2E2E8'};
   width: calc(100% - 30px);
   margin: auto;
 `;
