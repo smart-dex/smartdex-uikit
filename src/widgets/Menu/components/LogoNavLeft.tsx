@@ -18,8 +18,8 @@ const StyledLink = styled(Link)`
   font-weight: 800;
   font-size: 32px;
   line-height: 39px;
-  color: ${({ theme }) => theme.colors.textLogoMenuLeft};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.borderColor};
+  color: ${({ theme }) => theme.isDark ? "#FFFFFF" : "#5F5E76"};
+  border-bottom: 1px solid ${({ theme }) => theme.isDark ? "#2F344B" : "#E2E2E8"};
   letter-spacing: -0.04em;
 `;
 

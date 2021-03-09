@@ -1357,7 +1357,7 @@ var Handle = styled.div(templateObject_1$j || (templateObject_1$j = __makeTempla
     return theme.toggle.handleBackground;
 }, getScale("handleHeight"), getScale("handleLeft"), getScale("handleTop"), getScale("handleWidth"));
 var Input = styled.input(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n  cursor: pointer;\n  opacity: 0;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n\n  &:checked + ", " {\n    left: ", ";\n    background-color: ", ";\n  }\n\n  &:focus + ", " {\n    box-shadow: ", ";\n  }\n\n  &:hover + ", ":not(:disabled):not(:checked) {\n    box-shadow: ", ";\n  }\n"], ["\n  cursor: pointer;\n  opacity: 0;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n\n  &:checked + ", " {\n    left: ", ";\n    background-color: ", ";\n  }\n\n  &:focus + ", " {\n    box-shadow: ", ";\n  }\n\n  &:hover + ", ":not(:disabled):not(:checked) {\n    box-shadow: ", ";\n  }\n"])), Handle, getScale("checkedLeft"), function (_a) {
-    var theme = _a.theme; _a.checked;
+    var theme = _a.theme;
     return theme.colors.success;
 }, Handle, function (_a) {
     var theme = _a.theme;
@@ -1368,7 +1368,7 @@ var Input = styled.input(templateObject_2$7 || (templateObject_2$7 = __makeTempl
 });
 var StyledToggle = styled.div(templateObject_3$3 || (templateObject_3$3 = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border-radius: 24px;\n  box-shadow: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  height: ", ";\n  position: relative;\n  transition: background-color 200ms;\n  width: ", ";\n"], ["\n  align-items: center;\n  background-color: ", ";\n  border-radius: 24px;\n  box-shadow: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  height: ", ";\n  position: relative;\n  transition: background-color 200ms;\n  width: ", ";\n"])), function (_a) {
     var theme = _a.theme, checked = _a.checked;
-    return theme.colors[checked ? "success" : "success"] + '33';
+    return theme.colors[checked ? "success" : "success"] + "33";
 }, function (_a) {
     var theme = _a.theme;
     return theme.shadows.inset;
@@ -2060,7 +2060,7 @@ var Icon$n = function (props) {
 
 var Icon$m = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
-        React.createElement("path", { "fill-rule": "evenodd", "clip-rule": "evenodd", d: "M8.75 15.5C8.75 15.5 7.5 15.5 7.5 14.25C7.5 13 8.75 9.25 13.75 9.25C18.75 9.25 20 13 20 14.25C20 15.5 18.75 15.5 18.75 15.5H8.75ZM13.75 8C14.7446 8 15.6984 7.60491 16.4017 6.90165C17.1049 6.19839 17.5 5.24456 17.5 4.25C17.5 3.25544 17.1049 2.30161 16.4017 1.59835C15.6984 0.895088 14.7446 0.5 13.75 0.5C12.7554 0.5 11.8016 0.895088 11.0983 1.59835C10.3951 2.30161 10 3.25544 10 4.25C10 5.24456 10.3951 6.19839 11.0983 6.90165C11.8016 7.60491 12.7554 8 13.75 8ZM6.52 15.5C6.33469 15.1098 6.24228 14.6819 6.25 14.25C6.25 12.5562 7.1 10.8125 8.67 9.6C7.88636 9.35854 7.06994 9.24047 6.25 9.25C1.25 9.25 0 13 0 14.25C0 15.5 1.25 15.5 1.25 15.5H6.52ZM5.625 8C6.4538 8 7.24866 7.67076 7.83471 7.08471C8.42076 6.49866 8.75 5.7038 8.75 4.875C8.75 4.0462 8.42076 3.25134 7.83471 2.66529C7.24866 2.07924 6.4538 1.75 5.625 1.75C4.7962 1.75 4.00134 2.07924 3.41529 2.66529C2.82924 3.25134 2.5 4.0462 2.5 4.875C2.5 5.7038 2.82924 6.49866 3.41529 7.08471C4.00134 7.67076 4.7962 8 5.625 8Z" })));
+        React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M8.75 15.5C8.75 15.5 7.5 15.5 7.5 14.25C7.5 13 8.75 9.25 13.75 9.25C18.75 9.25 20 13 20 14.25C20 15.5 18.75 15.5 18.75 15.5H8.75ZM13.75 8C14.7446 8 15.6984 7.60491 16.4017 6.90165C17.1049 6.19839 17.5 5.24456 17.5 4.25C17.5 3.25544 17.1049 2.30161 16.4017 1.59835C15.6984 0.895088 14.7446 0.5 13.75 0.5C12.7554 0.5 11.8016 0.895088 11.0983 1.59835C10.3951 2.30161 10 3.25544 10 4.25C10 5.24456 10.3951 6.19839 11.0983 6.90165C11.8016 7.60491 12.7554 8 13.75 8ZM6.52 15.5C6.33469 15.1098 6.24228 14.6819 6.25 14.25C6.25 12.5562 7.1 10.8125 8.67 9.6C7.88636 9.35854 7.06994 9.24047 6.25 9.25C1.25 9.25 0 13 0 14.25C0 15.5 1.25 15.5 1.25 15.5H6.52ZM5.625 8C6.4538 8 7.24866 7.67076 7.83471 7.08471C8.42076 6.49866 8.75 5.7038 8.75 4.875C8.75 4.0462 8.42076 3.25134 7.83471 2.66529C7.24866 2.07924 6.4538 1.75 5.625 1.75C4.7962 1.75 4.00134 2.07924 3.41529 2.66529C2.82924 3.25134 2.5 4.0462 2.5 4.875C2.5 5.7038 2.82924 6.49866 3.41529 7.08471C4.00134 7.67076 4.7962 8 5.625 8Z" })));
 };
 
 var Icon$l = function (props) {
@@ -2128,15 +2128,15 @@ var Icon$e = function (props) {
 
 var Icon$d = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
-        React.createElement("path", { "fill-rule": "evenodd", "clip-rule": "evenodd", d: "M7.97898 0.9C8.6718 -0.299999 10.4038 -0.300001 11.0967 0.9L13.5686 5.18152C14.2614 6.38152 13.3954 7.88152 12.0098 7.88152H7.06589C5.68025 7.88152 4.81422 6.38152 5.50704 5.18152L7.97898 0.9ZM9.71103 1.7C9.63405 1.56667 9.4416 1.56667 9.36462 1.7L6.89268 5.98152C6.8157 6.11485 6.91193 6.28152 7.06589 6.28152H12.0098C12.1637 6.28152 12.2599 6.11485 12.183 5.98152L9.71103 1.7ZM0 12.4796C0 10.9332 1.2536 9.67956 2.8 9.67956H6.56695C8.11335 9.67956 9.36695 10.9332 9.36695 12.4796V16.2465C9.36695 17.7929 8.11335 19.0465 6.56695 19.0465H2.8C1.2536 19.0465 0 17.7929 0 16.2465V12.4796ZM2.8 11.2796C2.13726 11.2796 1.6 11.8168 1.6 12.4796V16.2465C1.6 16.9093 2.13726 17.4465 2.8 17.4465H6.56695C7.2297 17.4465 7.76695 16.9093 7.76695 16.2465V12.4796C7.76695 11.8168 7.2297 11.2796 6.56695 11.2796H2.8ZM12.2796 14.363C12.2796 12.6601 13.6601 11.2796 15.363 11.2796C17.066 11.2796 18.4465 12.6601 18.4465 14.363C18.4465 16.066 17.066 17.4465 15.363 17.4465C13.6601 17.4465 12.2796 16.066 12.2796 14.363ZM15.363 9.67956C12.7764 9.67956 10.6796 11.7764 10.6796 14.363C10.6796 16.9496 12.7764 19.0465 15.363 19.0465C17.9496 19.0465 20.0465 16.9496 20.0465 14.363C20.0465 11.7764 17.9496 9.67956 15.363 9.67956Z" })));
+        React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M7.97898 0.9C8.6718 -0.299999 10.4038 -0.300001 11.0967 0.9L13.5686 5.18152C14.2614 6.38152 13.3954 7.88152 12.0098 7.88152H7.06589C5.68025 7.88152 4.81422 6.38152 5.50704 5.18152L7.97898 0.9ZM9.71103 1.7C9.63405 1.56667 9.4416 1.56667 9.36462 1.7L6.89268 5.98152C6.8157 6.11485 6.91193 6.28152 7.06589 6.28152H12.0098C12.1637 6.28152 12.2599 6.11485 12.183 5.98152L9.71103 1.7ZM0 12.4796C0 10.9332 1.2536 9.67956 2.8 9.67956H6.56695C8.11335 9.67956 9.36695 10.9332 9.36695 12.4796V16.2465C9.36695 17.7929 8.11335 19.0465 6.56695 19.0465H2.8C1.2536 19.0465 0 17.7929 0 16.2465V12.4796ZM2.8 11.2796C2.13726 11.2796 1.6 11.8168 1.6 12.4796V16.2465C1.6 16.9093 2.13726 17.4465 2.8 17.4465H6.56695C7.2297 17.4465 7.76695 16.9093 7.76695 16.2465V12.4796C7.76695 11.8168 7.2297 11.2796 6.56695 11.2796H2.8ZM12.2796 14.363C12.2796 12.6601 13.6601 11.2796 15.363 11.2796C17.066 11.2796 18.4465 12.6601 18.4465 14.363C18.4465 16.066 17.066 17.4465 15.363 17.4465C13.6601 17.4465 12.2796 16.066 12.2796 14.363ZM15.363 9.67956C12.7764 9.67956 10.6796 11.7764 10.6796 14.363C10.6796 16.9496 12.7764 19.0465 15.363 19.0465C17.9496 19.0465 20.0465 16.9496 20.0465 14.363C20.0465 11.7764 17.9496 9.67956 15.363 9.67956Z" })));
 };
 
 var Icon$c = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
-        React.createElement("path", { "clip-rule": "evenodd", d: "M19.1528 5.45175L19.2255 5.51117C20.0806 6.21033 20.2071 7.47033 19.5079 8.32546L19.2846 8.59856L19.0526 8.40885C19.2907 8.8503 19.4644 9.33164 19.5611 9.84027L20.0588 9.23153L20.2821 8.95844C21.3308 7.67575 21.1412 5.78574 19.8585 4.73699L19.7858 4.67758C18.5031 3.62883 16.6131 3.81847 15.5644 5.10116L15.3411 5.37426L15 5.79144C15.3877 5.81831 15.7632 5.88937 16.1215 5.99963L16.3386 5.73414C17.0377 4.87901 18.2977 4.75258 19.1528 5.45175Z" }),
+        React.createElement("path", { clipRule: "evenodd", d: "M19.1528 5.45175L19.2255 5.51117C20.0806 6.21033 20.2071 7.47033 19.5079 8.32546L19.2846 8.59856L19.0526 8.40885C19.2907 8.8503 19.4644 9.33164 19.5611 9.84027L20.0588 9.23153L20.2821 8.95844C21.3308 7.67575 21.1412 5.78574 19.8585 4.73699L19.7858 4.67758C18.5031 3.62883 16.6131 3.81847 15.5644 5.10116L15.3411 5.37426L15 5.79144C15.3877 5.81831 15.7632 5.88937 16.1215 5.99963L16.3386 5.73414C17.0377 4.87901 18.2977 4.75258 19.1528 5.45175Z" }),
         React.createElement("path", { d: "M19.2255 5.51117L19.0673 5.70471V5.70471L19.2255 5.51117ZM19.1528 5.45175L19.3111 5.25821V5.25821L19.1528 5.45175ZM19.5079 8.32546L19.7014 8.4837H19.7014L19.5079 8.32546ZM19.2846 8.59856L19.1264 8.7921L19.3199 8.95035L19.4782 8.7568L19.2846 8.59856ZM19.0526 8.40885L19.2108 8.2153L18.8326 8.52754L19.0526 8.40885ZM19.5611 9.84027L19.3155 9.88694L19.4155 10.4133L19.7546 9.99851L19.5611 9.84027ZM20.0588 9.23153L19.8652 9.07329H19.8652L20.0588 9.23153ZM20.2821 8.95844L20.4756 9.11668L20.2821 8.95844ZM19.8585 4.73699L19.7003 4.93054V4.93054L19.8585 4.73699ZM19.7858 4.67758L19.9441 4.48404V4.48404L19.7858 4.67758ZM15.5644 5.10116L15.7579 5.25941V5.25941L15.5644 5.10116ZM15.3411 5.37426L15.1475 5.21601L15.3411 5.37426ZM15 5.79144L14.8065 5.63319L14.5005 6.00741L14.9827 6.04084L15 5.79144ZM16.1215 5.99963L16.048 6.23857L16.2086 6.288L16.315 6.15787L16.1215 5.99963ZM16.3386 5.73414L16.5321 5.89238H16.5321L16.3386 5.73414ZM19.3838 5.31762L19.3111 5.25821L18.9946 5.64529L19.0673 5.70471L19.3838 5.31762ZM19.7014 8.4837C20.488 7.52169 20.3458 6.10419 19.3838 5.31762L19.0673 5.70471C19.8155 6.31648 19.9261 7.41898 19.3144 8.16722L19.7014 8.4837ZM19.4782 8.7568L19.7014 8.4837L19.3144 8.16722L19.0911 8.44031L19.4782 8.7568ZM18.8943 8.60239L19.1264 8.7921L19.4429 8.40502L19.2108 8.2153L18.8943 8.60239ZM18.8326 8.52754C19.0587 8.94684 19.2237 9.40393 19.3155 9.88694L19.8067 9.7936C19.7052 9.25935 19.5227 8.75376 19.2726 8.29015L18.8326 8.52754ZM19.7546 9.99851L20.2523 9.38978L19.8652 9.07329L19.3675 9.68202L19.7546 9.99851ZM20.2523 9.38978L20.4756 9.11668L20.0885 8.80019L19.8652 9.07329L20.2523 9.38978ZM20.4756 9.11668C21.6118 7.7271 21.4063 5.6796 20.0167 4.54345L19.7003 4.93054C20.876 5.89189 21.0499 7.62439 20.0885 8.80019L20.4756 9.11668ZM20.0167 4.54345L19.9441 4.48404L19.6276 4.87112L19.7003 4.93054L20.0167 4.54345ZM19.9441 4.48404C18.5545 3.34789 16.507 3.55334 15.3708 4.94292L15.7579 5.25941C16.7193 4.08361 18.4518 3.90977 19.6276 4.87112L19.9441 4.48404ZM15.3708 4.94292L15.1475 5.21601L15.5346 5.5325L15.7579 5.25941L15.3708 4.94292ZM15.1475 5.21601L14.8065 5.63319L15.1935 5.94968L15.5346 5.5325L15.1475 5.21601ZM14.9827 6.04084C15.3511 6.06638 15.7077 6.13389 16.048 6.23857L16.195 5.76068C15.8186 5.64486 15.4242 5.57024 15.0173 5.54203L14.9827 6.04084ZM16.145 5.57589L15.9279 5.84138L16.315 6.15787L16.5321 5.89238L16.145 5.57589ZM19.3111 5.25821C18.3491 4.47164 16.9316 4.61388 16.145 5.57589L16.5321 5.89238C17.1439 5.14415 18.2464 5.03352 18.9946 5.64529L19.3111 5.25821Z" }),
-        React.createElement("rect", { x: "4", y: "6", width: "15", height: "16", rx: "5", "stroke-width": "1.6" }),
-        React.createElement("path", { d: "M8 5C8 3.34315 9.34315 2 11 2H12C13.6569 2 15 3.34315 15 5V6H8V5Z", "stroke-width": "1.6" }),
+        React.createElement("rect", { x: "4", y: "6", width: "15", height: "16", rx: "5", strokeWidth: "1.6" }),
+        React.createElement("path", { d: "M8 5C8 3.34315 9.34315 2 11 2H12C13.6569 2 15 3.34315 15 5V6H8V5Z", strokeWidth: "1.6" }),
         React.createElement("rect", { x: "7", y: "9", width: "9", height: "10", rx: "3" })));
 };
 
@@ -2165,7 +2165,7 @@ var Icon$9 = function (props) {
 
 var Icon$8 = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
-        React.createElement("path", { "clip-rule": "evenodd", d: "M11 21.5C5.20085 21.5 0.5 16.7991 0.5 11C0.5 5.20085 5.20085 0.5 11 0.5C16.7991 0.5 21.5 5.20085 21.5 11C21.5 16.7991 16.7991 21.5 11 21.5ZM11 7.85H6.8V9.95H16.25L11 4.7V7.85ZM5.75 12.05L11 17.3V14.15H15.2V12.05H5.75Z" })));
+        React.createElement("path", { clipRule: "evenodd", d: "M11 21.5C5.20085 21.5 0.5 16.7991 0.5 11C0.5 5.20085 5.20085 0.5 11 0.5C16.7991 0.5 21.5 5.20085 21.5 11C21.5 16.7991 16.7991 21.5 11 21.5ZM11 7.85H6.8V9.95H16.25L11 4.7V7.85ZM5.75 12.05L11 17.3V14.15H15.2V12.05H5.75Z" })));
 };
 
 var Icon$7 = function (props) {
@@ -2384,7 +2384,7 @@ var LinkLabel = styled.div(templateObject_2$5 || (templateObject_2$5 = __makeTem
     var isPushed = _a.isPushed, theme = _a.theme;
     return (isPushed ? theme.colors.textSubtle : "transparent");
 });
-var MenuEntry = styled.div(templateObject_3$1 || (templateObject_3$1 = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", "px;\n  padding: ", ";\n  font-size: ", ";\n  background-color: ", ";\n  color: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  div {\n    color: ", ";\n  }\n  \n  &:hover {\n    background-color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    color: ", ";\n    background-color: ", ";\n    background-size: 400% 100%;\n\n\n    svg {\n      fill: ", ";\n    }\n\n    div {\n      color: ", ";\n    }\n  }\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", "px;\n  padding: ", ";\n  font-size: ", ";\n  background-color: ", ";\n  color: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  div {\n    color: ", ";\n  }\n  \n  &:hover {\n    background-color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    color: ", ";\n    background-color: ", ";\n    background-size: 400% 100%;\n\n\n    svg {\n      fill: ", ";\n    }\n\n    div {\n      color: ", ";\n    }\n  }\n"])), MENU_ENTRY_HEIGHT, function (_a) {
+var MenuEntry = styled.div(templateObject_3$1 || (templateObject_3$1 = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", "px;\n  padding: ", ";\n  font-size: ", ";\n  background-color: ", ";\n  color: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  div {\n    color: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    color: ", ";\n    background-color: ", ";\n    background-size: 400% 100%;\n\n    svg {\n      fill: ", ";\n    }\n\n    div {\n      color: ", ";\n    }\n  }\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", "px;\n  padding: ", ";\n  font-size: ", ";\n  background-color: ", ";\n  color: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  div {\n    color: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    color: ", ";\n    background-color: ", ";\n    background-size: 400% 100%;\n\n    svg {\n      fill: ", ";\n    }\n\n    div {\n      color: ", ";\n    }\n  }\n"])), MENU_ENTRY_HEIGHT, function (_a) {
     var secondary = _a.secondary;
     return (secondary ? "0 10px 0 56px" : "0 10px 0 16px");
 }, function (_a) {
@@ -2465,7 +2465,7 @@ var MenuLink = function (_a) {
     return React.createElement(Tag, __assign({}, props, otherProps));
 };
 
-var Icons$2 = IconModule;
+var Icons$1 = IconModule;
 var Container$1 = styled.div(templateObject_1$d || (templateObject_1$d = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  overflow-y: auto;\n  overflow-x: hidden;\n  height: 100%;\n"], ["\n  display: flex;\n  flex-direction: column;\n  overflow-y: auto;\n  overflow-x: hidden;\n  height: 100%;\n"])));
 var PanelBody = function (_a) {
     var isPushed = _a.isPushed, pushNav = _a.pushNav, isMobile = _a.isMobile, links = _a.links;
@@ -2473,7 +2473,7 @@ var PanelBody = function (_a) {
     // Close the menu when a user clicks a link on mobile
     var handleClick = isMobile ? function () { return pushNav(false); } : undefined;
     return (React.createElement(Container$1, null, links.map(function (entry) {
-        var Icon = Icons$2[entry.icon];
+        var Icon = Icons$1[entry.icon];
         var iconElement = React.createElement(Icon, { width: "24px", mr: "16px" });
         var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
         if (entry.items) {
@@ -2501,9 +2501,9 @@ var CakePrice = function (_a) {
 var CakePrice$1 = React.memo(CakePrice);
 var templateObject_1$c;
 
-var Icons$1 = IconModule;
+var Icons = IconModule;
 var SocialLinks = function () { return (React.createElement(Flex, null, socials.map(function (social, index) {
-    var Icon = Icons$1[social.icon];
+    var Icon = Icons[social.icon];
     var iconProps = { width: "24px", color: "primary", style: { cursor: "pointer" } };
     var mr = index < socials.length - 1 ? "10px" : 0;
     if (social.items) {
@@ -2514,7 +2514,7 @@ var SocialLinks = function () { return (React.createElement(Flex, null, socials.
 }))); };
 var SocialLinks$1 = React.memo(SocialLinks, function () { return true; });
 
-var Container = styled.div(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  flex: none;\n  padding: 8px 4px;\n  border-top: solid 1px ;\n  border-color: ", ";\n  width: calc(100% - 30px);\n  margin: auto;\n"], ["\n  flex: none;\n  padding: 8px 4px;\n  border-top: solid 1px ;\n  border-color: ", ";\n  width: calc(100% - 30px);\n  margin: auto;\n"])), function (_a) {
+var Container = styled.div(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  flex: none;\n  padding: 8px 4px;\n  border-top: solid 1px;\n  border-color: ", ";\n  width: calc(100% - 30px);\n  margin: auto;\n"], ["\n  flex: none;\n  padding: 8px 4px;\n  border-top: solid 1px;\n  border-color: ", ";\n  width: calc(100% - 30px);\n  margin: auto;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.borderColor;
 });
@@ -2535,10 +2535,10 @@ var templateObject_1$b, templateObject_2$3;
 
 var StyledLink = styled(Link$1)(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  height: ", "px;\n  margin-bottom: 32px;\n  width: 100%;\n  padding: 0 22px;\n  font-weight: 800;\n  font-size: 32px;\n  line-height: 39px;\n  color: ", ";\n  border-bottom: 1px solid ", ";\n  letter-spacing: -0.04em;\n"], ["\n  display: flex;\n  align-items: center;\n  height: ", "px;\n  margin-bottom: 32px;\n  width: 100%;\n  padding: 0 22px;\n  font-weight: 800;\n  font-size: 32px;\n  line-height: 39px;\n  color: ", ";\n  border-bottom: 1px solid ", ";\n  letter-spacing: -0.04em;\n"])), MENU_HEIGHT, function (_a) {
     var theme = _a.theme;
-    return theme.colors.textLogoMenuLeft;
+    return theme.isDark ? "#FFFFFF" : "#5F5E76";
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.borderColor;
+    return theme.isDark ? "#2F344B" : "#E2E2E8";
 });
 var LogoNavLeft = function (_a) {
     var href = _a.href;
@@ -2572,7 +2572,7 @@ var StyledPanel = styled.div(templateObject_1$9 || (templateObject_1$9 = __makeT
 var Panel = function (props) {
     var isPushed = props.isPushed, showMenu = props.showMenu;
     return (React.createElement(StyledPanel, { isPushed: isPushed, showMenu: showMenu },
-        React.createElement(LogoNavLeft, { href: props.href }),
+        React.createElement(LogoNavLeft, __assign({}, props)),
         React.createElement(PanelBody, __assign({}, props)),
         React.createElement(PanelFooter, __assign({}, props))));
 };
@@ -2796,16 +2796,14 @@ var UserBlock = function (_a) {
 };
 var UserBlock$1 = React.memo(UserBlock, function (prevProps, nextProps) { return prevProps.account === nextProps.account; });
 
-var Icons = IconModule;
-Icons.MoonIcon; Icons.SunIcon;
 var ThemeSwitcherHeader = function (_a) {
     var isDark = _a.isDark, toggleTheme = _a.toggleTheme;
     return (React.createElement(React.Fragment, null,
-        React.createElement(Button, { variant: "text", onClick: function () { return toggleTheme(!isDark); } },
+        React.createElement(Button, { variant: "text" },
             React.createElement(Flex, { alignItems: "center" },
-                React.createElement(Text, { color: "text", mx: "4px", style: { marginRight: '13px' } }, "Dark"),
-                React.createElement(Toggle, { checked: isDark, scale: "sm" }),
-                React.createElement(Text, { color: "text", mx: "4px", style: { marginLeft: '13px' } }, "Light")))));
+                React.createElement(Text, { color: "text", mx: "4px", style: { marginRight: "13px" } }, "Dark"),
+                React.createElement(Toggle, { defaultChecked: !isDark, onChange: function () { return toggleTheme(!isDark); }, scale: "sm" }),
+                React.createElement(Text, { color: "text", mx: "4px", style: { marginLeft: "13px" } }, "Light")))));
 };
 var ThemeSwitcherHeader$1 = React.memo(ThemeSwitcherHeader, function (prev, next) { return prev.isDark === next.isDark; });
 

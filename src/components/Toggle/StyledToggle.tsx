@@ -50,7 +50,7 @@ export const Input = styled.input<InputProps>`
 
   &:checked + ${Handle} {
     left: ${getScale("checkedLeft")};
-    background-color: ${({ theme, checked }) => theme.colors.success};
+    background-color: ${({ theme }) => theme.colors.success};
   }
 
   &:focus + ${Handle} {
