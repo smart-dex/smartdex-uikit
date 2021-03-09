@@ -47,6 +47,10 @@ export declare type Colors = {
     card: string;
     gradients: Gradients;
     binance: string;
+    navThemeLeft: string;
+    textMenuLeft: string;
+    activeBackgroundMenuLeft: string;
+    textLogoMenuLeft: string;
 };
 export declare type ZIndices = {
     dropdown: number;

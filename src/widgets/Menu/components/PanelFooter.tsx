@@ -5,45 +5,27 @@ import IconButton from "../../../components/Button/IconButton";
 import { MENU_ENTRY_HEIGHT } from "../config";
 import { PanelProps, PushedProps } from "../types";
 import CakePrice from "./CakePrice";
-import ThemeSwitcher from "./ThemeSwitcher";
 import SocialLinks from "./SocialLinks";
-import LangSelector from "./LangSelector";
 
 interface Props extends PanelProps, PushedProps {}
 
 const Container = styled.div`
   flex: none;
   padding: 8px 4px;
-  background-color: ${({ theme }) => theme.nav.background};
-  border-top: solid 2px rgba(133, 133, 133, 0.1);
+  border-top: solid 1px;
+  border-color: ${({ theme }) => theme.colors.borderColor};
+  width: calc(100% - 30px);
+  margin: auto;
 `;
-
-const SettingsEntry = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: ${MENU_ENTRY_HEIGHT}px;
-  padding: 0 8px;
-`;
-
 const SocialEntry = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: ${MENU_ENTRY_HEIGHT}px;
-  padding: 0 16px;
+  padding: 0 5px;
 `;
 
-const PanelFooter: React.FC<Props> = ({
-  isPushed,
-  pushNav,
-  toggleTheme,
-  isDark,
-  cakePriceUsd,
-  currentLang,
-  langs,
-  setLang,
-}) => {
+const PanelFooter: React.FC<Props> = ({ isPushed, pushNav, cakePriceUsd }) => {
   if (!isPushed) {
     return (
       <Container>
@@ -60,10 +42,6 @@ const PanelFooter: React.FC<Props> = ({
         <CakePrice cakePriceUsd={cakePriceUsd} />
         <SocialLinks />
       </SocialEntry>
-      <SettingsEntry>
-        <ThemeSwitcher isDark={isDark} toggleTheme={toggleTheme} />
-        <LangSelector currentLang={currentLang} langs={langs} setLang={setLang} />
-      </SettingsEntry>
     </Container>
   );
 };

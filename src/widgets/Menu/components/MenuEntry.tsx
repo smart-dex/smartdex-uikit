@@ -29,11 +29,10 @@ const MenuEntry = styled.div<Props>`
   display: flex;
   align-items: center;
   height: ${MENU_ENTRY_HEIGHT}px;
-  padding: ${({ secondary }) => (secondary ? "0 32px" : "0 16px")};
+  padding: ${({ secondary }) => (secondary ? "0 10px 0 56px" : "0 10px 0 16px")};
   font-size: ${({ secondary }) => (secondary ? "14px" : "16px")};
-  background-color: ${({ secondary, theme }) => (secondary ? theme.colors.background : "transparent")};
-  color: ${({ theme }) => theme.colors.textSubtle};
-  box-shadow: ${({ isActive, theme }) => (isActive ? `inset 4px 0px 0px ${theme.colors.primary}` : "none")};
+  background-color: ${({ secondary }) => (secondary ? "transparent" : "transparent")};
+  color: ${({ theme }) => theme.colors.textMenuLeft};
 
   a {
     display: flex;
@@ -43,11 +42,15 @@ const MenuEntry = styled.div<Props>`
   }
 
   svg {
-    fill: ${({ theme }) => theme.colors.textSubtle};
+    fill: ${({ theme }) => theme.colors.textMenuLeft};
+  }
+
+  div {
+    color: ${({ theme }) => theme.colors.textMenuLeft};
   }
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.tertiary};
+    background-color: ${({ theme }) => theme.colors.activeBackgroundMenuLeft};
   }
 
   // Safari fix
@@ -56,8 +59,17 @@ const MenuEntry = styled.div<Props>`
   &.rainbow {
     background-clip: text;
     animation: ${rainbowAnimation} 3s ease-in-out infinite;
-    background: ${({ theme }) => theme.colors.gradients.bubblegum};
+    color: ${({ theme }) => theme.colors.primary};
+    background-color: ${({ theme }) => theme.colors.activeBackgroundMenuLeft};
     background-size: 400% 100%;
+
+    svg {
+      fill: ${({ theme }) => theme.colors.primary};
+    }
+
+    div {
+      color: ${({ theme }) => theme.colors.primary};
+    }
   }
 `;
 MenuEntry.defaultProps = {

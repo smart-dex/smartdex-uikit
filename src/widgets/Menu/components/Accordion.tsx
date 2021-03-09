@@ -25,9 +25,17 @@ const AccordionContent = styled.div<{ isOpen: boolean; isPushed: boolean; maxHei
   max-height: ${({ isOpen, maxHeight }) => (isOpen ? `${maxHeight}px` : 0)};
   transition: max-height 0.3s ease-out;
   overflow: hidden;
-  border-color: ${({ isOpen, isPushed }) => (isOpen && isPushed ? "rgba(133, 133, 133, 0.1)" : "transparent")};
-  border-style: solid;
-  border-width: 1px 0;
+  position: relative;
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1px;
+    background: ${({ theme }) => theme.colors.borderColor};
+    height: 100%;
+    top: 0px;
+    left: 28px;
+  }
 `;
 
 const Accordion: React.FC<Props> = ({

@@ -57,6 +57,10 @@ export type Colors = {
 
   // Brand colors
   binance: string;
+  navThemeLeft: string;
+  textMenuLeft: string;
+  activeBackgroundMenuLeft: string;
+  textLogoMenuLeft: string;
 };
 
 export type ZIndices = {

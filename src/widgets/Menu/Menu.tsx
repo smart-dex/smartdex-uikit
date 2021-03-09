@@ -4,9 +4,10 @@ import throttle from "lodash/throttle";
 import Overlay from "../../components/Overlay/Overlay";
 import Flex from "../../components/Box/Flex";
 import { useMatchBreakpoints } from "../../hooks";
-import Logo from "./components/Logo";
 import Panel from "./components/Panel";
 import UserBlock from "./components/UserBlock";
+import ThemeSwitcherHeader from "./components/ThemeSwitcherHeader";
+import LangSelectorHeader from "./components/LangSelectorHeader";
 import { NavProps } from "./types";
 import Avatar from "./components/Avatar";
 import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "./config";
@@ -22,14 +23,14 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
   left: 0;
   transition: top 0.2s;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding-left: 8px;
   padding-right: 16px;
   width: 100%;
   height: ${MENU_HEIGHT}px;
-  background-color: ${({ theme }) => theme.nav.background};
-  border-bottom: solid 2px rgba(133, 133, 133, 0.1);
+  background-color: ${({ theme }) => theme.colors.background};
+  border-bottom: ${({ theme }) => `solid 1px ${theme.nav.boderColor}`};
   z-index: 20;
   transform: translate3d(0, 0, 0);
 `;
@@ -116,14 +117,9 @@ const Menu: React.FC<NavProps> = ({
   return (
     <Wrapper>
       <StyledNav showMenu={showMenu}>
-        <Logo
-          isPushed={isPushed}
-          togglePush={() => setIsPushed((prevState: boolean) => !prevState)}
-          isDark={isDark}
-          href={homeLink?.href ?? "/"}
-        />
-        <Flex>
-          Mode
+        <Flex alignItems="center">
+          <ThemeSwitcherHeader isDark={isDark} toggleTheme={toggleTheme} />
+          <LangSelectorHeader isDark={isDark} currentLang={currentLang} langs={langs} setLang={setLang} />
           <UserBlock account={account} login={login} logout={logout} />
           {profile && <Avatar profile={profile} />}
         </Flex>
@@ -141,6 +137,7 @@ const Menu: React.FC<NavProps> = ({
           cakePriceUsd={cakePriceUsd}
           pushNav={setIsPushed}
           links={links}
+          href={homeLink?.href ?? "/"}
         />
         <Inner isPushed={isPushed} showMenu={showMenu}>
           {children}

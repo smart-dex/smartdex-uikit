@@ -9,7 +9,7 @@ interface AvatarProps {
 }
 
 const StyledAvatar = styled.div`
-  margin-left: 8px;
+  margin-left: 24px;
   position: relative;
 
   img {
@@ -34,9 +34,9 @@ const Avatar: React.FC<AvatarProps> = ({ profile }) => {
   const isExternal = link.startsWith("http");
   const ariaLabel = "Link to profile";
   const icon = image ? (
-    <img src={image} alt="profile avatar" height="32px" width="32px" />
+    <img src={image} alt="profile avatar" height="56px" width="56px" />
   ) : (
-    <NoProfileAvatar width="32px" height="32px" />
+    <NoProfileAvatar width="56px" height="56px" />
   );
 
   if (isExternal) {
