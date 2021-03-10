@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { LogoIcon } from "../../../components/Svg";
 import Flex from "../../../components/Box/Flex";
-import { HamburgerIcon, HamburgerCloseIcon, LogoIcon as LogoWithText } from "../icons";
+import { HamburgerIcon, HamburgerCloseIcon } from "../icons";
 import MenuButton from "./MenuButton";
+import { SIDEBAR_WIDTH_FULL } from "./../config";
 
 interface Props {
   isPushed: boolean;
@@ -29,24 +29,55 @@ const StyledLink = styled(Link)`
       display: block;
     }
   }
+  .desktop-icon-text {
+    color: ${({ theme }) => theme.isDark ? "#FFFFFF" : "#5F5E76"};
+    display: none;
+    padding: 0 22px;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 39px;
+    letter-spacing: -0.04em;
+    ${({ theme }) => theme.mediaQueries.nav} {
+      display: block;
+    }
+  }
 `;
 
-const Logo: React.FC<Props> = ({ isPushed, togglePush, isDark, href }) => {
+
+const StyleFlex = styled(Flex)`
+  margin-right: auto;
+  height: 100%;
+  align-items: center;
+  ${({ theme }) => theme.mediaQueries.nav} {
+    width: ${SIDEBAR_WIDTH_FULL}px;
+    background: ${({ theme }) => theme.isDark ? '#030610' : '#f9fcfe'};
+    margin-left: -8px;
+  }
+  .btn-toggle-menu {
+    display: block;
+    ${({ theme }) => theme.mediaQueries.nav} {
+      display: none;
+    }
+  }
+`;
+
+const Logo: React.FC<Props> = ({ isPushed, togglePush, href }) => {
   const isAbsoluteUrl = href.startsWith("http");
   const innerLogo = (
     <>
-      <LogoIcon className="mobile-icon" />
-      <LogoWithText className="desktop-icon" isDark={isDark} />
+      <span className="desktop-icon-text">
+        Pancake
+      </span>
     </>
   );
 
   return (
-    <Flex>
-      <MenuButton aria-label="Toggle menu" onClick={togglePush} mr="24px">
+    <StyleFlex>
+      <MenuButton className="btn-toggle-menu" aria-label="Toggle menu" onClick={togglePush} mr="24px">
         {isPushed ? (
-          <HamburgerCloseIcon width="24px" color="textSubtle" />
+          <HamburgerCloseIcon width="24px" color="#5F5E76" />
         ) : (
-          <HamburgerIcon width="24px" color="textSubtle" />
+          <HamburgerIcon width="24px" color="#0085FF" />
         )}
       </MenuButton>
       {isAbsoluteUrl ? (
@@ -58,7 +89,7 @@ const Logo: React.FC<Props> = ({ isPushed, togglePush, isDark, href }) => {
           {innerLogo}
         </StyledLink>
       )}
-    </Flex>
+    </StyleFlex>
   );
 };
 

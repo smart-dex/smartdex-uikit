@@ -28,15 +28,35 @@ const Pip = styled.div`
   width: 8px;
 `;
 
+const StyleNoProfileAvatar = styled(NoProfileAvatar)`
+  width: 37px;
+  height: 37px;
+
+  ${({ theme }) => theme.mediaQueries.nav} {
+    width: 56px;
+    height: 56px;
+  }
+`
+
+const StyleImg = styled.img`
+  width: 37px;
+  height: 37px;
+
+  ${({ theme }) => theme.mediaQueries.nav} {
+    width: 56px;
+    height: 56px;
+  }
+`
+
 const Avatar: React.FC<AvatarProps> = ({ profile }) => {
   const { username = "Bunny", image, profileLink, noProfileLink, showPip = false } = profile;
   const link = profile.username ? profileLink : noProfileLink;
   const isExternal = link.startsWith("http");
   const ariaLabel = "Link to profile";
   const icon = image ? (
-    <img src={image} alt="profile avatar" height="56px" width="56px" />
+    <StyleImg src={image} alt="profile avatar" />
   ) : (
-    <NoProfileAvatar width="56px" height="56px" />
+    <StyleNoProfileAvatar  />
   );
 
   if (isExternal) {

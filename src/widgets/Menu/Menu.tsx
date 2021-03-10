@@ -4,13 +4,14 @@ import throttle from "lodash/throttle";
 import Overlay from "../../components/Overlay/Overlay";
 import Flex from "../../components/Box/Flex";
 import { useMatchBreakpoints } from "../../hooks";
+import Logo from "./components/Logo";
 import Panel from "./components/Panel";
 import UserBlock from "./components/UserBlock";
 import ThemeSwitcherHeader from "./components/ThemeSwitcherHeader";
 import LangSelectorHeader from "./components/LangSelectorHeader";
 import { NavProps } from "./types";
 import Avatar from "./components/Avatar";
-import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "./config";
+import { MENU_HEIGHT, MENU_HEIGHT_MOBILE, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "./config";
 
 const Wrapper = styled.div`
   position: relative;
@@ -28,11 +29,14 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
   padding-left: 8px;
   padding-right: 16px;
   width: 100%;
-  height: ${MENU_HEIGHT}px;
+  height: ${MENU_HEIGHT_MOBILE}px;
   background-color: ${({ theme }) => theme.isDark ? '#151C31' : '#FFFFFF'};
   border-bottom: ${({ theme }) => `solid 1px ${theme.isDark ? '#2F344B' : '#E2E2E8'}`};
   z-index: 20;
   transform: translate3d(0, 0, 0);
+  ${({ theme }) => theme.mediaQueries.nav} {
+    height: ${MENU_HEIGHT}px;
+  }
 `;
 
 const BodyWrapper = styled.div`
@@ -62,6 +66,12 @@ const MobileOnlyOverlay = styled(Overlay)`
   }
 `;
 
+const StyleThemeSwitcherHeader = styled.div`
+  display: none;
+  ${({ theme }) => theme.mediaQueries.nav} {
+    display: block;
+  }
+`
 const Menu: React.FC<NavProps> = ({
   account,
   login,
@@ -117,8 +127,16 @@ const Menu: React.FC<NavProps> = ({
   return (
     <Wrapper>
       <StyledNav showMenu={showMenu}>
+        <Logo
+          isPushed={isPushed}
+          togglePush={() => setIsPushed((prevState: boolean) => !prevState)}
+          isDark={isDark}
+          href={homeLink?.href ?? "/"}
+        />
         <Flex alignItems="center">
-          <ThemeSwitcherHeader isDark={isDark} toggleTheme={toggleTheme} />
+          <StyleThemeSwitcherHeader>
+            <ThemeSwitcherHeader isDark={isDark} toggleTheme={toggleTheme} />
+          </StyleThemeSwitcherHeader>
           <LangSelectorHeader isDark={isDark} currentLang={currentLang} langs={langs} setLang={setLang} />
           <UserBlock account={account} login={login} logout={logout} />
           {profile && <Avatar profile={profile} />}

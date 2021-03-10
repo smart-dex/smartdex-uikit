@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import PanelBody from "./PanelBody";
 import PanelFooter from "./PanelFooter";
-import { SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "../config";
+import { MENU_HEIGHT_MOBILE, SIDEBAR_WIDTH_FULL, MENU_HEIGHT } from "../config";
 import { PanelProps, PushedProps } from "../types";
 import LogoNavLeft from "./LogoNavLeft";
 
@@ -26,12 +26,14 @@ const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   height: 100vh;
   transition: padding-top 0.2s, width 0.2s;
   border-right: ${({ isPushed }) => (isPushed ? 0 : 0)};
-  z-index: 25;
+  z-index: 11;
   overflow: ${({ isPushed }) => (isPushed ? "initial" : "hidden")};
   transform: translate3d(0, 0, 0);
+  padding-top: ${MENU_HEIGHT_MOBILE}px;
 
   ${({ theme }) => theme.mediaQueries.nav} {
-    width: ${({ isPushed }) => `${isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_REDUCED}px`};
+    width: ${({ isPushed }) => `${isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_FULL}px`};
+    padding-top: ${`${MENU_HEIGHT + 32}px`};
   }
 `;
 

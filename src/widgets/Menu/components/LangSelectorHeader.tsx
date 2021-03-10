@@ -18,15 +18,30 @@ const StyleButton = styled(Button)`
   border: 1px solid  ${({ theme }) => theme.isDark ? '#2F344B' : '#E2E2E8'};
   border-radius: 50px;
   margin-right: 20px;
-  height: 56px;
-  min-width: 150px;
+  height: 37px;
+  padding-left: 16px;
+  padding-right: 16px;
+  > div {
+    font-size: 13px;
+  }
+  ${({ theme }) => theme.mediaQueries.nav} {
+    min-width: 150px;
+    height: 56px;
+    > div {
+      font-size: 16px;
+    }
+  }
+`;
+
+const StyleChevronDownIcon = styled(ChevronDownIcon)`
+  color: ${({ theme }) => theme.isDark ? 'rgba(255, 255, 255, 0.87)' : '#6F6C99'};
 `;
 
 const LangSelectorHeader: React.FC<Props> = ({ currentLang, langs, setLang, isDark }) => (
   <Dropdown
     position="bottom"
     target={
-      <StyleButton variant="text" endIcon={<ChevronDownIcon color={!isDark ? 'rgba(255, 255, 255, 0.87)' : '#6F6C99'} width="24px" />}>
+      <StyleButton variant="text" endIcon={<StyleChevronDownIcon width="24px" />}>
         <Text color="textSubtle">{currentLang?.toUpperCase()}</Text>
       </StyleButton>
     }

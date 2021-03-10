@@ -3,24 +3,33 @@ import Text from "../../../components/Text/Text";
 import Flex from "../../../components/Box/Flex";
 import Toggle from "../../../components/Toggle/Toggle";
 import Button from "../../../components/Button/Button";
+import styled from "styled-components";
 
 interface Props {
   isDark: boolean;
   toggleTheme: (isDark: boolean) => void;
 }
 
+const StyleText = styled(Text)`
+  color: ${({ theme }) => theme.isDark ? 'rgba(255, 255, 255, 0.87)' : '#6F6C99'};
+  font-size: 13px;
+  ${({ theme }) => theme.mediaQueries.nav} {
+    font-size: 14px;
+  }
+`
+
 const ThemeSwitcherHeader: React.FC<Props> = ({ isDark, toggleTheme }) => (
   <>
     <Button variant="text">
       {/* alignItems center is a Safari fix */}
       <Flex alignItems="center">
-        <Text color="text" mx="4px" style={{ marginRight: "13px" }}>
+        <StyleText color="text" mx="4px" style={{ marginRight: "13px" }}>
           Dark
-        </Text>
+        </StyleText>
         <Toggle defaultChecked={!isDark} onChange={() => toggleTheme(!isDark)} scale="sm" />
-        <Text color="text" mx="4px" style={{ marginLeft: "13px" }}>
+        <StyleText color="text" mx="4px" style={{ marginLeft: "13px" }}>
           Light
-        </Text>
+        </StyleText>
       </Flex>
     </Button>
   </>
