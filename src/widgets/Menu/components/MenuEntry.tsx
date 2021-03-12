@@ -40,6 +40,16 @@ const MenuEntry = styled.div<Props>`
     align-items: center;
     width: 100%;
     height: 100%;
+
+    &.active {
+      svg {
+        fill: ${({ theme }) => theme.isDark ? '#0085FF' : '#0085FF'};
+      }
+  
+      div {
+        color:${({ theme }) => theme.isDark ? '#0085FF' : '#0085FF'};
+      }
+    }
   }
 
   svg {
@@ -63,14 +73,6 @@ const MenuEntry = styled.div<Props>`
     color: ${({ theme }) => theme.isDark ? '#0085FF' : '#0085FF'};
     background-color: ${({ theme }) => theme.isDark ? '#1C2438' : '#E9F4FC'};
     background-size: 400% 100%;
-
-    svg {
-      fill: ${({ theme }) => theme.isDark ? '#0085FF' : '#0085FF'};
-    }
-
-    div {
-      color:${({ theme }) => theme.isDark ? '#0085FF' : '#0085FF'};
-    }
   }
 `;
 MenuEntry.defaultProps = {

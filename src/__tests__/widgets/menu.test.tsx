@@ -214,7 +214,7 @@ it("renders correctly", () => {
               >
                 <a
                   aria-current="page"
-                  class="active"
+                  class=""
                   href="/"
                 >
                   <svg
