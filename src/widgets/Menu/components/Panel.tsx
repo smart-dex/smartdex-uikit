@@ -14,26 +14,28 @@ interface Props extends PanelProps, PushedProps {
 
 const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   position: fixed;
-  padding-top: ${({ showMenu }) => (showMenu ? "0" : 0)};
   top: 0;
   left: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex-shrink: 0;
-  background: ${({ theme }) => theme.isDark ? '#030610' : '#f9fcfe'};
+  background: ${({ theme }) => theme.isDark ? '#030610' : '#0085FF'};
   width: ${({ isPushed }) => (isPushed ? `${SIDEBAR_WIDTH_FULL}px` : 0)};
-  height: 100vh;
+  height: calc(100vh - ${MENU_HEIGHT_MOBILE}px);
   transition: padding-top 0.2s, width 0.2s;
   border-right: ${({ isPushed }) => (isPushed ? 0 : 0)};
   z-index: 11;
   overflow: ${({ isPushed }) => (isPushed ? "initial" : "hidden")};
   transform: translate3d(0, 0, 0);
-  padding-top: ${MENU_HEIGHT_MOBILE}px;
+  margin-top: ${MENU_HEIGHT_MOBILE}px;
+  padding-top: 40px;
 
   ${({ theme }) => theme.mediaQueries.nav} {
     width: ${({ isPushed }) => `${isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_FULL}px`};
-    padding-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT}px` : '32px')};
+    margin-top: ${MENU_HEIGHT}px;
+    border-radius: 0px 30px 30px 0px;
+    height: calc(100vh - ${MENU_HEIGHT}px);
   }
 `;
 

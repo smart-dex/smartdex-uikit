@@ -19,7 +19,7 @@ const rainbowAnimation = keyframes`
 `;
 
 const LinkLabel = styled.div<{ isPushed: boolean }>`
-  color: ${({ isPushed, theme }) => (isPushed ? (theme.isDark ? 'rgba(255, 255, 255, 0.77)' : '#5F5E76') : "transparent")};
+  color: ${({ isPushed, theme }) => (isPushed ? (theme.isDark ? 'rgba(255, 255, 255, 0.77)' : 'rgba(255, 255, 255, 0.6)') : "transparent")};
   transition: color 0.4s;
   flex-grow: 1;
 `;
@@ -32,36 +32,26 @@ const MenuEntry = styled.div<Props>`
   padding: ${({ secondary }) => (secondary ? "0 10px 0 56px" : "0 10px 0 16px")};
   font-size: ${({ secondary }) => (secondary ? "14px" : "16px")};
   background-color: ${({ secondary }) => (secondary ? "transparent" : "transparent")};
-  color: ${({ theme }) => theme.isDark ? 'rgba(255, 255, 255, 0.77)' : '#5F5E76'};
-  font-weight: 500;
+  color: ${({ isActive, theme }) => (isActive ? '#FFFFFF' : (theme.isDark ? 'rgba(255, 255, 255, 0.77)' : 'rgba(255, 255, 255, 0.6)'))};
+  font-weight: bold;
 
   a {
     display: flex;
     align-items: center;
     width: 100%;
     height: 100%;
-
-    &.active {
-      svg {
-        fill: ${({ theme }) => theme.isDark ? '#0085FF' : '#0085FF'};
-      }
-  
-      div {
-        color:${({ theme }) => theme.isDark ? '#0085FF' : '#0085FF'};
-      }
-    }
   }
 
   svg {
-    fill: ${({ theme }) => theme.isDark ? 'rgba(255, 255, 255, 0.77)' : '#5F5E76'};
+    fill: ${({ isActive, theme }) => (isActive ? 'rgba(255, 255, 255, 0.6)' : (theme.isDark ? 'rgba(255, 255, 255, 0.77)' : 'rgba(255, 255, 255, 0.6)'))};
   }
 
   div {
-    color: ${({ theme }) => theme.isDark ? 'rgba(255, 255, 255, 0.77)' : '#5F5E76'};
+    color: ${({ isActive, theme }) => (isActive ? 'rgba(255, 255, 255, 0.6)' : (theme.isDark ? 'rgba(255, 255, 255, 0.77)' : 'rgba(255, 255, 255, 0.6)'))};
   }
 
   &:hover {
-    background-color: ${({ theme }) => theme.isDark ? '#1C2438' : '#E9F4FC'};
+    background-color: ${({ theme }) => theme.isDark ? '#1C2438' : 'rgba(255, 255, 255, 0.3)'};
   }
 
   // Safari fix
@@ -71,7 +61,7 @@ const MenuEntry = styled.div<Props>`
     background-clip: text;
     animation: ${rainbowAnimation} 3s ease-in-out infinite;
     color: ${({ theme }) => theme.isDark ? '#0085FF' : '#0085FF'};
-    background-color: ${({ theme }) => theme.isDark ? '#1C2438' : '#E9F4FC'};
+    background-color: ${({ theme }) => theme.isDark ? '#1C2438' : 'rgba(255, 255, 255, 0.3)'};
     background-size: 400% 100%;
   }
 `;

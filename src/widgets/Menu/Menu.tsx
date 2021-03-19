@@ -20,7 +20,7 @@ const Wrapper = styled.div`
 
 const StyledNav = styled.nav<{ showMenu: boolean }>`
   position: fixed;
-  top: ${({ showMenu }) => (showMenu ? 0 : `-${MENU_HEIGHT}px`)};
+  top: ${({ showMenu }) => (showMenu ? 0 : 0)};
   left: 0;
   transition: top 0.2s;
   display: flex;
@@ -46,7 +46,7 @@ const BodyWrapper = styled.div`
 
 const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   flex-grow: 1;
-  margin-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT}px` : 0)};
+  margin-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT}px` : `${MENU_HEIGHT}px`)};
   transition: margin-top 0.2s;
   transform: translate3d(0, 0, 0);
   max-width: 100%;

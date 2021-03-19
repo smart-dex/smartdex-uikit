@@ -5,6 +5,24 @@ export const links = [
     href: "/",
   },
   {
+    label: "My Page",
+    icon: "MyPageIcon",
+    items: [
+      {
+        label: "Wallet",
+        href: "/wallet",
+      },
+      {
+        label: "Referral",
+        href: "/referral",
+      },
+      {
+        label: "Refferral Management",
+        href: "/refferral-management",
+      },
+    ],
+  },
+  {
     label: "Trade",
     icon: "TradeIcon",
     items: [

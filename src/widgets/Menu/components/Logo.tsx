@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Flex from "../../../components/Box/Flex";
-import { HamburgerIcon, HamburgerCloseIcon } from "../icons";
+import { HamburgerIcon, HamburgerCloseIcon, LogoText } from "../icons";
 import MenuButton from "./MenuButton";
 import { SIDEBAR_WIDTH_FULL } from "./../config";
 
@@ -50,7 +50,6 @@ const StyleFlex = styled(Flex)`
   align-items: center;
   ${({ theme }) => theme.mediaQueries.nav} {
     width: ${SIDEBAR_WIDTH_FULL}px;
-    background: ${({ theme }) => theme.isDark ? '#030610' : '#f9fcfe'};
     margin-left: -8px;
   }
   .btn-toggle-menu {
@@ -61,12 +60,14 @@ const StyleFlex = styled(Flex)`
   }
 `;
 
-const Logo: React.FC<Props> = ({ isPushed, togglePush, href }) => {
+
+const Logo: React.FC<Props> = ({ isPushed, togglePush, href, isDark }) => {
+
   const isAbsoluteUrl = href.startsWith("http");
   const innerLogo = (
     <>
       <span className="desktop-icon-text">
-        Pancake
+        <LogoText width="166" color={isDark ? '#FFFFFF' : '#605E77'} />
       </span>
     </>
   );

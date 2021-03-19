@@ -31,7 +31,7 @@ const AccordionContent = styled.div<{ isOpen: boolean; isPushed: boolean; maxHei
     display: block;
     position: absolute;
     width: 1px;
-    background: ${({ theme }) => theme.colors.borderColor};
+    background: rgba(255, 255, 255, 0.2);
     height: 100%;
     top: 0px;
     left: 28px;
