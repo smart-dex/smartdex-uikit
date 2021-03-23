@@ -23,6 +23,7 @@ const StyleButton = styled(Button)`
   padding-right: 16px;
   > div {
     font-size: 13px;
+    color: ${({ theme }) => theme.isDark ? 'rgba(255, 255, 255, 0.87)' : '#6F6C99'};
   }
   ${({ theme }) => theme.mediaQueries.nav} {
     min-width: 150px;

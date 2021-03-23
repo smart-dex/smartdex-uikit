@@ -16,7 +16,9 @@ const HelpLink = styled(Link)`
   display: flex;
   align-self: center;
   align-items: center;
-  margin-top: 24px;
+  margin-top: 20px;
+  color: #0085FF;
+  font-size: 18px;
 `;
 
 const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => (
@@ -34,8 +36,8 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => (
       href="https://docs.pancakeswap.finance/guides/faq#how-do-i-set-up-my-wallet-on-binance-smart-chain"
       external
     >
-      <HelpIcon color="primary" mr="6px" />
       Learn how to connect
+      <HelpIcon color="#0085FF" ml="12px" />
     </HelpLink>
   </Modal>
 );

@@ -40,6 +40,17 @@ const MenuEntry = styled.div<Props>`
     align-items: center;
     width: 100%;
     height: 100%;
+
+    &.active {
+      color: ${({ theme }) => theme.isDark ? '#0085FF' : '#FFFFFF'};
+      svg {
+        fill: ${({ theme }) => theme.isDark ? '#0085FF' : '#FFFFFF'};
+      }
+
+      div {
+        color: ${({ theme }) => theme.isDark ? '#0085FF' : '#FFFFFF'};
+      }
+    }
   }
 
   svg {
@@ -63,7 +74,7 @@ const MenuEntry = styled.div<Props>`
     color: ${({ theme }) => theme.isDark ? '#0085FF' : '#0085FF'};
     background-color: ${({ theme }) => theme.isDark ? '#1C2438' : 'rgba(255, 255, 255, 0.3)'};
     background-size: 400% 100%;
-  }
+  },
 `;
 MenuEntry.defaultProps = {
   secondary: false,

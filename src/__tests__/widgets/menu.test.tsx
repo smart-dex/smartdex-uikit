@@ -213,8 +213,7 @@ it("renders correctly", () => {
                 role="button"
               >
                 <a
-                  aria-current="page"
-                  class="active"
+                  class=""
                   href="/"
                 >
                   <svg

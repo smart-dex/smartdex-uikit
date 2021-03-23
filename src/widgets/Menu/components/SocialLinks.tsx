@@ -12,13 +12,13 @@ const SocialLinks: React.FC = () => (
   <Flex style={{paddingTop: 8}}>
     {socials.map((social, index) => {
       const Icon = Icons[social.icon];
-      const iconProps = { width: "24px", color: "#0085FF", style: { cursor: "pointer" } };
+      const iconProps = { width: "24px", color: "#FFFFFF", style: { cursor: "pointer" } };
       const mr = index < socials.length - 1 ? "10px" : 0;
       if (social.items) {
         return (
           <Dropdown key={social.label} position="top" target={<Icon {...iconProps} mr={mr} />}>
             {social.items.map((item) => (
-              <Link external key={item.label} href={item.href} aria-label={item.label} color="#0085FF">
+              <Link external key={item.label} href={item.href} aria-label={item.label} color="#FFFFFF">
                 {item.label}
               </Link>
             ))}

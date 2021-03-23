@@ -23,7 +23,7 @@ const SocialEntry = styled.div`
   justify-content: space-between;
   height: ${MENU_ENTRY_HEIGHT}px;
   border-top: solid 1px;
-  border-color: ${({ theme }) => theme.isDark ? '#2F344B' : '#E2E2E8'};
+  border-color: rgba(255, 255, 255, 0.2);
   padding: 0 5px;
 `
 
