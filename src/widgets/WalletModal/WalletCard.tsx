@@ -17,6 +17,8 @@ const ButtonStyle = styled(Button)`
   height: 70px;
   justify-content: flex-start;
   margin-bottom: 15px;
+  width: 410px;
+  max-width: 100%;
 `;
 const TextStyle = styled(Text)`
   color: ${({ theme }) => theme.isDark? 'rgba(255, 255, 255, 0.87)' : '#5F5E76'};
@@ -26,7 +28,6 @@ const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss, mb }) => 
   const { title, icon: Icon } = walletConfig;
   return (
     <ButtonStyle
-      width="100%"
       variant="tertiary"
       onClick={() => {
         login(walletConfig.connectorId);

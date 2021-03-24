@@ -29,6 +29,9 @@ const SocialEntry = styled.div`
 
 const StyleThemeSwitcherHeader = styled.div`
   display: block;
+  > button {
+    padding-left: 0px;
+  }
   ${({ theme }) => theme.mediaQueries.nav} {
     display: none;
   }

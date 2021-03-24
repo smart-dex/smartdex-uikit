@@ -23,7 +23,7 @@ const StyledModal = styled.div`
   overflow-y: auto;
   ${({ theme }) => theme.mediaQueries.xs} {
     width: auto;
-    min-width: 500px;
+    min-width: 360px;
     max-width: 100%;
   }
 `;
@@ -49,8 +49,8 @@ const IconButtonStyle = styled(IconButton)`
 
 const StyleFlexBody = styled(Flex)`
   border-top: 1px dashed  ${({ theme }) => theme.isDark ? 'rgba(239, 239, 241, 0.1)' : '#EFEFF1'};
-  width: calc(100% - 88px);
-  margin: auto;
+  width: auto;
+  margin: auto 44px;
   padding: 23px 0px;
 `;
 

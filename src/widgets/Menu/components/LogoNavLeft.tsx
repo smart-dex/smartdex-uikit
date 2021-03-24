@@ -15,9 +15,9 @@ const StyledLink = styled(Link)`
   font-weight: 800;
   font-size: 24px;
   line-height: 29px;
-  color: ${({ theme }) => theme.isDark ? "#FFFFFF" : "#5F5E76"};
+  color: ${({ theme }) => theme.isDark ? "#FFFFFF" : "#FFFFFF"};
   letter-spacing: -0.04em;
-  height: 55px;
+  height: 61px;
   ${({ theme }) => theme.mediaQueries.nav} {
     display: none;
   }
@@ -29,12 +29,12 @@ const LogoNavLeft: React.FC<Props> = ({ href }) => {
   return (
     <Flex>
       {isAbsoluteUrl ? (
-        <StyledLink as="a" href={href} aria-label="Pancake home page">
-          Pancake
+        <StyledLink as="a" href={href} aria-label="SmartDEX home page">
+          SmartDEX
         </StyledLink>
       ) : (
-        <StyledLink to={href} aria-label="Pancake home page">
-          Pancake
+        <StyledLink to={href} aria-label="SmartDEX home page">
+          SmartDEX
         </StyledLink>
       )}
     </Flex>

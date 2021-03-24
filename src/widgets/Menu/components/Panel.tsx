@@ -29,7 +29,6 @@ const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   overflow: ${({ isPushed }) => (isPushed ? "initial" : "hidden")};
   transform: translate3d(0, 0, 0);
   margin-top: ${MENU_HEIGHT_MOBILE}px;
-  padding-top: 40px;
 
   ${({ theme }) => theme.mediaQueries.nav} {
     width: ${({ isPushed }) => `${isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_FULL}px`};

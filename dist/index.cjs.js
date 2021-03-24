@@ -1959,7 +1959,7 @@ var useKonamiCheatCode = function (matchedCodeHandler) {
     }, [matchedCodeHandler]);
 };
 
-var StyledModal = styled__default['default'].div(templateObject_1$m || (templateObject_1$m = __makeTemplateObject(["\n  background: ", ";\n  border: 1px solid ", ";\n  box-shadow: 50px 38px 102px rgba(120, 118, 148, 0.14);\n  border-radius: 40px;\n  width: 100%;\n  z-index: ", ";\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 500px;\n    max-width: 100%;\n  }\n"], ["\n  background: ", ";\n  border: 1px solid ", ";\n  box-shadow: 50px 38px 102px rgba(120, 118, 148, 0.14);\n  border-radius: 40px;\n  width: 100%;\n  z-index: ", ";\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 500px;\n    max-width: 100%;\n  }\n"])), function (_a) {
+var StyledModal = styled__default['default'].div(templateObject_1$m || (templateObject_1$m = __makeTemplateObject(["\n  background: ", ";\n  border: 1px solid ", ";\n  box-shadow: 50px 38px 102px rgba(120, 118, 148, 0.14);\n  border-radius: 40px;\n  width: 100%;\n  z-index: ", ";\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 360px;\n    max-width: 100%;\n  }\n"], ["\n  background: ", ";\n  border: 1px solid ", ";\n  box-shadow: 50px 38px 102px rgba(120, 118, 148, 0.14);\n  border-radius: 40px;\n  width: 100%;\n  z-index: ", ";\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 360px;\n    max-width: 100%;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.isDark ? '#00071C' : '#FFFFFF';
 }, function (_a) {
@@ -1978,7 +1978,7 @@ var IconButtonStyle = styled__default['default'](IconButton)(templateObject_4$2 
     var theme = _a.theme;
     return theme.isDark ? '#9296A3' : '#D8D8D8';
 });
-var StyleFlexBody = styled__default['default'](Flex)(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  border-top: 1px dashed  ", ";\n  width: calc(100% - 88px);\n  margin: auto;\n  padding: 23px 0px;\n"], ["\n  border-top: 1px dashed  ", ";\n  width: calc(100% - 88px);\n  margin: auto;\n  padding: 23px 0px;\n"])), function (_a) {
+var StyleFlexBody = styled__default['default'](Flex)(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  border-top: 1px dashed  ", ";\n  width: auto;\n  margin: auto 44px;\n  padding: 23px 0px;\n"], ["\n  border-top: 1px dashed  ", ";\n  width: auto;\n  margin: auto 44px;\n  padding: 23px 0px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.isDark ? 'rgba(239, 239, 241, 0.1)' : '#EFEFF1';
 });
@@ -2604,12 +2604,15 @@ var SocialLinks = function () { return (React__default['default'].createElement(
 }))); };
 var SocialLinks$1 = React__default['default'].memo(SocialLinks, function () { return true; });
 
-var StyleText = styled__default['default'](Text)(templateObject_1$d || (templateObject_1$d = __makeTemplateObject(["\n  color: ", ";\n  font-size: 13px;\n  ", " {\n    font-size: 14px;\n  }\n"], ["\n  color: ", ";\n  font-size: 13px;\n  ", " {\n    font-size: 14px;\n  }\n"])), function (_a) {
+var StyleText = styled__default['default'](Text)(templateObject_1$d || (templateObject_1$d = __makeTemplateObject(["\n  color: ", ";\n  font-size: 13px;\n  ", " {\n    font-size: 14px;\n    color: ", ";\n  }\n"], ["\n  color: ", ";\n  font-size: 13px;\n  ", " {\n    font-size: 14px;\n    color: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.isDark ? 'rgba(255, 255, 255, 0.87)' : '#6F6C99';
+    return theme.isDark ? '#FFFFFF' : '#FFFFFF';
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.isDark ? 'rgba(255, 255, 255, 0.87)' : '#6F6C99';
 });
 var ThemeSwitcherHeader = function (_a) {
     var isDark = _a.isDark, toggleTheme = _a.toggleTheme;
@@ -2625,7 +2628,7 @@ var templateObject_1$d;
 
 var Container = styled__default['default'].div(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n  flex: none;\n  padding: 8px 4px;\n  width: calc(100% - 30px);\n  margin: auto;\n"], ["\n  flex: none;\n  padding: 8px 4px;\n  width: calc(100% - 30px);\n  margin: auto;\n"])));
 var SocialEntry = styled__default['default'].div(templateObject_2$5 || (templateObject_2$5 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  border-top: solid 1px;\n  border-color: rgba(255, 255, 255, 0.2);\n  padding: 0 5px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  border-top: solid 1px;\n  border-color: rgba(255, 255, 255, 0.2);\n  padding: 0 5px;\n"])), MENU_ENTRY_HEIGHT);
-var StyleThemeSwitcherHeader$1 = styled__default['default'].div(templateObject_3$2 || (templateObject_3$2 = __makeTemplateObject(["\n  display: block;\n  ", " {\n    display: none;\n  }\n"], ["\n  display: block;\n  ", " {\n    display: none;\n  }\n"])), function (_a) {
+var StyleThemeSwitcherHeader$1 = styled__default['default'].div(templateObject_3$2 || (templateObject_3$2 = __makeTemplateObject(["\n  display: block;\n  > button {\n    padding-left: 0px;\n  }\n  ", " {\n    display: none;\n  }\n"], ["\n  display: block;\n  > button {\n    padding-left: 0px;\n  }\n  ", " {\n    display: none;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 });
@@ -2645,9 +2648,9 @@ var PanelFooter = function (_a) {
 };
 var templateObject_1$c, templateObject_2$5, templateObject_3$2;
 
-var StyledLink = styled__default['default'](reactRouterDom.Link)(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  width: 100%;\n  padding: 0 22px;\n  font-weight: 800;\n  font-size: 24px;\n  line-height: 29px;\n  color: ", ";\n  letter-spacing: -0.04em;\n  height: 55px;\n  ", " {\n    display: none;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  width: 100%;\n  padding: 0 22px;\n  font-weight: 800;\n  font-size: 24px;\n  line-height: 29px;\n  color: ", ";\n  letter-spacing: -0.04em;\n  height: 55px;\n  ", " {\n    display: none;\n  }\n"])), function (_a) {
+var StyledLink = styled__default['default'](reactRouterDom.Link)(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  width: 100%;\n  padding: 0 22px;\n  font-weight: 800;\n  font-size: 24px;\n  line-height: 29px;\n  color: ", ";\n  letter-spacing: -0.04em;\n  height: 61px;\n  ", " {\n    display: none;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  width: 100%;\n  padding: 0 22px;\n  font-weight: 800;\n  font-size: 24px;\n  line-height: 29px;\n  color: ", ";\n  letter-spacing: -0.04em;\n  height: 61px;\n  ", " {\n    display: none;\n  }\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.isDark ? "#FFFFFF" : "#5F5E76";
+    return theme.isDark ? "#FFFFFF" : "#FFFFFF";
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
@@ -2655,11 +2658,11 @@ var StyledLink = styled__default['default'](reactRouterDom.Link)(templateObject_
 var LogoNavLeft = function (_a) {
     var href = _a.href;
     var isAbsoluteUrl = href.startsWith("http");
-    return (React__default['default'].createElement(Flex, null, isAbsoluteUrl ? (React__default['default'].createElement(StyledLink, { as: "a", href: href, "aria-label": "Pancake home page" }, "Pancake")) : (React__default['default'].createElement(StyledLink, { to: href, "aria-label": "Pancake home page" }, "Pancake"))));
+    return (React__default['default'].createElement(Flex, null, isAbsoluteUrl ? (React__default['default'].createElement(StyledLink, { as: "a", href: href, "aria-label": "SmartDEX home page" }, "SmartDEX")) : (React__default['default'].createElement(StyledLink, { to: href, "aria-label": "SmartDEX home page" }, "SmartDEX"))));
 };
 var templateObject_1$b;
 
-var StyledPanel = styled__default['default'].div(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  position: fixed;\n  top: 0;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  flex-shrink: 0;\n  background: ", ";\n  width: ", ";\n  height: calc(100vh - ", "px);\n  transition: padding-top 0.2s, width 0.2s;\n  border-right: ", ";\n  z-index: 11;\n  overflow: ", ";\n  transform: translate3d(0, 0, 0);\n  margin-top: ", "px;\n  padding-top: 40px;\n\n  ", " {\n    width: ", ";\n    margin-top: ", "px;\n    border-radius: 0px 30px 30px 0px;\n    height: calc(100vh - ", "px);\n  }\n"], ["\n  position: fixed;\n  top: 0;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  flex-shrink: 0;\n  background: ", ";\n  width: ", ";\n  height: calc(100vh - ", "px);\n  transition: padding-top 0.2s, width 0.2s;\n  border-right: ", ";\n  z-index: 11;\n  overflow: ", ";\n  transform: translate3d(0, 0, 0);\n  margin-top: ", "px;\n  padding-top: 40px;\n\n  ", " {\n    width: ", ";\n    margin-top: ", "px;\n    border-radius: 0px 30px 30px 0px;\n    height: calc(100vh - ", "px);\n  }\n"])), function (_a) {
+var StyledPanel = styled__default['default'].div(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  position: fixed;\n  top: 0;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  flex-shrink: 0;\n  background: ", ";\n  width: ", ";\n  height: calc(100vh - ", "px);\n  transition: padding-top 0.2s, width 0.2s;\n  border-right: ", ";\n  z-index: 11;\n  overflow: ", ";\n  transform: translate3d(0, 0, 0);\n  margin-top: ", "px;\n\n  ", " {\n    width: ", ";\n    margin-top: ", "px;\n    border-radius: 0px 30px 30px 0px;\n    height: calc(100vh - ", "px);\n  }\n"], ["\n  position: fixed;\n  top: 0;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  flex-shrink: 0;\n  background: ", ";\n  width: ", ";\n  height: calc(100vh - ", "px);\n  transition: padding-top 0.2s, width 0.2s;\n  border-right: ", ";\n  z-index: 11;\n  overflow: ", ";\n  transform: translate3d(0, 0, 0);\n  margin-top: ", "px;\n\n  ", " {\n    width: ", ";\n    margin-top: ", "px;\n    border-radius: 0px 30px 30px 0px;\n    height: calc(100vh - ", "px);\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.isDark ? '#030610' : '#0085FF';
 }, function (_a) {
@@ -2817,7 +2820,7 @@ var connectors = [
 ];
 var connectorLocalStorageKey = "connectorId";
 
-var ButtonStyle = styled__default['default'](Button)(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n  background: ", ";\n  height: 70px;\n  justify-content: flex-start;\n  margin-bottom: 15px;\n"], ["\n  background: ", ";\n  height: 70px;\n  justify-content: flex-start;\n  margin-bottom: 15px;\n"])), function (_a) {
+var ButtonStyle = styled__default['default'](Button)(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n  background: ", ";\n  height: 70px;\n  justify-content: flex-start;\n  margin-bottom: 15px;\n  width: 410px;\n  max-width: 100%;\n"], ["\n  background: ", ";\n  height: 70px;\n  justify-content: flex-start;\n  margin-bottom: 15px;\n  width: 410px;\n  max-width: 100%;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.isDark ? '#151C31' : '#E9F4FC';
 });
@@ -2828,7 +2831,7 @@ var TextStyle = styled__default['default'](Text)(templateObject_2$4 || (template
 var WalletCard = function (_a) {
     var login = _a.login, walletConfig = _a.walletConfig, onDismiss = _a.onDismiss, mb = _a.mb;
     var title = walletConfig.title, Icon = walletConfig.icon;
-    return (React__default['default'].createElement(ButtonStyle, { width: "100%", variant: "tertiary", onClick: function () {
+    return (React__default['default'].createElement(ButtonStyle, { variant: "tertiary", onClick: function () {
             login(walletConfig.connectorId);
             window.localStorage.setItem(connectorLocalStorageKey, walletConfig.connectorId);
             onDismiss();

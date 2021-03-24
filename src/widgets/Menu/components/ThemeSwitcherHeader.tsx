@@ -11,10 +11,11 @@ interface Props {
 }
 
 const StyleText = styled(Text)`
-  color: ${({ theme }) => theme.isDark ? 'rgba(255, 255, 255, 0.87)' : '#6F6C99'};
+  color: ${({ theme }) => theme.isDark ? '#FFFFFF' : '#FFFFFF'};
   font-size: 13px;
   ${({ theme }) => theme.mediaQueries.nav} {
     font-size: 14px;
+    color: ${({ theme }) => theme.isDark ? 'rgba(255, 255, 255, 0.87)' : '#6F6C99'};
   }
 `
 
