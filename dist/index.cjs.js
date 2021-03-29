@@ -960,7 +960,7 @@ var sizes = {
 };
 
 var _a$1;
-var style = (_a$1 = {},
+(_a$1 = {},
     _a$1[sizes.MD] = {
         fontSize: "20px",
         fontSizeLg: "20px",
@@ -978,18 +978,12 @@ var style = (_a$1 = {},
         fontSizeLg: "64px",
     },
     _a$1);
-var Heading = styled__default['default'](Text).attrs({ bold: true })(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  font-size: ", ";\n  font-weight: 600;\n  line-height: 29px;\n  color: ", ";\n\n  ", " {\n    font-size: ", ";\n  }\n"], ["\n  font-size: ", ";\n  font-weight: 600;\n  line-height: 29px;\n  color: ", ";\n\n  ", " {\n    font-size: ", ";\n  }\n"])), function (_a) {
-    var size = _a.size;
-    return style[size || sizes.MD].fontSize;
-}, function (_a) {
+var Heading = styled__default['default'](Text).attrs({ bold: true })(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  font-size: 18px;\n  font-weight: 600;\n  line-height: 29px;\n  color: ", ";\n\n  ", " {\n    font-size: 24px;\n  }\n"], ["\n  font-size: 18px;\n  font-weight: 600;\n  line-height: 29px;\n  color: ", ";\n\n  ", " {\n    font-size: 24px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.isDark ? 'rgba(255, 255, 255, 0.87)' : '#5F5E76';
 }, function (_a) {
     var theme = _a.theme;
-    return theme.mediaQueries.lg;
-}, function (_a) {
-    var size = _a.size;
-    return style[size || sizes.MD].fontSizeLg;
+    return theme.mediaQueries.nav;
 });
 Heading.defaultProps = {
     as: tags.H2,
@@ -1964,7 +1958,7 @@ var useKonamiCheatCode = function (matchedCodeHandler) {
     }, [matchedCodeHandler]);
 };
 
-var StyledModal = styled__default['default'].div(templateObject_1$n || (templateObject_1$n = __makeTemplateObject(["\n  background: ", ";\n  border: 1px solid ", ";\n  box-shadow: 50px 38px 102px rgba(120, 118, 148, 0.14);\n  border-radius: 40px;\n  width: 100%;\n  z-index: ", ";\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 360px;\n    max-width: 100%;\n  }\n"], ["\n  background: ", ";\n  border: 1px solid ", ";\n  box-shadow: 50px 38px 102px rgba(120, 118, 148, 0.14);\n  border-radius: 40px;\n  width: 100%;\n  z-index: ", ";\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 360px;\n    max-width: 100%;\n  }\n"])), function (_a) {
+var StyledModal = styled__default['default'].div(templateObject_1$n || (templateObject_1$n = __makeTemplateObject(["\n  background: ", ";\n  border: 1px solid ", ";\n  box-shadow: 50px 38px 102px rgba(120, 118, 148, 0.14);\n  border-radius: 40px;\n  width: 100%;\n  z-index: ", ";\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 360px;\n    max-width: calc(100% - 70px);\n  }\n"], ["\n  background: ", ";\n  border: 1px solid ", ";\n  box-shadow: 50px 38px 102px rgba(120, 118, 148, 0.14);\n  border-radius: 40px;\n  width: 100%;\n  z-index: ", ";\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 360px;\n    max-width: calc(100% - 70px);\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.isDark ? '#00071C' : '#FFFFFF';
 }, function (_a) {
@@ -1977,15 +1971,24 @@ var StyledModal = styled__default['default'].div(templateObject_1$n || (template
     var theme = _a.theme;
     return theme.mediaQueries.xs;
 });
-var ModalHeader = styled__default['default'].div(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  padding: 12px 44px;\n  min-height: 80px;\n"], ["\n  display: flex;\n  align-items: center;\n  padding: 12px 44px;\n  min-height: 80px;\n"])));
+var ModalHeader = styled__default['default'].div(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  align-items: center;\n  padding: 12px 22px;\n  min-height: 64px;\n  ", " {\n    min-height: 80px;\n    padding: 12px 44px;\n  }\n"], ["\n  position: relative;\n  display: flex;\n  align-items: center;\n  padding: 12px 22px;\n  min-height: 64px;\n  ", " {\n    min-height: 80px;\n    padding: 12px 44px;\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.nav;
+});
 var ModalTitle = styled__default['default'](Flex)(templateObject_3$4 || (templateObject_3$4 = __makeTemplateObject(["\n  align-items: center;\n  flex: 1;\n"], ["\n  align-items: center;\n  flex: 1;\n"])));
-var IconButtonStyle = styled__default['default'](IconButton)(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  width: 30px;\n  height: 30px;\n  border-radius: 50%;\n  background: ", ";\n"], ["\n  width: 30px;\n  height: 30px;\n  border-radius: 50%;\n  background: ", ";\n"])), function (_a) {
+var IconButtonStyle = styled__default['default'](IconButton)(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  width: 20px;\n  height: 20px;\n  border-radius: 50%;\n  position: absolute;\n  top: 17px;\n  right: 17px;\n  background: ", ";\n  svg {\n    width: 15px;\n  }\n  ", " {\n    top: 20px;\n    right: 20px;\n    width: 30px;\n    height: 30px;\n    svg {\n      width: 20px;\n    }\n  }\n"], ["\n  width: 20px;\n  height: 20px;\n  border-radius: 50%;\n  position: absolute;\n  top: 17px;\n  right: 17px;\n  background: ", ";\n  svg {\n    width: 15px;\n  }\n  ", " {\n    top: 20px;\n    right: 20px;\n    width: 30px;\n    height: 30px;\n    svg {\n      width: 20px;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.isDark ? '#9296A3' : '#D8D8D8';
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.nav;
 });
-var StyleFlexBody = styled__default['default'](Flex)(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  border-top: 1px dashed  ", ";\n  width: auto;\n  margin: auto 44px;\n  padding: 23px 0px;\n"], ["\n  border-top: 1px dashed  ", ";\n  width: auto;\n  margin: auto 44px;\n  padding: 23px 0px;\n"])), function (_a) {
+var StyleFlexBody = styled__default['default'](Flex)(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  border-top: 1px dashed  ", ";\n  width: auto;\n  margin: auto 22px;\n  padding: 23px 0px;\n  ", " {\n    margin: auto 44px;\n  }\n"], ["\n  border-top: 1px dashed  ", ";\n  width: auto;\n  margin: auto 22px;\n  padding: 23px 0px;\n  ", " {\n    margin: auto 44px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.isDark ? 'rgba(239, 239, 241, 0.1)' : '#EFEFF1';
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.nav;
 });
 var Modal = function (_a) {
     var title = _a.title, onDismiss = _a.onDismiss, onBack = _a.onBack, children = _a.children, _b = _a.hideCloseButton, hideCloseButton = _b === void 0 ? false : _b, _c = _a.bodyPadding, bodyPadding = _c === void 0 ? "" : _c;
@@ -2825,13 +2828,19 @@ var connectors = [
 ];
 var connectorLocalStorageKey = "connectorId";
 
-var ButtonStyle = styled__default['default'](Button)(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  background: ", ";\n  height: 70px;\n  justify-content: flex-start;\n  margin-bottom: 15px;\n  width: 410px;\n  max-width: 100%;\n"], ["\n  background: ", ";\n  height: 70px;\n  justify-content: flex-start;\n  margin-bottom: 15px;\n  width: 410px;\n  max-width: 100%;\n"])), function (_a) {
+var ButtonStyle = styled__default['default'](Button)(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  background: ", ";\n  height: 60px;\n  justify-content: flex-start;\n  margin-bottom: 15px;\n  width: 410px;\n  max-width: 100%;\n  svg {\n    width: 34px;\n    margin-right: 23px;\n  }\n  ", " {\n    height: 70px;\n    svg {\n      width: 40px;\n      margin-right: 43px;\n    }\n  }\n"], ["\n  background: ", ";\n  height: 60px;\n  justify-content: flex-start;\n  margin-bottom: 15px;\n  width: 410px;\n  max-width: 100%;\n  svg {\n    width: 34px;\n    margin-right: 23px;\n  }\n  ", " {\n    height: 70px;\n    svg {\n      width: 40px;\n      margin-right: 43px;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.isDark ? '#151C31' : '#E9F4FC';
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.nav;
 });
-var TextStyle = styled__default['default'](Text)(templateObject_2$5 || (templateObject_2$5 = __makeTemplateObject(["\n  color: ", ";\n"], ["\n  color: ", ";\n"])), function (_a) {
+var TextStyle = styled__default['default'](Text)(templateObject_2$5 || (templateObject_2$5 = __makeTemplateObject(["\n  color: ", ";\n  font-size: 14px;\n  font-weight: 600;\n  ", " {\n    font-size: 18px;\n  }\n"], ["\n  color: ", ";\n  font-size: 14px;\n  font-weight: 600;\n  ", " {\n    font-size: 18px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.isDark ? 'rgba(255, 255, 255, 0.87)' : '#5F5E76';
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.nav;
 });
 var WalletCard = function (_a) {
     var login = _a.login, walletConfig = _a.walletConfig, onDismiss = _a.onDismiss, mb = _a.mb;
@@ -2841,12 +2850,15 @@ var WalletCard = function (_a) {
             window.localStorage.setItem(connectorLocalStorageKey, walletConfig.connectorId);
             onDismiss();
         }, mb: mb, id: "wallet-connect-" + title.toLocaleLowerCase() },
-        React__default['default'].createElement(Icon, { width: "32px", style: { marginRight: 46 } }),
-        React__default['default'].createElement(TextStyle, { bold: true, color: "primary", mr: "16px" }, title)));
+        React__default['default'].createElement(Icon, null),
+        React__default['default'].createElement(TextStyle, { bold: true, color: "primary" }, title)));
 };
 var templateObject_1$a, templateObject_2$5;
 
-var HelpLink = styled__default['default'](Link)(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n  display: flex;\n  align-self: center;\n  align-items: center;\n  margin-top: 20px;\n  color: #0085FF;\n  font-size: 18px;\n"], ["\n  display: flex;\n  align-self: center;\n  align-items: center;\n  margin-top: 20px;\n  color: #0085FF;\n  font-size: 18px;\n"])));
+var HelpLink = styled__default['default'](Link)(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n  display: flex;\n  align-self: center;\n  align-items: center;\n  margin-top: 10px;\n  color: #0085FF;\n  font-size: 14px;\n  font-weight: bold;\n  svg {\n    width: 15px;\n  }\n  ", " {\n    margin-top: 20px;\n    font-size: 18px;\n    svg {\n      width: 18px;\n    }\n  }\n"], ["\n  display: flex;\n  align-self: center;\n  align-items: center;\n  margin-top: 10px;\n  color: #0085FF;\n  font-size: 14px;\n  font-weight: bold;\n  svg {\n    width: 15px;\n  }\n  ", " {\n    margin-top: 20px;\n    font-size: 18px;\n    svg {\n      width: 18px;\n    }\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.nav;
+});
 var ConnectModal = function (_a) {
     var login = _a.login, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
     return (React__default['default'].createElement(Modal, { title: "Connect to a wallet", onDismiss: onDismiss },

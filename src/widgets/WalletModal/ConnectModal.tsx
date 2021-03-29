@@ -16,9 +16,20 @@ const HelpLink = styled(Link)`
   display: flex;
   align-self: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 10px;
   color: #0085FF;
-  font-size: 18px;
+  font-size: 14px;
+  font-weight: bold;
+  svg {
+    width: 15px;
+  }
+  ${({ theme }) => theme.mediaQueries.nav} {
+    margin-top: 20px;
+    font-size: 18px;
+    svg {
+      width: 18px;
+    }
+  }
 `;
 
 const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => (

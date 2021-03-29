@@ -14,14 +14,30 @@ interface Props {
 
 const ButtonStyle = styled(Button)`
   background: ${({ theme }) => theme.isDark ? '#151C31' : '#E9F4FC'};
-  height: 70px;
+  height: 60px;
   justify-content: flex-start;
   margin-bottom: 15px;
   width: 410px;
   max-width: 100%;
+  svg {
+    width: 34px;
+    margin-right: 23px;
+  }
+  ${({ theme }) => theme.mediaQueries.nav} {
+    height: 70px;
+    svg {
+      width: 40px;
+      margin-right: 43px;
+    }
+  }
 `;
 const TextStyle = styled(Text)`
   color: ${({ theme }) => theme.isDark? 'rgba(255, 255, 255, 0.87)' : '#5F5E76'};
+  font-size: 14px;
+  font-weight: 600;
+  ${({ theme }) => theme.mediaQueries.nav} {
+    font-size: 18px;
+  }
 `;
 
 const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss, mb }) => {
@@ -37,8 +53,8 @@ const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss, mb }) => 
       mb={mb}
       id={`wallet-connect-${title.toLocaleLowerCase()}`}
     >
-      <Icon width="32px" style={{marginRight: 46}} />
-      <TextStyle bold color="primary" mr="16px">
+      <Icon />
+      <TextStyle bold color="primary">
         {title}
       </TextStyle>
     </ButtonStyle>
