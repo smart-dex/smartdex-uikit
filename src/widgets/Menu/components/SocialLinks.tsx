@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import { SvgProps } from "../../../components/Svg";
 import Flex from "../../../components/Box/Flex";
 import Dropdown from "../../../components/Dropdown/Dropdown";
@@ -6,6 +7,15 @@ import Link from "../../../components/Link/Link";
 import * as IconModule from "../icons";
 import { socials } from "../config";
 
+const SocialLink = styled(Link)`
+  color: ${({ theme }) => theme.isDark ? 'rgba(255, 255, 255, 0.87)' : '#5F5E76'};
+  width: 142px;
+  max-width: 100%;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 25px;
+`
 const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
 
 const SocialLinks: React.FC = () => (
@@ -18,9 +28,9 @@ const SocialLinks: React.FC = () => (
         return (
           <Dropdown key={social.label} position="top" target={<Icon {...iconProps} mr={mr} />}>
             {social.items.map((item) => (
-              <Link external key={item.label} href={item.href} aria-label={item.label} color="#FFFFFF">
+              <SocialLink external key={item.label} href={item.href} aria-label={item.label}>
                 {item.label}
-              </Link>
+              </SocialLink>
             ))}
           </Dropdown>
         );

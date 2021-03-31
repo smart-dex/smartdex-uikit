@@ -28,7 +28,7 @@ const getScale = (property: ScaleKeys) => ({ scale = scales.MD }: ToggleProps) =
 };
 
 export const Handle = styled.div<HandleProps>`
-  background-color: ${({ theme }) => theme.isDark ? '#FFFFFF' : '#17C267'};
+  background-color: ${({ theme }) => theme.isDark ? '#17C267' : '#17C267'};
   border-radius: 50%;
   cursor: pointer;
   height: ${getScale("handleHeight")};

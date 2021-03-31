@@ -30,7 +30,7 @@ const MenuEntry = styled.div<Props>`
   align-items: center;
   height: ${MENU_ENTRY_HEIGHT}px;
   padding: ${({ secondary }) => (secondary ? "0 10px 0 56px" : "0 10px 0 16px")};
-  font-size: ${({ secondary }) => (secondary ? "14px" : "16px")};
+  font-size: 14px;
   background-color: ${({ secondary }) => (secondary ? "transparent" : "transparent")};
   color: ${({ isActive, theme }) => (isActive ? '#FFFFFF' : (theme.isDark ? 'rgba(255, 255, 255, 0.77)' : 'rgba(255, 255, 255, 0.6)'))};
   font-weight: bold;

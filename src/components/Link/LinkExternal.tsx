@@ -21,7 +21,7 @@ const LinkExternal: React.FC<LinkProps> = ({ children, ...props }) => {
   return (
     <BoxLink external {...props}>
       {children}
-      <OpenNewIcon width="20px" color="primary" />
+      <OpenNewIcon width="20px" color="#0085FF" />
     </BoxLink>
   );
 };

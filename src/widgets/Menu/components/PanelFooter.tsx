@@ -42,7 +42,7 @@ const PanelFooter: React.FC<Props> = ({ isPushed, pushNav, cakePriceUsd, isDark,
     return (
       <Container>
         <IconButton variant="text" onClick={() => pushNav(true)}>
-          <CogIcon />
+          <CogIcon color="#FFFFFF" />
         </IconButton>
       </Container>
     );

@@ -21,7 +21,7 @@ const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   justify-content: space-between;
   flex-shrink: 0;
   background: ${({ theme }) => theme.isDark ? '#030610' : '#0085FF'};
-  width: ${({ isPushed }) => (isPushed ? `${SIDEBAR_WIDTH_FULL}px` : 0)};
+  width: ${({ isPushed }) => (isPushed ? `253px` : 0)};
   height: calc(100vh - ${MENU_HEIGHT_MOBILE}px);
   transition: padding-top 0.2s, width 0.2s;
   border-right: ${({ isPushed }) => (isPushed ? 0 : 0)};
