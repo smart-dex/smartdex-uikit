@@ -66,7 +66,7 @@ const Avatar: React.FC<AvatarProps> = ({ profile }) => {
         <a href={link} aria-label={ariaLabel}>
           {icon}
         </a>
-        {showPip && <Pip />}
+        {/* {showPip && <Pip />} */}
       </StyledAvatar>
     );
   }
@@ -76,7 +76,7 @@ const Avatar: React.FC<AvatarProps> = ({ profile }) => {
       <Link to={link} aria-label={ariaLabel}>
         {icon}
       </Link>
-      {showPip && <Pip />}
+      {/* {showPip && <Pip />} */}
     </StyledAvatar>
   );
 };

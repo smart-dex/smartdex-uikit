@@ -2952,7 +2952,7 @@ var LangSelectorHeader$1 = React.memo(LangSelectorHeader, function (prev, next) 
 var templateObject_1$5, templateObject_2$2;
 
 var StyledAvatar = styled.div(templateObject_1$4 || (templateObject_1$4 = __makeTemplateObject(["\n  margin-left: 24px;\n  position: relative;\n\n  img {\n    border-radius: 50%;\n  }\n"], ["\n  margin-left: 24px;\n  position: relative;\n\n  img {\n    border-radius: 50%;\n  }\n"])));
-var Pip = styled.div(templateObject_2$1 || (templateObject_2$1 = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 50%;\n  pointer-events: none;\n  height: 8px;\n  position: absolute;\n  right: 0;\n  top: 0;\n  width: 8px;\n"], ["\n  background-color: ", ";\n  border-radius: 50%;\n  pointer-events: none;\n  height: 8px;\n  position: absolute;\n  right: 0;\n  top: 0;\n  width: 8px;\n"])), function (_a) {
+styled.div(templateObject_2$1 || (templateObject_2$1 = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 50%;\n  pointer-events: none;\n  height: 8px;\n  position: absolute;\n  right: 0;\n  top: 0;\n  width: 8px;\n"], ["\n  background-color: ", ";\n  border-radius: 50%;\n  pointer-events: none;\n  height: 8px;\n  position: absolute;\n  right: 0;\n  top: 0;\n  width: 8px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.failure;
 });
@@ -2966,19 +2966,17 @@ var StyleImg = styled.img(templateObject_4$1 || (templateObject_4$1 = __makeTemp
 });
 var Avatar = function (_a) {
     var profile = _a.profile;
-    var _b = profile.username, username = _b === void 0 ? "Bunny" : _b, image = profile.image, profileLink = profile.profileLink, noProfileLink = profile.noProfileLink, _c = profile.showPip, showPip = _c === void 0 ? false : _c;
+    var _b = profile.username, username = _b === void 0 ? "Bunny" : _b, image = profile.image, profileLink = profile.profileLink, noProfileLink = profile.noProfileLink; profile.showPip;
     var link = profile.username ? profileLink : noProfileLink;
     var isExternal = link.startsWith("http");
     var ariaLabel = "Link to profile";
     var icon = image ? (React.createElement(StyleImg, { src: image, alt: "profile avatar" })) : (React.createElement(StyleNoProfileAvatar, null));
     if (isExternal) {
         return (React.createElement(StyledAvatar, { title: username },
-            React.createElement("a", { href: link, "aria-label": ariaLabel }, icon),
-            showPip && React.createElement(Pip, null)));
+            React.createElement("a", { href: link, "aria-label": ariaLabel }, icon)));
     }
     return (React.createElement(StyledAvatar, { title: username },
-        React.createElement(Link$1, { to: link, "aria-label": ariaLabel }, icon),
-        showPip && React.createElement(Pip, null)));
+        React.createElement(Link$1, { to: link, "aria-label": ariaLabel }, icon)));
 };
 var templateObject_1$4, templateObject_2$1, templateObject_3$1, templateObject_4$1;
 
