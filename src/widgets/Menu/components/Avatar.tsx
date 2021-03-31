@@ -31,6 +31,7 @@ const Pip = styled.div`
 const StyleNoProfileAvatar = styled(NoProfileAvatar)`
   width: 37px;
   height: 37px;
+  fill: #E2E2E8;
 
   ${({ theme }) => theme.mediaQueries.nav} {
     width: 56px;

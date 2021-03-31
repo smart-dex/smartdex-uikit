@@ -2969,7 +2969,7 @@ var Pip = styled__default['default'].div(templateObject_2$1 || (templateObject_2
     var theme = _a.theme;
     return theme.colors.failure;
 });
-var StyleNoProfileAvatar = styled__default['default'](Icon$G)(templateObject_3$1 || (templateObject_3$1 = __makeTemplateObject(["\n  width: 37px;\n  height: 37px;\n\n  ", " {\n    width: 56px;\n    height: 56px;\n  }\n"], ["\n  width: 37px;\n  height: 37px;\n\n  ", " {\n    width: 56px;\n    height: 56px;\n  }\n"])), function (_a) {
+var StyleNoProfileAvatar = styled__default['default'](Icon$G)(templateObject_3$1 || (templateObject_3$1 = __makeTemplateObject(["\n  width: 37px;\n  height: 37px;\n  fill: #E2E2E8;\n\n  ", " {\n    width: 56px;\n    height: 56px;\n  }\n"], ["\n  width: 37px;\n  height: 37px;\n  fill: #E2E2E8;\n\n  ", " {\n    width: 56px;\n    height: 56px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 });

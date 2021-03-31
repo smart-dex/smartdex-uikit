@@ -2956,7 +2956,7 @@ var Pip = styled.div(templateObject_2$1 || (templateObject_2$1 = __makeTemplateO
     var theme = _a.theme;
     return theme.colors.failure;
 });
-var StyleNoProfileAvatar = styled(Icon$G)(templateObject_3$1 || (templateObject_3$1 = __makeTemplateObject(["\n  width: 37px;\n  height: 37px;\n\n  ", " {\n    width: 56px;\n    height: 56px;\n  }\n"], ["\n  width: 37px;\n  height: 37px;\n\n  ", " {\n    width: 56px;\n    height: 56px;\n  }\n"])), function (_a) {
+var StyleNoProfileAvatar = styled(Icon$G)(templateObject_3$1 || (templateObject_3$1 = __makeTemplateObject(["\n  width: 37px;\n  height: 37px;\n  fill: #E2E2E8;\n\n  ", " {\n    width: 56px;\n    height: 56px;\n  }\n"], ["\n  width: 37px;\n  height: 37px;\n  fill: #E2E2E8;\n\n  ", " {\n    width: 56px;\n    height: 56px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 });
