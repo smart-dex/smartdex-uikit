@@ -35,6 +35,7 @@ const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean }>`
     margin-top: ${MENU_HEIGHT}px;
     border-radius: 0px 30px 30px 0px;
     height: calc(100vh - ${MENU_HEIGHT}px);
+    padding-top: 33px;
   }
 `;
 

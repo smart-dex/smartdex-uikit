@@ -16,6 +16,19 @@ const SocialLink = styled(Link)`
   font-size: 12px;
   line-height: 25px;
 `
+const StyleIconT = styled(Link)`
+  svg {
+    fill: ${({ theme }) => theme.isDark ? '#0085FF' : '#FFFFFF'};
+  }
+`
+const StyleIconTl = styled.span`
+  padding-top: 2px;
+  display: inline-block;
+  svg {
+    fill: ${({ theme }) => theme.isDark ? '#0085FF' : '#FFFFFF'};
+    width: 23px;
+  }
+`
 const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
 
 const SocialLinks: React.FC = () => (
@@ -26,7 +39,7 @@ const SocialLinks: React.FC = () => (
       const mr = index < socials.length - 1 ? "10px" : 0;
       if (social.items) {
         return (
-          <Dropdown key={social.label} position="top" target={<Icon {...iconProps} mr={mr} />}>
+          <Dropdown key={social.label} position="top" target={<StyleIconTl><Icon {...iconProps} mr={mr} /></StyleIconTl>}>
             {social.items.map((item) => (
               <SocialLink external key={item.label} href={item.href} aria-label={item.label}>
                 {item.label}
@@ -36,9 +49,9 @@ const SocialLinks: React.FC = () => (
         );
       }
       return (
-        <Link external key={social.label} href={social.href} aria-label={social.label} mr={mr}>
+        <StyleIconT external key={social.label} href={social.href} aria-label={social.label} mr={mr}>
           <Icon {...iconProps} />
-        </Link>
+        </StyleIconT>
       );
     })}
   </Flex>
