@@ -2034,6 +2034,9 @@ var ModalProvider = function (_a) {
             handleDismiss();
         }
     };
+    React__default['default'].useEffect(function () {
+        document.body.classList.toggle('modal-open', isOpen);
+    }, [isOpen]);
     return (React__default['default'].createElement(Context.Provider, { value: {
             onPresent: handlePresent,
             onDismiss: handleDismiss,
@@ -2218,10 +2221,7 @@ var IconModule = /*#__PURE__*/Object.freeze({
     MyPageIcon: Icon$7
 });
 
-var MenuButton = styled__default['default'](Button)(templateObject_1$l || (templateObject_1$l = __makeTemplateObject(["\n  color: ", ";\n  padding: 0 8px;\n  border-radius: 8px;\n  font-weight: 600;\n  font-size: 12px;\n  line-height: 25px;\n"], ["\n  color: ", ";\n  padding: 0 8px;\n  border-radius: 8px;\n  font-weight: 600;\n  font-size: 12px;\n  line-height: 25px;\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.colors.text;
-});
+var MenuButton = styled__default['default'](Button)(templateObject_1$l || (templateObject_1$l = __makeTemplateObject(["\n  color: rgba(255,255,255,0.87);\n  padding: 0 8px;\n  border-radius: 8px;\n  font-weight: 600;\n  font-size: 12px;\n  line-height: 25px;\n"], ["\n  color: rgba(255,255,255,0.87);\n  padding: 0 8px;\n  border-radius: 8px;\n  font-weight: 600;\n  font-size: 12px;\n  line-height: 25px;\n"])));
 MenuButton.defaultProps = {
     variant: "text",
     size: "sm",
@@ -2258,11 +2258,11 @@ var links = [
         items: [
             {
                 label: "Exchange",
-                href: "https://exchange.pancakeswap.finance",
+                href: "http://smartdex-exchange.sotatek.works/pool#/swap",
             },
             {
                 label: "Liquidity",
-                href: "https://exchange.pancakeswap.finance/#/pool",
+                href: "http://smartdex-exchange.sotatek.works/pool#/pool",
             },
         ],
     },
@@ -2299,7 +2299,6 @@ var links = [
                 href: "/",
             },
         ],
-        calloutClass: "rainbow",
     },
     {
         label: "Info",
@@ -2307,19 +2306,19 @@ var links = [
         items: [
             {
                 label: "Overview",
-                href: "https://pancakeswap.info",
+                href: "http://smartdex-info.sotatek.works/home",
             },
             {
                 label: "Tokens",
-                href: "https://pancakeswap.info/tokens",
+                href: "http://smartdex-info.sotatek.works/tokens",
             },
             {
                 label: "Pairs",
-                href: "https://pancakeswap.info/pairs",
+                href: "http://smartdex-info.sotatek.works/pairs",
             },
             {
                 label: "Accounts",
-                href: "https://pancakeswap.info/accounts",
+                href: "http://smartdex-info.sotatek.works/accounts",
             },
         ],
     },
@@ -2351,7 +2350,7 @@ var links = [
             },
             {
                 label: "Docs",
-                href: "https://docs.pancakeswap.finance",
+                href: "https://smart-dex29.gitbook.io/smart-dex/",
             },
             {
                 label: "Blog",
@@ -2429,7 +2428,6 @@ var MENU_HEIGHT = 94;
 var MENU_HEIGHT_MOBILE = 65;
 var MENU_ENTRY_HEIGHT = 48;
 var SIDEBAR_WIDTH_FULL = 240;
-var SIDEBAR_WIDTH_REDUCED = 0;
 
 var StyledLink$1 = styled__default['default'](reactRouterDom.Link)(templateObject_1$k || (templateObject_1$k = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 32px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 156px;\n    display: none;\n    ", " {\n      display: block;\n    }\n  }\n  .desktop-icon-text {\n    color: ", ";\n    display: none;\n    padding: 0 22px;\n    font-weight: 800;\n    font-size: 32px;\n    line-height: 39px;\n    letter-spacing: -0.04em;\n    ", " {\n      display: block;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 32px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 156px;\n    display: none;\n    ", " {\n      display: block;\n    }\n  }\n  .desktop-icon-text {\n    color: ", ";\n    display: none;\n    padding: 0 22px;\n    font-weight: 800;\n    font-size: 32px;\n    line-height: 39px;\n    letter-spacing: -0.04em;\n    ", " {\n      display: block;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -2469,7 +2467,7 @@ var LinkLabel = styled__default['default'].div(templateObject_2$a || (templateOb
     var isPushed = _a.isPushed, theme = _a.theme;
     return (isPushed ? (theme.isDark ? 'rgba(255, 255, 255, 0.77)' : 'rgba(255, 255, 255, 0.6)') : "transparent");
 });
-var MenuEntry = styled__default['default'].div(templateObject_3$4 || (templateObject_3$4 = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", "px;\n  padding: ", ";\n  font-size: 14px;\n  background-color: ", ";\n  color: ", ";\n  font-weight: bold;\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n\n    &.active {\n      color: ", ";\n      svg {\n        fill: ", ";\n      }\n\n      div {\n        color: ", ";\n      }\n    }\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  div {\n    color: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    color: ", ";\n    background-color: ", ";\n    background-size: 400% 100%;\n  },\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", "px;\n  padding: ", ";\n  font-size: 14px;\n  background-color: ", ";\n  color: ", ";\n  font-weight: bold;\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n\n    &.active {\n      color: ", ";\n      svg {\n        fill: ", ";\n      }\n\n      div {\n        color: ", ";\n      }\n    }\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  div {\n    color: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    color: ", ";\n    background-color: ", ";\n    background-size: 400% 100%;\n  },\n"])), MENU_ENTRY_HEIGHT, function (_a) {
+var MenuEntry = styled__default['default'].div(templateObject_3$4 || (templateObject_3$4 = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", "px;\n  padding: ", ";\n  font-size: 14px;\n  background-color: ", ";\n  color: ", ";\n  font-weight: bold;\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n    color: ", ";\n\n    &.active.is_active {\n      color: ", ";\n      svg {\n        fill: ", ";\n      }\n\n      div {\n        color: ", ";\n      }\n    }\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  div {\n    color: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    color: ", ";\n    background-color: ", ";\n    background-size: 400% 100%;\n  },\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", "px;\n  padding: ", ";\n  font-size: 14px;\n  background-color: ", ";\n  color: ", ";\n  font-weight: bold;\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n    color: ", ";\n\n    &.active.is_active {\n      color: ", ";\n      svg {\n        fill: ", ";\n      }\n\n      div {\n        color: ", ";\n      }\n    }\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  div {\n    color: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    color: ", ";\n    background-color: ", ";\n    background-size: 400% 100%;\n  },\n"])), MENU_ENTRY_HEIGHT, function (_a) {
     var secondary = _a.secondary;
     return (secondary ? "0 10px 0 56px" : "0 10px 0 16px");
 }, function (_a) {
@@ -2478,6 +2476,9 @@ var MenuEntry = styled__default['default'].div(templateObject_3$4 || (templateOb
 }, function (_a) {
     var isActive = _a.isActive, theme = _a.theme;
     return (isActive ? '#FFFFFF' : (theme.isDark ? 'rgba(255, 255, 255, 0.77)' : 'rgba(255, 255, 255, 0.6)'));
+}, function (_a) {
+    var theme = _a.theme;
+    return (theme.isDark ? 'rgba(255, 255, 255, 0.77)' : 'rgba(255, 255, 255, 0.6)');
 }, function (_a) {
     var theme = _a.theme;
     return theme.isDark ? '#0085FF' : '#FFFFFF';
@@ -2541,10 +2542,11 @@ var templateObject_1$i, templateObject_2$9;
 var MenuLink = function (_a) {
     var href = _a.href, otherProps = __rest(_a, ["href"]);
     var isHttpLink = href === null || href === void 0 ? void 0 : href.startsWith("http");
+    var location = reactRouterDom.useLocation();
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     var Tag = isHttpLink ? "a" : reactRouterDom.NavLink;
     var props = isHttpLink ? { href: href } : { to: href };
-    return React__default['default'].createElement(Tag, __assign({}, props, otherProps));
+    return React__default['default'].createElement(Tag, __assign({}, props, { className: props.to === location.pathname ? 'is_active' : '' }, otherProps));
 };
 
 var Icons$1 = IconModule;
@@ -2863,7 +2865,7 @@ var ConnectModal = function (_a) {
     return (React__default['default'].createElement(Modal, { title: "Connect to a wallet", onDismiss: onDismiss },
         React__default['default'].createElement(StyleContent, null,
             connectors.map(function (entry, index) { return (React__default['default'].createElement(WalletCard, { key: entry.title, login: login, walletConfig: entry, onDismiss: onDismiss, mb: index < connectors.length - 1 ? "8px" : "0" })); }),
-            React__default['default'].createElement(HelpLink, { href: "https://docs.pancakeswap.finance/guides/faq#how-do-i-set-up-my-wallet-on-binance-smart-chain", external: true },
+            React__default['default'].createElement(HelpLink, { href: "https://smart-dex29.gitbook.io/smart-dex/", external: true },
                 "Learn how to connect",
                 React__default['default'].createElement(Icon$L, { color: "#0085FF", ml: "12px" })))));
 };
@@ -3025,10 +3027,10 @@ var Inner = styled__default['default'].div(templateObject_4 || (templateObject_4
     return theme.mediaQueries.nav;
 }, function (_a) {
     var isPushed = _a.isPushed;
-    return (isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_REDUCED) + "px";
+    return (isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_FULL) + "px";
 }, function (_a) {
     var isPushed = _a.isPushed;
-    return "calc(100% - " + (isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_REDUCED) + "px)";
+    return "calc(100% - " + (isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_FULL) + "px)";
 });
 var MobileOnlyOverlay = styled__default['default'](Overlay)(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  position: fixed;\n  height: 100%;\n\n  ", " {\n    display: none;\n  }\n"], ["\n  position: fixed;\n  height: 100%;\n\n  ", " {\n    display: none;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -3169,7 +3171,7 @@ var ToastContainer = function (_a) {
 };
 var templateObject_1$1;
 
-var ResetCSS = styled.createGlobalStyle(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  /* prettier-ignore */\n  html, body, div, span, applet, object, iframe,\n  h1, h2, h3, h4, h5, h6, p, blockquote, pre,\n  a, abbr, acronym, address, big, cite, code,\n  del, dfn, em, img, ins, kbd, q, s, samp,\n  small, strike, strong, sub, sup, tt, var,\n  b, u, i, center,\n  dl, dt, dd, ol, ul, li,\n  fieldset, form, label, legend,\n  table, caption, tbody, tfoot, thead, tr, th, td,\n  article, aside, canvas, details, embed, \n  figure, figcaption, footer, header, hgroup, \n  menu, nav, output, ruby, section, summary,\n  time, mark, audio, video {\n    margin: 0;\n    padding: 0;\n    border: 0;\n    font-size: 100%;\n    vertical-align: baseline;\n  }\n  /* HTML5 display-role reset for older browsers */\n  /* prettier-ignore */\n  article, aside, details, figcaption, figure, \n  footer, header, hgroup, menu, nav, section {\n    display: block;\n  }\n  body {\n    line-height: 1;\n    font-size: 16px;\n  }\n  ol,\n  ul {\n    list-style: disc;\n    list-style-position: inside;\n  }\n  blockquote,\n  q {\n    quotes: none;\n  }\n  blockquote:before,\n  blockquote:after,\n  q:before,\n  q:after {\n    content: \"\";\n    content: none;\n  }\n  table {\n    border-collapse: collapse;\n    border-spacing: 0;\n  }\n  a {\n    color: inherit;\n    text-decoration: none;\n  }\n  [role=\"button\"] {\n    cursor: pointer;\n  }\n  *,\n  *::before,\n  *::after {\n    box-sizing: border-box;\n  }\n  * {\n    font-family: 'Montserrat', sans-serif;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n  }\n  /* Scrollbar */\n  ::-webkit-scrollbar {\n    width: 8px;\n  }\n  ::-webkit-scrollbar-thumb {\n    background: ", "; \n    border-radius: 8px;\n  }\n  ::-webkit-scrollbar-track {\n    box-shadow: inset 0 0 5px ", "; \n    border-radius: 10px;\n  }\n"], ["\n  /* prettier-ignore */\n  html, body, div, span, applet, object, iframe,\n  h1, h2, h3, h4, h5, h6, p, blockquote, pre,\n  a, abbr, acronym, address, big, cite, code,\n  del, dfn, em, img, ins, kbd, q, s, samp,\n  small, strike, strong, sub, sup, tt, var,\n  b, u, i, center,\n  dl, dt, dd, ol, ul, li,\n  fieldset, form, label, legend,\n  table, caption, tbody, tfoot, thead, tr, th, td,\n  article, aside, canvas, details, embed, \n  figure, figcaption, footer, header, hgroup, \n  menu, nav, output, ruby, section, summary,\n  time, mark, audio, video {\n    margin: 0;\n    padding: 0;\n    border: 0;\n    font-size: 100%;\n    vertical-align: baseline;\n  }\n  /* HTML5 display-role reset for older browsers */\n  /* prettier-ignore */\n  article, aside, details, figcaption, figure, \n  footer, header, hgroup, menu, nav, section {\n    display: block;\n  }\n  body {\n    line-height: 1;\n    font-size: 16px;\n  }\n  ol,\n  ul {\n    list-style: disc;\n    list-style-position: inside;\n  }\n  blockquote,\n  q {\n    quotes: none;\n  }\n  blockquote:before,\n  blockquote:after,\n  q:before,\n  q:after {\n    content: \"\";\n    content: none;\n  }\n  table {\n    border-collapse: collapse;\n    border-spacing: 0;\n  }\n  a {\n    color: inherit;\n    text-decoration: none;\n  }\n  [role=\"button\"] {\n    cursor: pointer;\n  }\n  *,\n  *::before,\n  *::after {\n    box-sizing: border-box;\n  }\n  * {\n    font-family: 'Montserrat', sans-serif;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n  }\n  /* Scrollbar */\n  ::-webkit-scrollbar {\n    width: 8px;\n  }\n  ::-webkit-scrollbar-thumb {\n    background: ", "; \n    border-radius: 8px;\n  }\n  ::-webkit-scrollbar-track {\n    box-shadow: inset 0 0 5px ", "; \n    border-radius: 10px;\n  }\n"])), function (_a) {
+var ResetCSS = styled.createGlobalStyle(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  /* prettier-ignore */\n  html, body, div, span, applet, object, iframe,\n  h1, h2, h3, h4, h5, h6, p, blockquote, pre,\n  a, abbr, acronym, address, big, cite, code,\n  del, dfn, em, img, ins, kbd, q, s, samp,\n  small, strike, strong, sub, sup, tt, var,\n  b, u, i, center,\n  dl, dt, dd, ol, ul, li,\n  fieldset, form, label, legend,\n  table, caption, tbody, tfoot, thead, tr, th, td,\n  article, aside, canvas, details, embed, \n  figure, figcaption, footer, header, hgroup, \n  menu, nav, output, ruby, section, summary,\n  time, mark, audio, video {\n    margin: 0;\n    padding: 0;\n    border: 0;\n    font-size: 100%;\n    vertical-align: baseline;\n  }\n  /* HTML5 display-role reset for older browsers */\n  /* prettier-ignore */\n  article, aside, details, figcaption, figure, \n  footer, header, hgroup, menu, nav, section {\n    display: block;\n  }\n  body {\n    line-height: 1;\n    font-size: 16px;\n  }\n  body.modal-open{\n    overflow: hidden;\n  }\n  ol,\n  ul {\n    list-style: disc;\n    list-style-position: inside;\n  }\n  blockquote,\n  q {\n    quotes: none;\n  }\n  blockquote:before,\n  blockquote:after,\n  q:before,\n  q:after {\n    content: \"\";\n    content: none;\n  }\n  table {\n    border-collapse: collapse;\n    border-spacing: 0;\n  }\n  a {\n    color: inherit;\n    text-decoration: none;\n  }\n  [role=\"button\"] {\n    cursor: pointer;\n  }\n  *,\n  *::before,\n  *::after {\n    box-sizing: border-box;\n  }\n  * {\n    font-family: 'Montserrat', sans-serif;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n  }\n  /* Scrollbar */\n  ::-webkit-scrollbar {\n    width: 8px;\n  }\n  ::-webkit-scrollbar-thumb {\n    background: ", "; \n    border-radius: 8px;\n  }\n  ::-webkit-scrollbar-track {\n    box-shadow: inset 0 0 5px ", "; \n    border-radius: 10px;\n  }\n"], ["\n  /* prettier-ignore */\n  html, body, div, span, applet, object, iframe,\n  h1, h2, h3, h4, h5, h6, p, blockquote, pre,\n  a, abbr, acronym, address, big, cite, code,\n  del, dfn, em, img, ins, kbd, q, s, samp,\n  small, strike, strong, sub, sup, tt, var,\n  b, u, i, center,\n  dl, dt, dd, ol, ul, li,\n  fieldset, form, label, legend,\n  table, caption, tbody, tfoot, thead, tr, th, td,\n  article, aside, canvas, details, embed, \n  figure, figcaption, footer, header, hgroup, \n  menu, nav, output, ruby, section, summary,\n  time, mark, audio, video {\n    margin: 0;\n    padding: 0;\n    border: 0;\n    font-size: 100%;\n    vertical-align: baseline;\n  }\n  /* HTML5 display-role reset for older browsers */\n  /* prettier-ignore */\n  article, aside, details, figcaption, figure, \n  footer, header, hgroup, menu, nav, section {\n    display: block;\n  }\n  body {\n    line-height: 1;\n    font-size: 16px;\n  }\n  body.modal-open{\n    overflow: hidden;\n  }\n  ol,\n  ul {\n    list-style: disc;\n    list-style-position: inside;\n  }\n  blockquote,\n  q {\n    quotes: none;\n  }\n  blockquote:before,\n  blockquote:after,\n  q:before,\n  q:after {\n    content: \"\";\n    content: none;\n  }\n  table {\n    border-collapse: collapse;\n    border-spacing: 0;\n  }\n  a {\n    color: inherit;\n    text-decoration: none;\n  }\n  [role=\"button\"] {\n    cursor: pointer;\n  }\n  *,\n  *::before,\n  *::after {\n    box-sizing: border-box;\n  }\n  * {\n    font-family: 'Montserrat', sans-serif;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n  }\n  /* Scrollbar */\n  ::-webkit-scrollbar {\n    width: 8px;\n  }\n  ::-webkit-scrollbar-thumb {\n    background: ", "; \n    border-radius: 8px;\n  }\n  ::-webkit-scrollbar-track {\n    box-shadow: inset 0 0 5px ", "; \n    border-radius: 10px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.isDark ? 'rgb(197 197 197 / 87%)' : 'rgb(197 197 197 / 87%)';
 }, function (_a) {

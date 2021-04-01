@@ -49,6 +49,10 @@ const ModalProvider: React.FC = ({ children }) => {
     }
   };
 
+  React.useEffect(() => {
+    document.body.classList.toggle('modal-open', isOpen);
+  }, [isOpen])
+  
   return (
     <Context.Provider
       value={{
