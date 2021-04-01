@@ -40,8 +40,9 @@ const MenuEntry = styled.div<Props>`
     align-items: center;
     width: 100%;
     height: 100%;
+    color: ${({ theme }) => (theme.isDark ? 'rgba(255, 255, 255, 0.77)' : 'rgba(255, 255, 255, 0.6)')};
 
-    &.active {
+    &.active.is_active {
       color: ${({ theme }) => theme.isDark ? '#0085FF' : '#FFFFFF'};
       svg {
         fill: ${({ theme }) => theme.isDark ? '#0085FF' : '#FFFFFF'};

@@ -28,11 +28,11 @@ export const links = [
     items: [
       {
         label: "Exchange",
-        href: "https://exchange.pancakeswap.finance",
+        href: "http://smartdex-exchange.sotatek.works/pool#/swap",
       },
       {
         label: "Liquidity",
-        href: "https://exchange.pancakeswap.finance/#/pool",
+        href: "http://smartdex-exchange.sotatek.works/pool#/pool",
       },
     ],
   },
@@ -69,7 +69,6 @@ export const links = [
         href: "/",
       },
     ],
-    calloutClass: "rainbow",
   },
   {
     label: "Info",
@@ -77,19 +76,19 @@ export const links = [
     items: [
       {
         label: "Overview",
-        href: "https://pancakeswap.info",
+        href: "http://smartdex-info.sotatek.works/home",
       },
       {
         label: "Tokens",
-        href: "https://pancakeswap.info/tokens",
+        href: "http://smartdex-info.sotatek.works/tokens",
       },
       {
         label: "Pairs",
-        href: "https://pancakeswap.info/pairs",
+        href: "http://smartdex-info.sotatek.works/pairs",
       },
       {
         label: "Accounts",
-        href: "https://pancakeswap.info/accounts",
+        href: "http://smartdex-info.sotatek.works/accounts",
       },
     ],
   },
@@ -121,7 +120,7 @@ export const links = [
       },
       {
         label: "Docs",
-        href: "https://docs.pancakeswap.finance",
+        href: "https://smart-dex29.gitbook.io/smart-dex/",
       },
       {
         label: "Blog",

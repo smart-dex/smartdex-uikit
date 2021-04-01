@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Button from "../../../components/Button/Button";
 
 const MenuButton = styled(Button)`
-  color: ${({ theme }) => theme.colors.text};
+  color: rgba(255,255,255,0.87);
   padding: 0 8px;
   border-radius: 8px;
   font-weight: 600;
