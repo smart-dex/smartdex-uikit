@@ -2221,7 +2221,10 @@ var IconModule = /*#__PURE__*/Object.freeze({
     MyPageIcon: Icon$7
 });
 
-var MenuButton = styled__default['default'](Button)(templateObject_1$l || (templateObject_1$l = __makeTemplateObject(["\n  color: rgba(255,255,255,0.87);\n  padding: 0 8px;\n  border-radius: 8px;\n  font-weight: 600;\n  font-size: 12px;\n  line-height: 25px;\n"], ["\n  color: rgba(255,255,255,0.87);\n  padding: 0 8px;\n  border-radius: 8px;\n  font-weight: 600;\n  font-size: 12px;\n  line-height: 25px;\n"])));
+var MenuButton = styled__default['default'](Button)(templateObject_1$l || (templateObject_1$l = __makeTemplateObject(["\n  color: ", ";\n  padding: 0 8px;\n  border-radius: 8px;\n  font-weight: 600;\n  font-size: 12px;\n  line-height: 25px;\n"], ["\n  color: ", ";\n  padding: 0 8px;\n  border-radius: 8px;\n  font-weight: 600;\n  font-size: 12px;\n  line-height: 25px;\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.isDark ? 'rgba(255,255,255,0.87)' : '#5F5E76';
+});
 MenuButton.defaultProps = {
     variant: "text",
     size: "sm",
