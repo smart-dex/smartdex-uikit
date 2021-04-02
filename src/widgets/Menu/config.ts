@@ -112,11 +112,11 @@ export const links = [
     items: [
       {
         label: "Voting",
-        href: "https://voting.pancakeswap.finance",
+        href: "",
       },
       {
         label: "Github",
-        href: "https://github.com/pancakeswap",
+        href: "",
       },
       {
         label: "Docs",
@@ -124,7 +124,7 @@ export const links = [
       },
       {
         label: "Blog",
-        href: "https://pancakeswap.medium.com",
+        href: "",
       },
     ],
   },
@@ -137,62 +137,62 @@ export const socials = [
     items: [
       {
         label: "English",
-        href: "https://t.me/pancakeswap",
+        href: "",
       },
       {
         label: "Bahasa Indonesia",
-        href: "https://t.me/PancakeSwapIndonesia",
+        href: "",
       },
       {
         label: "中文",
-        href: "https://t.me/PancakeSwap_CN",
+        href: "",
       },
       {
         label: "Tiếng Việt",
-        href: "https://t.me/PancakeSwapVN",
+        href: "",
       },
       {
         label: "Italiano",
-        href: "https://t.me/pancakeswap_ita",
+        href: "",
       },
       {
         label: "русский",
-        href: "https://t.me/pancakeswap_ru",
+        href: "",
       },
       {
         label: "Türkiye",
-        href: "https://t.me/pancakeswapturkiye",
+        href: "",
       },
       {
         label: "Português",
-        href: "https://t.me/PancakeSwapPortuguese",
+        href: "",
       },
       {
         label: "Español",
-        href: "https://t.me/PancakeswapEs",
+        href: "",
       },
       {
         label: "日本語",
-        href: "https://t.me/pancakeswapjp",
+        href: "",
       },
       {
         label: "Français",
-        href: "https://t.me/pancakeswapfr",
+        href: "",
       },
       {
         label: "Announcements",
-        href: "https://t.me/PancakeSwapAnn",
+        href: "",
       },
       {
         label: "Whale Alert",
-        href: "https://t.me/PancakeSwapWhales",
+        href: "",
       },
     ],
   },
   {
     label: "Twitter",
     icon: "TwitterIcon",
-    href: "https://twitter.com/pancakeswap",
+    href: "",
   },
 ];
 

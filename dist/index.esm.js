@@ -2332,11 +2332,11 @@ var links = [
         items: [
             {
                 label: "Voting",
-                href: "https://voting.pancakeswap.finance",
+                href: "",
             },
             {
                 label: "Github",
-                href: "https://github.com/pancakeswap",
+                href: "",
             },
             {
                 label: "Docs",
@@ -2344,7 +2344,7 @@ var links = [
             },
             {
                 label: "Blog",
-                href: "https://pancakeswap.medium.com",
+                href: "",
             },
         ],
     },
@@ -2356,62 +2356,62 @@ var socials = [
         items: [
             {
                 label: "English",
-                href: "https://t.me/pancakeswap",
+                href: "",
             },
             {
                 label: "Bahasa Indonesia",
-                href: "https://t.me/PancakeSwapIndonesia",
+                href: "",
             },
             {
                 label: "中文",
-                href: "https://t.me/PancakeSwap_CN",
+                href: "",
             },
             {
                 label: "Tiếng Việt",
-                href: "https://t.me/PancakeSwapVN",
+                href: "",
             },
             {
                 label: "Italiano",
-                href: "https://t.me/pancakeswap_ita",
+                href: "",
             },
             {
                 label: "русский",
-                href: "https://t.me/pancakeswap_ru",
+                href: "",
             },
             {
                 label: "Türkiye",
-                href: "https://t.me/pancakeswapturkiye",
+                href: "",
             },
             {
                 label: "Português",
-                href: "https://t.me/PancakeSwapPortuguese",
+                href: "",
             },
             {
                 label: "Español",
-                href: "https://t.me/PancakeswapEs",
+                href: "",
             },
             {
                 label: "日本語",
-                href: "https://t.me/pancakeswapjp",
+                href: "",
             },
             {
                 label: "Français",
-                href: "https://t.me/pancakeswapfr",
+                href: "",
             },
             {
                 label: "Announcements",
-                href: "https://t.me/PancakeSwapAnn",
+                href: "",
             },
             {
                 label: "Whale Alert",
-                href: "https://t.me/PancakeSwapWhales",
+                href: "",
             },
         ],
     },
     {
         label: "Twitter",
         icon: "TwitterIcon",
-        href: "https://twitter.com/pancakeswap",
+        href: "",
     },
 ];
 var MENU_HEIGHT = 94;
@@ -2568,7 +2568,7 @@ var templateObject_1$h;
 var PriceLink = styled.a(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"])));
 var CakePrice = function (_a) {
     var cakePriceUsd = _a.cakePriceUsd;
-    return cakePriceUsd ? (React.createElement(PriceLink, { href: "https://pancakeswap.info/token/0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82", target: "_blank" },
+    return cakePriceUsd ? (React.createElement(PriceLink, { href: "http://smartdex-info.sotatek.works/tokens/", target: "_blank" },
         React.createElement(Icon$D, { width: "24px", mr: "8px" }),
         React.createElement(Text, { color: "textSubtle", bold: true }, "$" + cakePriceUsd.toFixed(3)))) : (React.createElement(Skeleton, { width: 80, height: 24 }));
 };
