@@ -82,6 +82,9 @@ const StyleWarningModalIcon = styled(WarningModalIcon)`
   width: 28px;
   height: 28px;
   margin-right: 20px;
+  display: inline-block;
+  position: relative;
+  top: 10px;
   ${({ theme }) => theme.mediaQueries.nav} {
     width: 40px;
     height: 37px;

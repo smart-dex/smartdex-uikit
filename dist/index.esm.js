@@ -957,7 +957,7 @@ var _a$1;
         fontSizeLg: "64px",
     },
     _a$1);
-var Heading = styled(Text).attrs({ bold: true })(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  font-size: 18px;\n  font-weight: 600;\n  line-height: 29px;\n  color: ", ";\n  display: flex;\n  align-items: center;\n\n  ", " {\n    font-size: 24px;\n  }\n"], ["\n  font-size: 18px;\n  font-weight: 600;\n  line-height: 29px;\n  color: ", ";\n  display: flex;\n  align-items: center;\n\n  ", " {\n    font-size: 24px;\n  }\n"])), function (_a) {
+var Heading = styled(Text).attrs({ bold: true })(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  font-size: 18px;\n  font-weight: 600;\n  line-height: 29px;\n  color: ", ";\n\n  ", " {\n    font-size: 24px;\n  }\n"], ["\n  font-size: 18px;\n  font-weight: 600;\n  line-height: 29px;\n  color: ", ";\n\n  ", " {\n    font-size: 24px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.isDark ? 'rgba(255, 255, 255, 0.87)' : '#5F5E76';
 }, function (_a) {
@@ -1969,7 +1969,7 @@ var StyleFlexBody = styled(Flex)(templateObject_5$1 || (templateObject_5$1 = __m
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 });
-var StyleWarningModalIcon = styled(Icon$s)(templateObject_6$1 || (templateObject_6$1 = __makeTemplateObject(["\n  fill: #FFA14E;\n  width: 28px;\n  height: 28px;\n  margin-right: 20px;\n  ", " {\n    width: 40px;\n    height: 37px;\n    margin-right: 34px;\n  }\n"], ["\n  fill: #FFA14E;\n  width: 28px;\n  height: 28px;\n  margin-right: 20px;\n  ", " {\n    width: 40px;\n    height: 37px;\n    margin-right: 34px;\n  }\n"])), function (_a) {
+var StyleWarningModalIcon = styled(Icon$s)(templateObject_6$1 || (templateObject_6$1 = __makeTemplateObject(["\n  fill: #FFA14E;\n  width: 28px;\n  height: 28px;\n  margin-right: 20px;\n  display: inline-block;\n  position: relative;\n  top: 10px;\n  ", " {\n    width: 40px;\n    height: 37px;\n    margin-right: 34px;\n  }\n"], ["\n  fill: #FFA14E;\n  width: 28px;\n  height: 28px;\n  margin-right: 20px;\n  display: inline-block;\n  position: relative;\n  top: 10px;\n  ", " {\n    width: 40px;\n    height: 37px;\n    margin-right: 34px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 });
