@@ -26,6 +26,8 @@ const Heading = styled(Text).attrs({ bold: true })<HeadingProps>`
   font-weight: 600;
   line-height: 29px;
   color: ${({ theme }) => theme.isDark? 'rgba(255, 255, 255, 0.87)' : '#5F5E76'};
+  display: flex;
+  align-items: center;
 
   ${({ theme }) => theme.mediaQueries.nav} {
     font-size: 24px;

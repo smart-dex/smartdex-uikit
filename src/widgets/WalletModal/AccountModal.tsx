@@ -60,7 +60,7 @@ const AccountModal: React.FC<Props> = ({ account, logout, onDismiss = () => null
     </BoxText>
     <Flex mb="23px" justifyContent="center">
       <CopyToClipboard toCopy={account}></CopyToClipboard>
-      <LinkExternal small href={`https://bscscan.com/address/${account}`} mr="16px"></LinkExternal>
+      <LinkExternal small href={`https://testnet.bscscan.com/address/${account}`} mr="16px"></LinkExternal>
     </Flex>
     <Flex justifyContent="center">
       <StyledButtonLogout

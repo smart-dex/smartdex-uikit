@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Heading from "../../components/Heading/Heading";
 import Flex from "../../components/Box/Flex";
-import { ArrowBackIcon, CloseIcon } from "../../components/Svg";
+import { ArrowBackIcon, CloseIcon, WarningModalIcon } from "../../components/Svg";
 import { IconButton } from "../../components/Button";
 import { InjectedProps } from "./types";
 
@@ -77,6 +77,19 @@ const StyleFlexBody = styled(Flex)`
   }
 `;
 
+const StyleWarningModalIcon = styled(WarningModalIcon)`
+  fill: #FFA14E;
+  width: 28px;
+  height: 28px;
+  margin-right: 20px;
+  ${({ theme }) => theme.mediaQueries.nav} {
+    width: 40px;
+    height: 37px;
+    margin-right: 34px;
+  }
+`;
+
+
 const Modal: React.FC<Props> = ({
   title,
   onDismiss,
@@ -93,7 +106,10 @@ const Modal: React.FC<Props> = ({
             <ArrowBackIcon color="#FFFFFF" />
           </IconButtonStyle>
         )}
-        <Heading>{title}</Heading>
+        <Heading>
+          {title === 'Warning' && <StyleWarningModalIcon /> }
+          {title}
+          </Heading>
       </ModalTitle>
       {!hideCloseButton && (
         <IconButtonStyle variant="text" onClick={onDismiss} aria-label="Close the dialog">
