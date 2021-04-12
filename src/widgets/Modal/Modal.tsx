@@ -34,9 +34,11 @@ const ModalHeader = styled.div`
   align-items: center;
   padding: 12px 22px;
   min-height: 64px;
+  padding-right: 45px;
   ${({ theme }) => theme.mediaQueries.nav} {
     min-height: 80px;
     padding: 12px 44px;
+    padding-right: 55px;
   }
 `;
 

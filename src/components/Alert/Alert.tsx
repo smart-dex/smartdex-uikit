@@ -19,14 +19,14 @@ interface ThemedIconLabel {
 const getThemeColor = ({ theme, variant = variants.INFO }: ThemedIconLabel) => {
   switch (variant) {
     case variants.DANGER:
-      return theme.colors.failure;
+      return '#FF6970';
     case variants.WARNING:
-      return theme.colors.warning;
+      return '#FFA14E';
     case variants.SUCCESS:
-      return theme.colors.success;
+      return '#17C267';
     case variants.INFO:
     default:
-      return theme.colors.secondary;
+      return '#0085FF';
   }
 };
 
@@ -89,7 +89,7 @@ const Alert: React.FC<AlertProps> = ({ title, children, variant, onClick }) => {
       {onClick && (
         <CloseHandler>
           <IconButton scale="sm" variant="text" onClick={onClick}>
-            <CloseIcon width="24px" color="currentColor" />
+            <CloseIcon width="24px" color="#0085FF" />
           </IconButton>
         </CloseHandler>
       )}
