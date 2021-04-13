@@ -627,7 +627,7 @@ var IconLabel = styled.div(templateObject_1$P || (templateObject_1$P = __makeTem
     return theme.alert.background;
 });
 var withHandlerSpacing = 32 + 12 + 8; // button size + inner spacing + handler position
-var Details = styled.div(templateObject_2$l || (templateObject_2$l = __makeTemplateObject(["\n  flex: 1;\n  padding-bottom: 12px;\n  padding-left: 12px;\n  padding-right: ", ";\n  padding-top: 12px;\n"], ["\n  flex: 1;\n  padding-bottom: 12px;\n  padding-left: 12px;\n  padding-right: ", ";\n  padding-top: 12px;\n"])), function (_a) {
+var Details = styled.div(templateObject_2$l || (templateObject_2$l = __makeTemplateObject(["\n  flex: 1;\n  padding-bottom: 12px;\n  padding-left: 12px;\n  padding-right: ", ";\n  padding-top: 12px;\n  color: #5F5E76 !important;\n  >p {\n    color: #5F5E76 !important;\n  }\n"], ["\n  flex: 1;\n  padding-bottom: 12px;\n  padding-left: 12px;\n  padding-right: ", ";\n  padding-top: 12px;\n  color: #5F5E76 !important;\n  >p {\n    color: #5F5E76 !important;\n  }\n"])), function (_a) {
     var hasHandler = _a.hasHandler;
     return (hasHandler ? withHandlerSpacing + "px" : "12px");
 });
@@ -636,6 +636,7 @@ var StyledAlert = styled(Flex)(templateObject_4$5 || (templateObject_4$5 = __mak
     var theme = _a.theme;
     return theme.alert.background;
 });
+var StyledText = styled(Text)(templateObject_5$4 || (templateObject_5$4 = __makeTemplateObject(["\n  color: #5F5E76;\n"], ["\n  color: #5F5E76;\n"])));
 var Alert = function (_a) {
     var title = _a.title, children = _a.children, variant = _a.variant, onClick = _a.onClick;
     var Icon = getIcon(variant);
@@ -643,13 +644,13 @@ var Alert = function (_a) {
         React.createElement(IconLabel, { variant: variant, hasDescription: !!children },
             React.createElement(Icon, { color: "currentColor", width: "24px" })),
         React.createElement(Details, { hasHandler: !!onClick },
-            React.createElement(Text, { bold: true }, title),
-            typeof children === "string" ? React.createElement(Text, { as: "p" }, children) : children),
+            React.createElement(StyledText, { bold: true }, title),
+            typeof children === "string" ? React.createElement(StyledText, { as: "p" }, children) : children),
         onClick && (React.createElement(CloseHandler, null,
             React.createElement(IconButton, { scale: "sm", variant: "text", onClick: onClick },
                 React.createElement(Icon$Q, { width: "24px", color: "#0085FF" }))))));
 };
-var templateObject_1$P, templateObject_2$l, templateObject_3$9, templateObject_4$5;
+var templateObject_1$P, templateObject_2$l, templateObject_3$9, templateObject_4$5, templateObject_5$4;
 
 var Separator = styled.div(templateObject_1$O || (templateObject_1$O = __makeTemplateObject(["\n  align-items: center;\n  color: currentColor;\n  display: flex;\n  justify-content: center;\n  padding-left: 4px;\n  padding-right: 4px;\n\n  ", " {\n    padding-left: 8px;\n    padding-right: 8px;\n  }\n\n  ", " {\n    padding-left: 16px;\n    padding-right: 16px;\n  }\n"], ["\n  align-items: center;\n  color: currentColor;\n  display: flex;\n  justify-content: center;\n  padding-left: 4px;\n  padding-right: 4px;\n\n  ", " {\n    padding-left: 8px;\n    padding-right: 8px;\n  }\n\n  ", " {\n    padding-left: 16px;\n    padding-right: 16px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
