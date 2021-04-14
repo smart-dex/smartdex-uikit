@@ -2854,7 +2854,7 @@ var ConnectModal = function (_a) {
     return (React__default['default'].createElement(Modal, { title: "Connect to a wallet", onDismiss: onDismiss },
         React__default['default'].createElement(StyleContent, null,
             connectors.map(function (entry, index) { return (React__default['default'].createElement(WalletCard, { key: entry.title, login: login, walletConfig: entry, onDismiss: onDismiss, mb: index < connectors.length - 1 ? "8px" : "0" })); }),
-            React__default['default'].createElement(HelpLink, { href: "https://smart-dex29.gitbook.io/smart-dex/", external: true },
+            React__default['default'].createElement(HelpLink, { href: "https://smart-dex29.gitbook.io/smart-dex/guides-and-faqs/general-faq#how-do-i-connect-my-wallet-to-smartdex", external: true },
                 "Learn how to connect",
                 React__default['default'].createElement(Icon$M, { color: "#0085FF", ml: "12px" })))));
 };
