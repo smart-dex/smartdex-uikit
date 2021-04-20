@@ -2528,13 +2528,14 @@ var Accordion$1 = React__default['default'].memo(Accordion, function (prev, next
 var templateObject_1$i, templateObject_2$9;
 
 var MenuLink = function (_a) {
+    var _b, _c;
     var href = _a.href, otherProps = __rest(_a, ["href"]);
     var isHttpLink = href === null || href === void 0 ? void 0 : href.startsWith("http");
     var location = reactRouterDom.useLocation();
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     var Tag = isHttpLink ? "a" : reactRouterDom.NavLink;
     var props = isHttpLink ? { href: href } : { to: href };
-    return React__default['default'].createElement(Tag, __assign({}, props, { className: props.to === location.pathname ? 'is_active' : '' }, otherProps));
+    return React__default['default'].createElement(Tag, __assign({}, props, { className: ((_b = props.to) === null || _b === void 0 ? void 0 : _b.split("/")[1]) === ((_c = location.pathname) === null || _c === void 0 ? void 0 : _c.split("/")[1]) ? 'is_active' : '' }, otherProps));
 };
 
 var Icons$1 = IconModule;
@@ -2544,7 +2545,6 @@ var PanelBody = function (_a) {
     var location = reactRouterDom.useLocation();
     // Close the menu when a user clicks a link on mobile
     var handleClick = isMobile ? function () { return pushNav(false); } : undefined;
-    console.log(location);
     return (React__default['default'].createElement(Container$1, null, links.map(function (entry) {
         var Icon = Icons$1[entry.icon];
         var iconElement = React__default['default'].createElement(Icon, { width: "24px", mr: "16px" });
