@@ -2567,7 +2567,7 @@ var templateObject_1$h;
 var PriceLink = styled__default['default'].a(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"])));
 var CakePrice = function (_a) {
     var cakePriceUsd = _a.cakePriceUsd;
-    return cakePriceUsd ? (React__default['default'].createElement(PriceLink, { href: "https://smartdex-info.sotatek.works/tokens/", target: "_blank" },
+    return cakePriceUsd ? (React__default['default'].createElement(PriceLink, { href: "https://smartdex-info.sotatek.works/token/0x863d95004611e547c32c123d6f37f765474a3e9f", target: "_blank" },
         React__default['default'].createElement(Icon$E, { width: "24px", mr: "8px" }),
         React__default['default'].createElement(Text, { color: "textSubtle", bold: true }, "$" + cakePriceUsd.toFixed(3)))) : (React__default['default'].createElement(Skeleton, { width: 80, height: 24 }));
 };
@@ -2854,7 +2854,7 @@ var ConnectModal = function (_a) {
     return (React__default['default'].createElement(Modal, { title: "Connect to a wallet", onDismiss: onDismiss },
         React__default['default'].createElement(StyleContent, null,
             connectors.map(function (entry, index) { return (React__default['default'].createElement(WalletCard, { key: entry.title, login: login, walletConfig: entry, onDismiss: onDismiss, mb: index < connectors.length - 1 ? "8px" : "0" })); }),
-            React__default['default'].createElement(HelpLink, { href: "https://smart-dex29.gitbook.io/smart-dex/guides-and-faqs/general-faq#how-do-i-connect-my-wallet-to-smartdex", external: true },
+            React__default['default'].createElement(HelpLink, { href: "https://smart-dex29.gitbook.io/smartdex-v2/general-faq#how-do-i-connect-my-wallet-to-smartdex", external: true },
                 "Learn how to connect",
                 React__default['default'].createElement(Icon$M, { color: "#0085FF", ml: "12px" })))));
 };

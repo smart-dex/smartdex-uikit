@@ -53,7 +53,7 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => (
         />
       ))}
       <HelpLink
-        href="https://smart-dex29.gitbook.io/smart-dex/guides-and-faqs/general-faq#how-do-i-connect-my-wallet-to-smartdex"
+        href="https://smart-dex29.gitbook.io/smartdex-v2/general-faq#how-do-i-connect-my-wallet-to-smartdex"
         external
       >
         Learn how to connect
