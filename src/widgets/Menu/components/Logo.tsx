@@ -35,10 +35,9 @@ const StyledLink = styled(Link)`
     padding: 0 22px;
     font-weight: 800;
     font-size: 32px;
-    line-height: 39px;
     letter-spacing: -0.04em;
     ${({ theme }) => theme.mediaQueries.nav} {
-      display: block;
+      display: flex;
     }
   }
 `;
