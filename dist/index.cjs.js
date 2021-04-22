@@ -2885,15 +2885,13 @@ var CopyToClipboard = function (_a) {
     var toCopy = _a.toCopy, children = _a.children, props = __rest(_a, ["toCopy", "children"]);
     var _b = React.useState(false), isTooltipDisplayed = _b[0], setIsTooltipDisplayed = _b[1];
     return (React__default['default'].createElement(StyleButton$2, __assign({ small: true, bold: true, onClick: function () {
-            var _a;
-            (_a = navigator === null || navigator === void 0 ? void 0 : navigator.clipboard) === null || _a === void 0 ? void 0 : _a.writeText(toCopy).then(function () {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(toCopy);
                 setIsTooltipDisplayed(true);
                 setTimeout(function () {
                     setIsTooltipDisplayed(false);
                 }, 1000);
-            }, function () {
-                /* clipboard write failed */
-            });
+            }
         } }, props),
         children,
         React__default['default'].createElement(Icon$N, { width: "20px", color: "#0085FF" }),
