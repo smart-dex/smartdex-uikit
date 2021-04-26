@@ -3053,24 +3053,35 @@ var UserBlock = function (_a) {
 var UserBlock$1 = React__default['default'].memo(UserBlock, function (prevProps, nextProps) { return prevProps.account === nextProps.account; });
 var templateObject_1$6;
 
-var StyleButton = styled__default['default'](Button)(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  border: 1px solid  ", ";\n  border-radius: 50px;\n  margin-right: 20px;\n  height: 37px;\n  padding-left: 16px;\n  padding-right: 16px;\n  > div {\n    font-size: 13px;\n    color: ", ";\n  }\n  ", " {\n    min-width: 150px;\n    height: 56px;\n    > div {\n      font-size: 16px;\n    }\n  }\n"], ["\n  border: 1px solid  ", ";\n  border-radius: 50px;\n  margin-right: 20px;\n  height: 37px;\n  padding-left: 16px;\n  padding-right: 16px;\n  > div {\n    font-size: 13px;\n    color: ", ";\n  }\n  ", " {\n    min-width: 150px;\n    height: 56px;\n    > div {\n      font-size: 16px;\n    }\n  }\n"])), function (_a) {
+var StyleButton = styled__default['default'](Button)(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  border: 1px solid ", ";\n  border-radius: 50px;\n  margin-right: 20px;\n  height: 37px;\n  padding-left: 16px;\n  padding-right: 16px;\n  > div {\n    font-size: 13px;\n    color: ", ";\n  }\n  ", " {\n    min-width: 150px;\n    height: 56px;\n    > div {\n      font-size: 16px;\n    }\n  }\n"], ["\n  border: 1px solid ", ";\n  border-radius: 50px;\n  margin-right: 20px;\n  height: 37px;\n  padding-left: 16px;\n  padding-right: 16px;\n  > div {\n    font-size: 13px;\n    color: ", ";\n  }\n  ", " {\n    min-width: 150px;\n    height: 56px;\n    > div {\n      font-size: 16px;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.isDark ? '#2F344B' : '#E2E2E8';
+    return (theme.isDark ? "#2F344B" : "#E2E2E8");
 }, function (_a) {
     var theme = _a.theme;
-    return theme.isDark ? 'rgba(255, 255, 255, 0.87)' : '#6F6C99';
+    return (theme.isDark ? "rgba(255, 255, 255, 0.87)" : "#6F6C99");
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 });
 var StyleChevronDownIcon = styled__default['default'](Icon$U)(templateObject_2$2 || (templateObject_2$2 = __makeTemplateObject(["\n  color: ", ";\n"], ["\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.isDark ? 'rgba(255, 255, 255, 0.87)' : '#6F6C99';
+    return (theme.isDark ? "rgba(255, 255, 255, 0.87)" : "#6F6C99");
 });
 var LangSelectorHeader = function (_a) {
     var currentLang = _a.currentLang, langs = _a.langs, setLang = _a.setLang; _a.isDark;
+    if (currentLang === "zh-CN") {
+        i18n__default['default'].changeLanguage("zh_CN");
+    }
+    else if (currentLang === "zh-TW") {
+        i18n__default['default'].changeLanguage("zh_TW");
+    }
+    else
+        i18n__default['default'].changeLanguage(currentLang);
     return (React__default['default'].createElement(Dropdown, { position: "bottom", target: React__default['default'].createElement(StyleButton, { variant: "text", endIcon: React__default['default'].createElement(StyleChevronDownIcon, { width: "24px" }) },
-            React__default['default'].createElement(Text, { color: "textSubtle" }, currentLang === null || currentLang === void 0 ? void 0 : currentLang.toUpperCase())) }, langs.map(function (lang) { return (React__default['default'].createElement(MenuButton, { key: lang.code, fullWidth: true, onClick: function () { return setLang(lang); }, 
+            React__default['default'].createElement(Text, { color: "textSubtle" }, currentLang === null || currentLang === void 0 ? void 0 :
+                currentLang.toUpperCase(),
+                " and ",
+                React__default['default'].createElement(reactI18next.Trans, null, "Dark"))) }, langs.map(function (lang) { return (React__default['default'].createElement(MenuButton, { key: lang.code, fullWidth: true, onClick: function () { return setLang(lang); }, 
         // Safari fix
         style: { minHeight: "32px", height: "auto", minWidth: 118 } }, lang.language)); })));
 };
