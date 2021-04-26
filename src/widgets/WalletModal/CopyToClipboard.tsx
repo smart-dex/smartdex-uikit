@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { Trans } from "react-i18next";
 import Text from "../../components/Text/Text";
 import { CopyIcon } from "../../components/Svg";
 
@@ -51,7 +52,7 @@ const CopyToClipboard: React.FC<Props> = ({ toCopy, children, ...props }) => {
     >
       {children}
       <CopyIcon width="20px" color="#0085FF" />
-      <Tooltip isTooltipDisplayed={isTooltipDisplayed}>Copied</Tooltip>
+      <Tooltip isTooltipDisplayed={isTooltipDisplayed}><Trans>Copied</Trans></Tooltip>
     </StyleButton>
   );
 };

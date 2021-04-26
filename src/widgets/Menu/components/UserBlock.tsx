@@ -1,13 +1,16 @@
 import React from "react";
+import { Trans } from "react-i18next";
+import styled from "styled-components";
 import Button from "../../../components/Button/Button";
 import { useWalletModal } from "../../WalletModal";
 import { Login } from "../../WalletModal/types";
-import styled from "styled-components";
+import i18n from "../../../i18n";
 
 interface Props {
   account?: string;
   login: Login;
   logout: () => void;
+  currentLang?: string;
 }
 const StyleButton = styled(Button)`
   font-weight: 600;
@@ -34,9 +37,16 @@ const StyleButton = styled(Button)`
   }
 `;
 
-const UserBlock: React.FC<Props> = ({ account, login, logout }) => {
-  const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(login, logout, account);
+const UserBlock: React.FC<Props> = ({ account, login, logout, currentLang }) => {
+  const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(login, logout, account, currentLang);
   const accountEllipsis = account ? `${account.substring(0, 4)}...${account.substring(account.length - 4)}` : null;
+
+  if (currentLang === "zh-CN") {
+    i18n.changeLanguage("zh_CN");
+  } else if (currentLang === "zh-TW") {
+    i18n.changeLanguage("zh_TW");
+  } else i18n.changeLanguage(currentLang);
+
   return (
     <div>
       {account ? (
@@ -55,7 +65,7 @@ const UserBlock: React.FC<Props> = ({ account, login, logout }) => {
             onPresentConnectModal();
           }}
         >
-          Connect
+          <Trans>Connect</Trans>
         </StyleButton>
       )}
     </div>

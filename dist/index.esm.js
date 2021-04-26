@@ -6,6 +6,8 @@ import noop from 'lodash/noop';
 import debounce from 'lodash/debounce';
 import throttle from 'lodash/throttle';
 import { Link as Link$1, useLocation, NavLink } from 'react-router-dom';
+import { initReactI18next, Trans, useTranslation } from 'react-i18next';
+import i18n from 'i18next';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 /*! *****************************************************************************
@@ -2595,24 +2597,98 @@ var SocialLinks = function () { return (React.createElement(Flex, { style: { pad
 var SocialLinks$1 = React.memo(SocialLinks, function () { return true; });
 var templateObject_1$f, templateObject_2$8, templateObject_3$3;
 
+// the translations
+const resources = {
+  en: {
+    translation: {
+      "Dark": "Dark",
+      "Light": "Light",
+      "Connect": "Connect",
+      "Connect to a wallet": "Connect to a wallet",
+      "Learn how to connect": "Learn how to connect",
+      "Your wallet": "Your wallet",
+      "Logout": "Logout",
+      "Copied": "Copied"
+  }
+  },
+  ja: {
+    translation: {
+      "Dark": "ダークモード",
+      "Light": "ライトモード",
+      "Connect": "接続する",
+      "Connect to a wallet": "ウォレットに接続する",
+      "Learn how to connect": "接続する方法を学ぶ",
+      "Your wallet": "あなたの財布",
+      "Logout": "ログアウト",
+      "Copied": "コピー"
+  }
+  },
+  zh_CN: {
+    translation: {
+      "Dark": "暗模式",
+      "Light": "灯光模式",
+      "Connect": "连接",
+      "Connect to a wallet": "连接到钱包",
+      "Learn how to connect": "了解如何连接",
+      "Your wallet": "你的钱包",
+      "Logout": "登出",
+      "Copied": "复制的"
+  }
+  },
+  zh_TW: {
+    translation: {
+      "Dark": "暗模式",
+      "Light": "燈光模式",
+      "Connect": "連接",
+      "Connect to a wallet": "連接到錢包",
+      "Learn how to connect": "了解如何連接",
+      "Your wallet": "你的錢包",
+      "Logout": "登出",
+      "Copied": "複製的"
+  }
+  }
+};
+
+i18n
+  .use(initReactI18next) // passes i18n down to react-i18next
+  .init({
+    resources,
+    lng: "en",
+    fallbackLng: "en", // use en if detected lng is not available
+    keySeparator: false, // we do not use keys in form messages.welcome
+
+    interpolation: {
+      escapeValue: false // react already safes from xss
+    }
+  });
+
 var StyleText = styled(Text)(templateObject_1$e || (templateObject_1$e = __makeTemplateObject(["\n  color: ", ";\n  font-size: 13px;\n  letter-spacing: -0.03em;\n  ", " {\n    font-size: 16px;\n    color: ", ";\n  }\n"], ["\n  color: ", ";\n  font-size: 13px;\n  letter-spacing: -0.03em;\n  ", " {\n    font-size: 16px;\n    color: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.isDark ? '#FFFFFF' : '#FFFFFF';
+    return (theme.isDark ? "#FFFFFF" : "#FFFFFF");
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 }, function (_a) {
     var theme = _a.theme;
-    return theme.isDark ? 'rgba(255, 255, 255, 0.87)' : '#6F6C99';
+    return (theme.isDark ? "rgba(255, 255, 255, 0.87)" : "#6F6C99");
 });
 var ThemeSwitcherHeader = function (_a) {
-    var isDark = _a.isDark, toggleTheme = _a.toggleTheme;
-    return (React.createElement(React.Fragment, null,
-        React.createElement(Button, { variant: "text" },
-            React.createElement(Flex, { alignItems: "center" },
-                React.createElement(StyleText, { color: "text", mx: "4px", style: { marginRight: "13px" } }, "Dark"),
-                React.createElement(Toggle, { defaultChecked: !isDark, onChange: function () { return toggleTheme(!isDark); }, scale: "sm" }),
-                React.createElement(StyleText, { color: "text", mx: "4px", style: { marginLeft: "13px" } }, "Light")))));
+    var isDark = _a.isDark, toggleTheme = _a.toggleTheme, currentLang = _a.currentLang;
+    if (currentLang === "zh-CN") {
+        i18n.changeLanguage("zh_CN");
+    }
+    else if (currentLang === "zh-TW") {
+        i18n.changeLanguage("zh_TW");
+    }
+    else
+        i18n.changeLanguage(currentLang);
+    return (React.createElement(Button, { variant: "text" },
+        React.createElement(Flex, { alignItems: "center" },
+            React.createElement(StyleText, { color: "text", mx: "4px", style: { marginRight: "13px" } },
+                React.createElement(Trans, null, "Dark")),
+            React.createElement(Toggle, { defaultChecked: !isDark, onChange: function () { return toggleTheme(!isDark); }, scale: "sm" }),
+            React.createElement(StyleText, { color: "text", mx: "4px", style: { marginLeft: "13px" } },
+                React.createElement(Trans, null, "Light")))));
 };
 var ThemeSwitcherHeader$1 = React.memo(ThemeSwitcherHeader, function (prev, next) { return prev.isDark === next.isDark; });
 var templateObject_1$e;
@@ -2838,18 +2914,27 @@ var WalletCard = function (_a) {
 };
 var templateObject_1$a, templateObject_2$6;
 
-var HelpLink = styled(Link)(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n  display: flex;\n  align-self: center;\n  align-items: center;\n  margin-top: 10px;\n  color: #0085FF;\n  font-size: 14px;\n  font-weight: bold;\n  margin: auto;\n  svg {\n    width: 15px;\n  }\n  ", " {\n    margin-top: 20px;\n    font-size: 18px;\n    svg {\n      width: 18px;\n    }\n  }\n"], ["\n  display: flex;\n  align-self: center;\n  align-items: center;\n  margin-top: 10px;\n  color: #0085FF;\n  font-size: 14px;\n  font-weight: bold;\n  margin: auto;\n  svg {\n    width: 15px;\n  }\n  ", " {\n    margin-top: 20px;\n    font-size: 18px;\n    svg {\n      width: 18px;\n    }\n  }\n"])), function (_a) {
+var HelpLink = styled(Link)(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n  display: flex;\n  align-self: center;\n  align-items: center;\n  margin-top: 10px;\n  color: #0085ff;\n  font-size: 14px;\n  font-weight: bold;\n  margin: auto;\n  svg {\n    width: 15px;\n  }\n  ", " {\n    margin-top: 20px;\n    font-size: 18px;\n    svg {\n      width: 18px;\n    }\n  }\n"], ["\n  display: flex;\n  align-self: center;\n  align-items: center;\n  margin-top: 10px;\n  color: #0085ff;\n  font-size: 14px;\n  font-weight: bold;\n  margin: auto;\n  svg {\n    width: 15px;\n  }\n  ", " {\n    margin-top: 20px;\n    font-size: 18px;\n    svg {\n      width: 18px;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 });
 var StyleContent = styled.div(templateObject_2$5 || (templateObject_2$5 = __makeTemplateObject(["\n  display: block;\n  width: 410px;\n  max-width: 100%;\n  max-height: calc(100vh - 130px);\n  overflow-y: auto;\n"], ["\n  display: block;\n  width: 410px;\n  max-width: 100%;\n  max-height: calc(100vh - 130px);\n  overflow-y: auto;\n"])));
 var ConnectModal = function (_a) {
-    var login = _a.login, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
-    return (React.createElement(Modal, { title: "Connect to a wallet", onDismiss: onDismiss },
+    var login = _a.login, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b, currentLang = _a.currentLang;
+    if (currentLang === "zh-CN") {
+        i18n.changeLanguage("zh_CN");
+    }
+    else if (currentLang === "zh-TW") {
+        i18n.changeLanguage("zh_TW");
+    }
+    else
+        i18n.changeLanguage(currentLang);
+    var t = useTranslation().t;
+    return (React.createElement(Modal, { title: t("Connect to a wallet"), onDismiss: onDismiss },
         React.createElement(StyleContent, null,
             connectors.map(function (entry, index) { return (React.createElement(WalletCard, { key: entry.title, login: login, walletConfig: entry, onDismiss: onDismiss, mb: index < connectors.length - 1 ? "8px" : "0" })); }),
             React.createElement(HelpLink, { href: "https://smart-dex29.gitbook.io/smartdex-v2/general-faq#how-do-i-connect-my-wallet-to-smartdex", external: true },
-                "Learn how to connect",
+                React.createElement(Trans, null, "Learn how to connect"),
                 React.createElement(Icon$M, { color: "#0085FF", ml: "12px" })))));
 };
 var templateObject_1$9, templateObject_2$5;
@@ -2882,21 +2967,31 @@ var CopyToClipboard = function (_a) {
         } }, props),
         children,
         React.createElement(Icon$N, { width: "20px", color: "#0085FF" }),
-        React.createElement(Tooltip, { isTooltipDisplayed: isTooltipDisplayed }, "Copied")));
+        React.createElement(Tooltip, { isTooltipDisplayed: isTooltipDisplayed },
+            React.createElement(Trans, null, "Copied"))));
 };
 var templateObject_1$8, templateObject_2$4;
 
 var BoxText = styled.div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  background: ", ";\n  width: 468px;\n  max-width: 100%;\n  height: 70px;\n  border-radius: 20px;\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  padding: 10px 20px;\n  margin-bottom: 20px;\n  > div {\n    margin-bottom: 0px !important;\n    color: ", " !important;\n    font-weight: 600;\n    font-size: 14px !important;\n    line-height: 17px;\n  }\n"], ["\n  background: ", ";\n  width: 468px;\n  max-width: 100%;\n  height: 70px;\n  border-radius: 20px;\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  padding: 10px 20px;\n  margin-bottom: 20px;\n  > div {\n    margin-bottom: 0px !important;\n    color: ", " !important;\n    font-weight: 600;\n    font-size: 14px !important;\n    line-height: 17px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.isDark ? '#151C31' : '#E9F4FC';
+    return (theme.isDark ? "#151C31" : "#E9F4FC");
 }, function (_a) {
     var theme = _a.theme;
-    return theme.isDark ? 'rgba(255, 255, 255, 0.87)' : '#5F5E76';
+    return (theme.isDark ? "rgba(255, 255, 255, 0.87)" : "#5F5E76");
 });
-var StyledButtonLogout = styled(Button)(templateObject_2$3 || (templateObject_2$3 = __makeTemplateObject(["\n  background: #FF6970;\n  box-shadow: 0px 4px 10px rgba(222, 222, 222, 0.24);\n  border-radius: 10px;\n  height: 56px;\n  min-widht: 143px;\n  font-weight: 600;\n  font-size: 16px;\n  line-height: 20px;\n  border: none;\n  color: #FFFFFF;\n"], ["\n  background: #FF6970;\n  box-shadow: 0px 4px 10px rgba(222, 222, 222, 0.24);\n  border-radius: 10px;\n  height: 56px;\n  min-widht: 143px;\n  font-weight: 600;\n  font-size: 16px;\n  line-height: 20px;\n  border: none;\n  color: #FFFFFF;\n"])));
+var StyledButtonLogout = styled(Button)(templateObject_2$3 || (templateObject_2$3 = __makeTemplateObject(["\n  background: #ff6970;\n  box-shadow: 0px 4px 10px rgba(222, 222, 222, 0.24);\n  border-radius: 10px;\n  height: 56px;\n  min-widht: 143px;\n  font-weight: 600;\n  font-size: 16px;\n  line-height: 20px;\n  border: none;\n  color: #ffffff;\n"], ["\n  background: #ff6970;\n  box-shadow: 0px 4px 10px rgba(222, 222, 222, 0.24);\n  border-radius: 10px;\n  height: 56px;\n  min-widht: 143px;\n  font-weight: 600;\n  font-size: 16px;\n  line-height: 20px;\n  border: none;\n  color: #ffffff;\n"])));
 var AccountModal = function (_a) {
-    var account = _a.account, logout = _a.logout, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
-    return (React.createElement(Modal, { title: "Your wallet", onDismiss: onDismiss },
+    var account = _a.account, logout = _a.logout, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b, currentLang = _a.currentLang;
+    if (currentLang === "zh-CN") {
+        i18n.changeLanguage("zh_CN");
+    }
+    else if (currentLang === "zh-TW") {
+        i18n.changeLanguage("zh_TW");
+    }
+    else
+        i18n.changeLanguage(currentLang);
+    var t = useTranslation().t;
+    return (React.createElement(Modal, { title: t("Your wallet"), onDismiss: onDismiss },
         React.createElement(BoxText, null,
             React.createElement(Text, { fontSize: "20px", bold: true, style: { whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "8px" } }, account)),
         React.createElement(Flex, { mb: "23px", justifyContent: "center" },
@@ -2907,13 +3002,14 @@ var AccountModal = function (_a) {
                     logout();
                     window.localStorage.removeItem(connectorLocalStorageKey);
                     onDismiss();
-                } }, "Logout"))));
+                } },
+                React.createElement(Trans, null, "Logout")))));
 };
 var templateObject_1$7, templateObject_2$3;
 
-var useWalletModal = function (login, logout, account) {
-    var onPresentConnectModal = useModal(React.createElement(ConnectModal, { login: login }))[0];
-    var onPresentAccountModal = useModal(React.createElement(AccountModal, { account: account || "", logout: logout }))[0];
+var useWalletModal = function (login, logout, account, currentLang) {
+    var onPresentConnectModal = useModal(React.createElement(ConnectModal, { login: login, currentLang: currentLang }))[0];
+    var onPresentAccountModal = useModal(React.createElement(AccountModal, { account: account || "", logout: logout, currentLang: currentLang }))[0];
     return { onPresentConnectModal: onPresentConnectModal, onPresentAccountModal: onPresentAccountModal };
 };
 
@@ -2922,14 +3018,23 @@ var StyleButton$1 = styled(Button)(templateObject_1$6 || (templateObject_1$6 = _
     return theme.mediaQueries.nav;
 });
 var UserBlock = function (_a) {
-    var account = _a.account, login = _a.login, logout = _a.logout;
-    var _b = useWalletModal(login, logout, account), onPresentConnectModal = _b.onPresentConnectModal, onPresentAccountModal = _b.onPresentAccountModal;
+    var account = _a.account, login = _a.login, logout = _a.logout, currentLang = _a.currentLang;
+    var _b = useWalletModal(login, logout, account, currentLang), onPresentConnectModal = _b.onPresentConnectModal, onPresentAccountModal = _b.onPresentAccountModal;
     var accountEllipsis = account ? account.substring(0, 4) + "..." + account.substring(account.length - 4) : null;
+    if (currentLang === "zh-CN") {
+        i18n.changeLanguage("zh_CN");
+    }
+    else if (currentLang === "zh-TW") {
+        i18n.changeLanguage("zh_TW");
+    }
+    else
+        i18n.changeLanguage(currentLang);
     return (React.createElement("div", null, account ? (React.createElement(StyleButton$1, { className: "btn-onPresentAccountModal", onClick: function () {
             onPresentAccountModal();
         } }, accountEllipsis)) : (React.createElement(StyleButton$1, { className: "btn-onPresentConnectModal", onClick: function () {
             onPresentConnectModal();
-        } }, "Connect"))));
+        } },
+        React.createElement(Trans, null, "Connect")))));
 };
 var UserBlock$1 = React.memo(UserBlock, function (prevProps, nextProps) { return prevProps.account === nextProps.account; });
 var templateObject_1$6;
@@ -3066,9 +3171,9 @@ var Menu = function (_a) {
             React.createElement(Logo$1, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
             React.createElement(Flex, { alignItems: "center" },
                 React.createElement(StyleThemeSwitcherHeader, null,
-                    React.createElement(ThemeSwitcherHeader$1, { isDark: isDark, toggleTheme: toggleTheme })),
+                    React.createElement(ThemeSwitcherHeader$1, { isDark: isDark, toggleTheme: toggleTheme, currentLang: currentLang })),
                 React.createElement(LangSelectorHeader$1, { isDark: isDark, currentLang: currentLang, langs: langs, setLang: setLang }),
-                React.createElement(UserBlock$1, { account: account, login: login, logout: logout }),
+                React.createElement(UserBlock$1, { account: account, login: login, logout: logout, currentLang: currentLang }),
                 profile && React.createElement(Avatar, { profile: profile }))),
         React.createElement(BodyWrapper, null,
             React.createElement(Panel, { isPushed: isPushed, isMobile: isMobile, showMenu: showMenu, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, cakePriceUsd: cakePriceUsd, pushNav: setIsPushed, links: links, href: (_c = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _c !== void 0 ? _c : "/" }),

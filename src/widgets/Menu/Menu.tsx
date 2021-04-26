@@ -11,7 +11,7 @@ import ThemeSwitcherHeader from "./components/ThemeSwitcherHeader";
 import LangSelectorHeader from "./components/LangSelectorHeader";
 import { NavProps } from "./types";
 import Avatar from "./components/Avatar";
-import { MENU_HEIGHT, MENU_HEIGHT_MOBILE, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "./config";
+import { MENU_HEIGHT, MENU_HEIGHT_MOBILE, SIDEBAR_WIDTH_FULL } from "./config";
 
 const Wrapper = styled.div`
   position: relative;
@@ -121,6 +121,7 @@ const Menu: React.FC<NavProps> = ({
     };
   }, []);
 
+
   // Find the home link if provided
   const homeLink = links.find((link) => link.label === "Home");
 
@@ -135,10 +136,10 @@ const Menu: React.FC<NavProps> = ({
         />
         <Flex alignItems="center">
           <StyleThemeSwitcherHeader>
-            <ThemeSwitcherHeader isDark={isDark} toggleTheme={toggleTheme} />
+            <ThemeSwitcherHeader isDark={isDark} toggleTheme={toggleTheme} currentLang={currentLang}/>
           </StyleThemeSwitcherHeader>
           <LangSelectorHeader isDark={isDark} currentLang={currentLang} langs={langs} setLang={setLang} />
-          <UserBlock account={account} login={login} logout={logout} />
+          <UserBlock account={account} login={login} logout={logout} currentLang={currentLang}/>
           {profile && <Avatar profile={profile} />}
         </Flex>
       </StyledNav>

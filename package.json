@@ -1,6 +1,6 @@
 {
   "name": "uikit-sotatek",
-  "version": "1.5.5",
+  "version": "1.5.6",
   "description": "Set of UI components for pancake projects",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -75,7 +75,9 @@
   "dependencies": {
     "@types/lodash": "^4.14.162",
     "@types/styled-system": "^5.1.10",
+    "i18next": "^20.2.1",
     "lodash": "^4.17.20",
+    "react-i18next": "^11.8.13",
     "react-transition-group": "^4.4.1",
     "styled-system": "^5.1.5"
   },
