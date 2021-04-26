@@ -24,11 +24,13 @@ const StyleText = styled(Text)`
 `;
 
 const ThemeSwitcherHeader: React.FC<Props> = ({ isDark, toggleTheme, currentLang }) => {
-  if (currentLang === "zh-CN") {
-    i18n.changeLanguage("zh_CN");
-  } else if (currentLang === "zh-TW") {
-    i18n.changeLanguage("zh_TW");
-  } else i18n.changeLanguage(currentLang);
+  React.useEffect(() => {
+    if (currentLang === "zh-CN") {
+      i18n.changeLanguage("zh_CN");
+    } else if (currentLang === "zh-TW") {
+      i18n.changeLanguage("zh_TW");
+    } else i18n.changeLanguage(currentLang);
+  },[currentLang])
 
   return (
     <Button variant="text">
