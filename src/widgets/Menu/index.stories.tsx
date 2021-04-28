@@ -7,7 +7,7 @@ import Text from "../../components/Text/Text";
 import { MenuEntry } from "./components/MenuEntry";
 import Menu from "./Menu";
 import { LangType } from "./types";
-import { links } from "./config";
+import { links, linkMyPage } from "./config";
 
 export default {
   title: "Widgets/Menu",
@@ -30,6 +30,7 @@ const useProps = () => {
     currentLang: "EN",
     cakePriceUsd: 0.023158668932877668,
     links,
+    linkMyPage,
     profile: null,
   });
 
@@ -46,6 +47,7 @@ const useProps = () => {
         currentLang: "EN",
         cakePriceUsd: 0.023158668932877668,
         links,
+        linkMyPage,
         profile: null,
       });
     }, 2000);
@@ -98,6 +100,7 @@ export const NotConnected: React.FC = () => {
         setLang={noop}
         currentLang="EN"
         links={links}
+        linkMyPage={linkMyPage}
       >
         <div>
           <h1>Page body</h1>
@@ -130,6 +133,7 @@ export const WithNoProfile: React.FC = () => {
         currentLang="EN"
         cakePriceUsd={0.23158668932877668}
         links={links}
+        linkMyPage={linkMyPage}
         profile={{
           profileLink: "/profile",
           noProfileLink: "/no-profile",
@@ -172,6 +176,7 @@ export const WithProfile: React.FC = () => {
         currentLang="EN"
         cakePriceUsd={0.23158668932877668}
         links={links}
+        linkMyPage={linkMyPage}
         profile={{
           username: "pancakeswap",
           image: "https://pancakeswap.finance/images/nfts/blueberries-preview.png",
@@ -226,6 +231,7 @@ export const WithSubmenuSelected: React.FC = () => {
         currentLang="EN"
         cakePriceUsd={0.23158668932877668}
         links={links}
+        linkMyPage={linkMyPage}
         profile={{
           username: "pancakeswap",
           image: "https://pancakeswap.finance/images/nfts/blueberries-preview.png",

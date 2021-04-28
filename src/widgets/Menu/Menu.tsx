@@ -85,6 +85,7 @@ const Menu: React.FC<NavProps> = ({
   currentLang,
   cakePriceUsd,
   links,
+  linkMyPage,
   profile,
   children,
 }) => {
@@ -136,7 +137,7 @@ const Menu: React.FC<NavProps> = ({
           href={homeLink?.href ?? "/"}
         />
         <Flex alignItems="center">
-          <MyPage links={links}/>
+          <MyPage linkMyPage={linkMyPage}/>
           <StyleThemeSwitcherHeader>
             <ThemeSwitcherHeader isDark={isDark} toggleTheme={toggleTheme} />
           </StyleThemeSwitcherHeader>

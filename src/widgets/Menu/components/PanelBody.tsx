@@ -30,7 +30,6 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
   return (
     <Container>
       {links.map((entry) => {
-        if (entry.icon !== "MyPageIcon") {
           const Icon = Icons[entry.icon];
           const iconElement = <Icon width="24px" mr="16px" />;
           const calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
@@ -72,8 +71,6 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
               </MenuLink>
             </MenuEntry>
           );
-        }
-        
       })}
     </Container>
   );

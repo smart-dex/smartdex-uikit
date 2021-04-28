@@ -8,7 +8,7 @@ import Button from "../../../components/Button/Button";
 import { MenuEntry } from "../types";
 
 interface Props  {
-    links: Array<MenuEntry>
+    linkMyPage: Array<MenuEntry>
   }
 
 
@@ -40,22 +40,23 @@ const LinkStyle = styled.div`
   font-weight: 600;
   font-size: 14px;
   line-height: 25px;
+  &:hover {
+      opacity: 0.6
+  }
 `;
 
-const MyPage: React.FC<Props> = ({links}) => {
-
-  const linkMyPage = links.find((element) => element.icon ==='MyPageIcon')
+const MyPage: React.FC<Props> = ({linkMyPage}) => {
 
   return (
     <Dropdown
       position="bottom"
       target={
         <StyleButton variant="text" endIcon={<StyleChevronDownIcon width="24px" />}>
-          <Text color="textSubtle">{linkMyPage && linkMyPage.label}</Text>
+          <Text color="textSubtle">{linkMyPage[0].label}</Text>
         </StyleButton>
       }
     >
-      {linkMyPage && linkMyPage.items && linkMyPage.items.map((itemMyPage) => (
+      {linkMyPage[0].items && linkMyPage[0].items.map((itemMyPage) => (
         <MenuLink href={itemMyPage.href}>
           <LinkStyle>{itemMyPage.label}</LinkStyle>
         </MenuLink>
