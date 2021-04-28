@@ -11,7 +11,8 @@ import ThemeSwitcherHeader from "./components/ThemeSwitcherHeader";
 import LangSelectorHeader from "./components/LangSelectorHeader";
 import { NavProps } from "./types";
 import Avatar from "./components/Avatar";
-import { MENU_HEIGHT, MENU_HEIGHT_MOBILE, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "./config";
+import { MENU_HEIGHT, MENU_HEIGHT_MOBILE, SIDEBAR_WIDTH_FULL } from "./config";
+import MyPage from './components/My Page'
 
 const Wrapper = styled.div`
   position: relative;
@@ -72,6 +73,7 @@ const StyleThemeSwitcherHeader = styled.div`
     display: block;
   }
 `
+
 const Menu: React.FC<NavProps> = ({
   account,
   login,
@@ -134,6 +136,7 @@ const Menu: React.FC<NavProps> = ({
           href={homeLink?.href ?? "/"}
         />
         <Flex alignItems="center">
+          <MyPage/>
           <StyleThemeSwitcherHeader>
             <ThemeSwitcherHeader isDark={isDark} toggleTheme={toggleTheme} />
           </StyleThemeSwitcherHeader>

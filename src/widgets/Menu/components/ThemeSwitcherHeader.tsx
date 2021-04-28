@@ -1,9 +1,9 @@
 import React from "react";
+import styled from "styled-components";
 import Text from "../../../components/Text/Text";
 import Flex from "../../../components/Box/Flex";
 import Toggle from "../../../components/Toggle/Toggle";
 import Button from "../../../components/Button/Button";
-import styled from "styled-components";
 
 interface Props {
   isDark: boolean;
