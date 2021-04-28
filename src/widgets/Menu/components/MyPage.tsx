@@ -5,12 +5,7 @@ import MenuLink from "./MenuLink";
 import Text from "../../../components/Text/Text";
 import { ChevronDownIcon } from "../../../components/Svg";
 import Button from "../../../components/Button/Button";
-import { MenuEntry } from "../types";
-
-interface Props  {
-    linkMyPage: Array<MenuEntry>
-  }
-
+import { MenuEntryHeader } from "../types";
 
 const StyleButton = styled(Button)`
   height: 37px;
@@ -41,28 +36,29 @@ const LinkStyle = styled.div`
   font-size: 14px;
   line-height: 25px;
   &:hover {
-      opacity: 0.6
+    opacity: 0.6;
   }
 `;
 
-const MyPage: React.FC<Props> = ({linkMyPage}) => {
-
-  return (
-    <Dropdown
-      position="bottom"
-      target={
-        <StyleButton variant="text" endIcon={<StyleChevronDownIcon width="24px" />}>
-          <Text color="textSubtle">{linkMyPage[0].label}</Text>
-        </StyleButton>
-      }
-    >
-      {linkMyPage[0].items && linkMyPage[0].items.map((itemMyPage) => (
-        <MenuLink href={itemMyPage.href}>
-          <LinkStyle>{itemMyPage.label}</LinkStyle>
-        </MenuLink>
-      ))}
-    </Dropdown>
-  );
+const MyPage: React.FC<MenuEntryHeader> = ({ linkMyPage }) => {
+    return (
+      // linkMyPage.length > 0 && 
+        <Dropdown
+          position="bottom"
+          target={
+            <StyleButton variant="text" endIcon={<StyleChevronDownIcon width="24px" />}>
+              <Text color="textSubtle">{linkMyPage[0].label}</Text>
+            </StyleButton>
+          }
+        >
+          {linkMyPage[0].items &&
+            linkMyPage[0].items.map((itemMyPage) => (
+              <MenuLink href={itemMyPage?.href}>
+                <LinkStyle>{itemMyPage?.label}</LinkStyle>
+              </MenuLink>
+            ))}
+        </Dropdown>
+    )
 };
 
 export default MyPage;

@@ -12,7 +12,7 @@ import LangSelectorHeader from "./components/LangSelectorHeader";
 import { NavProps } from "./types";
 import Avatar from "./components/Avatar";
 import { MENU_HEIGHT, MENU_HEIGHT_MOBILE, SIDEBAR_WIDTH_FULL } from "./config";
-import MyPage from './components/My Page'
+import MyPage from './components/MyPage'
 
 const Wrapper = styled.div`
   position: relative;

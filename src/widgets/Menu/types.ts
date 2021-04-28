@@ -38,6 +38,9 @@ export interface MenuEntry {
   calloutClass?: string;
   initialOpenState?: boolean;
 }
+export interface MenuEntryHeader {
+  linkMyPage: Array<MenuEntry>;
+}
 
 export interface PanelProps {
   isDark: boolean;
@@ -47,7 +50,6 @@ export interface PanelProps {
   langs: LangType[];
   setLang: (lang: LangType) => void;
   links: Array<MenuEntry>;
-  linkMyPage: Array<MenuEntry>;
 }
 
 export interface NavProps extends PanelProps {
@@ -55,4 +57,5 @@ export interface NavProps extends PanelProps {
   login: Login;
   profile?: Profile;
   logout: () => void;
+  linkMyPage: Array<MenuEntry>;
 }
