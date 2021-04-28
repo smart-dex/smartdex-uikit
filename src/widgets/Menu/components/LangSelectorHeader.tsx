@@ -1,11 +1,11 @@
 import React from "react";
+import styled from "styled-components";
 import Text from "../../../components/Text/Text";
 import Dropdown from "../../../components/Dropdown/Dropdown";
 import Button from "../../../components/Button/Button";
 import { LangType } from "../types";
 import MenuButton from "./MenuButton";
 import { ChevronDownIcon } from "../../../components/Svg";
-import styled from "styled-components";
 
 interface Props {
   currentLang: string;
@@ -38,7 +38,7 @@ const StyleChevronDownIcon = styled(ChevronDownIcon)`
   color: ${({ theme }) => theme.isDark ? 'rgba(255, 255, 255, 0.87)' : '#6F6C99'};
 `;
 
-const LangSelectorHeader: React.FC<Props> = ({ currentLang, langs, setLang, isDark }) => (
+const LangSelectorHeader: React.FC<Props> = ({ currentLang, langs, setLang }) => (
   <Dropdown
     position="bottom"
     target={
