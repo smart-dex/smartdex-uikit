@@ -1,29 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import Dropdown from "../../../components/Dropdown/Dropdown";
 import MenuLink from "./MenuLink";
 import Text from "../../../components/Text/Text";
 import { ChevronDownIcon } from "../../../components/Svg";
 import Button from "../../../components/Button/Button";
+import { MenuEntry } from "../types";
 
-const linkMyPage = {
-  label: "My Page",
-  icon: "MyPageIcon",
-  items: [
-    {
-      label: "Wallet",
-      href: "/wallet",
-    },
-    {
-      label: "Referral",
-      href: "/referral",
-    },
-    {
-      label: "Refferral Management",
-      href: "/refferral-management",
-    },
-  ],
-};
+interface Props  {
+    links: Array<MenuEntry>
+  }
+
 
 const StyleButton = styled(Button)`
   height: 37px;
@@ -55,21 +42,21 @@ const LinkStyle = styled.div`
   line-height: 25px;
 `;
 
-const MyPage: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(true);
-  const handleClick = () => setIsOpen(!isOpen);
+const MyPage: React.FC<Props> = ({links}) => {
+
+  const linkMyPage = links.find((element) => element.icon ==='MyPageIcon')
 
   return (
     <Dropdown
       position="bottom"
       target={
         <StyleButton variant="text" endIcon={<StyleChevronDownIcon width="24px" />}>
-          <Text color="textSubtle">{linkMyPage.label}</Text>
+          <Text color="textSubtle">{linkMyPage && linkMyPage.label}</Text>
         </StyleButton>
       }
     >
-      {linkMyPage.items.map((itemMyPage) => (
-        <MenuLink href={itemMyPage.href} onClick={handleClick}>
+      {linkMyPage && linkMyPage.items && linkMyPage.items.map((itemMyPage) => (
+        <MenuLink href={itemMyPage.href}>
           <LinkStyle>{itemMyPage.label}</LinkStyle>
         </MenuLink>
       ))}

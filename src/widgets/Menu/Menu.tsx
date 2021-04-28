@@ -136,7 +136,7 @@ const Menu: React.FC<NavProps> = ({
           href={homeLink?.href ?? "/"}
         />
         <Flex alignItems="center">
-          <MyPage/>
+          <MyPage links={links}/>
           <StyleThemeSwitcherHeader>
             <ThemeSwitcherHeader isDark={isDark} toggleTheme={toggleTheme} />
           </StyleThemeSwitcherHeader>
