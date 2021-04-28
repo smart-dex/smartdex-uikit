@@ -32,6 +32,9 @@ export interface MenuEntry {
     calloutClass?: string;
     initialOpenState?: boolean;
 }
+export interface MenuEntryHeader {
+    linkMyPage: Array<MenuEntry>;
+}
 export interface PanelProps {
     isDark: boolean;
     toggleTheme: (isDark: boolean) => void;
@@ -46,4 +49,5 @@ export interface NavProps extends PanelProps {
     login: Login;
     profile?: Profile;
     logout: () => void;
+    linkMyPage: Array<MenuEntry>;
 }

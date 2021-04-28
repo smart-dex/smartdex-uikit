@@ -26,6 +26,14 @@ export declare const socials: ({
     href: string;
     items?: undefined;
 })[];
+export declare const linkMyPage: {
+    label: string;
+    icon: string;
+    items: {
+        label: string;
+        href: string;
+    }[];
+}[];
 export declare const MENU_HEIGHT = 94;
 export declare const MENU_HEIGHT_MOBILE = 65;
 export declare const MENU_ENTRY_HEIGHT = 48;
