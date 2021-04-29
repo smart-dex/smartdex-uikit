@@ -2316,10 +2316,6 @@ var links = [
                 label: "Docs",
                 href: "https://smart-dex29.gitbook.io/smart-dex/",
             },
-            {
-                label: "Blog",
-                href: "",
-            },
         ],
     },
 ];
