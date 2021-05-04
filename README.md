@@ -6,7 +6,7 @@ Pancake UIkit is a set of React components and hooks used to build pages on Panc
 
 ## Install
 
-`npm install uikit-sotatek`
+`npm install smartdex-uikit`
 
 ## Setup
 
@@ -16,7 +16,7 @@ Before using Pancake UIkit, you need to provide the theme file to styled-compone
 
 ```
 import { ThemeProvider } from 'styled-components'
-import { light, dark } from 'uikit-sotatek'
+import { light, dark } from 'smartdex-uikit'
 ...
 <ThemeProvider theme={isDark}>...</ThemeProvider>
 ```
@@ -26,7 +26,7 @@ import { light, dark } from 'uikit-sotatek'
 A reset CSS is available as a global styled component.
 
 ```
-import { ResetCSS } from 'uikit-sotatek'
+import { ResetCSS } from 'smartdex-uikit'
 ...
 <ResetCSS />
 ```

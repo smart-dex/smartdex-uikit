@@ -1,6 +1,6 @@
 {
-  "name": "uikit-sotatek",
-  "version": "1.7.1",
+  "name": "smartdex-uikit",
+  "version": "1.0.0",
   "description": "Set of UI components for pancake projects",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -10,7 +10,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sotatek-CanPham/pancake-uikit-sota.git"
+    "url": "git+https://github.com/blockchain-defi/smartdex-uikit.git"
   },
   "license": "MIT",
   "scripts": {
@@ -81,7 +81,7 @@
   },
   "author": "",
   "bugs": {
-    "url": "https://github.com/Sotatek-CanPham/pancake-uikit-sota/issues"
+    "url": "https://github.com/blockchain-defi/smartdex-uikit/issues"
   },
-  "homepage": "https://github.com/Sotatek-CanPham/pancake-uikit-sota#readme"
+  "homepage": "https://github.com/blockchain-defi/smartdex-uikit#readme"
 }
