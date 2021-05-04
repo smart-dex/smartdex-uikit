@@ -3074,7 +3074,7 @@ var Menu = function (_a) {
                     React.createElement(ThemeSwitcherHeader$1, { isDark: isDark, toggleTheme: toggleTheme })),
                 React.createElement(LangSelectorHeader$1, { isDark: isDark, currentLang: currentLang, langs: langs, setLang: setLang }),
                 React.createElement(UserBlock$1, { account: account, login: login, logout: logout }),
-                React.createElement(StyleThemeSwitcherHeader, null, profile && React.createElement(Avatar, { profile: profile })))),
+                React.createElement(StyleThemeSwitcherHeader, { style: { display: 'none' } }, profile && React.createElement(Avatar, { profile: profile })))),
         React.createElement(BodyWrapper, null,
             React.createElement(Panel, { isPushed: isPushed, isMobile: isMobile, showMenu: showMenu, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, cakePriceUsd: cakePriceUsd, pushNav: setIsPushed, links: links, href: (_c = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _c !== void 0 ? _c : "/" }),
             React.createElement(Inner, { isPushed: isPushed, showMenu: showMenu }, children),
